@@ -4,7 +4,7 @@ const perfumes = [
   description: "Apple, Bergamot, Lemon, Cinnamon.",
   variants: {
     spray: {
-      image: "image: "images/spray-30ml.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -24,7 +24,7 @@ const perfumes = [
     description: "Bergamot, Green Notes.",
     variants: {
     spray: {
-      image: "image: "images/spray-30ml.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -44,7 +44,7 @@ const perfumes = [
     description: "Tobacco Leaf, Spicy Notes.",
     variants: {
     spray: {
-      image: "image: "images/spray-30ml.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -64,7 +64,7 @@ const perfumes = [
     description: "Blueberry, Anise.",
     variants: {
     spray: {
-      image: "image: "images/spray-30ml.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -84,7 +84,7 @@ const perfumes = [
     description: "Black Currant, Citron,.",
     variants: {
     spray: {
-      image: "image: "images/spray-30ml.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
