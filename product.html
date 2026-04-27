@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+
+    <!-- CONNECT MAIN CSS -->
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="product-page-body">
+
+<nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">
+    <img src="jibreel-logo.png" alt="Jibreel Perfumes Logo" class="nav-logo-img">
+</a>
+
+        <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+        <a href="#collections">Collections</a>
+        <ul class="dropdown-menu">
+            <li><a href="index.html#perfumes">Perfumes</a></li>
+            <li><a href="index.html#attars">Attars</a></li>
+        </ul>
+    </li>
+
+    
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+</ul>
+
+        <div class="nav-icons">
+            <a href="#perfumeSearch"><i class="fas fa-search"></i></a>
+            <a href="account.html"><i class="fas fa-user"></i></a>
+            <a href="#" class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+<!-- Mobile Menu Overlay -->
+   <!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="index.html#collections" onclick="toggleMenu()">Collections</a>
+    <a href="index.html#about" onclick="toggleMenu()">About</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="product-page">
+
+<div class="product-image">
+<img id="productImage">
+</div>
+<div class="product-info">
+
+    <!-- TITLE -->
+    <h1 id="productName"></h1>
+
+    <!-- RATING -->
+    <div class="perfume-rating">
+        ★★★★★ <span>(7)</span>
+    </div>
+
+    <!-- TAGS -->
+    <div class="product-tags">
+        <span>Aquatic</span>
+        <span>Aromatic</span>
+        <span>Fresh</span>
+        <span class="tag-men">Men</span>
+    </div>
+
+    <!-- BADGES -->
+    <div class="product-badges">
+        <div>All Day <span>Longevity</span></div>
+        <div>Strong <span>Projection</span></div>
+    </div>
+
+    <!-- INSPIRED -->
+    <p class="inspired-text">
+        Inspired by <span id="inspiredBy"></span>
+    </p>
+
+    <!-- PRICE -->
+    <div class="price-box">
+        <span class="price" id="productPrice"></span>
+        <span class="mrp">M.R.P. <span id="productMRP"></span></span>
+        <p class="tax-text">Inclusive of all taxes</p>
+    </div>
+    <!-- VARIANT -->
+<div class="variant-selector">
+    <button class="variant-btn active" data-variant="spray">Spray</button>
+    <button class="variant-btn" data-variant="rollon">Roll-On</button>
+</div>
+    <!-- SIZE -->
+<div class="size-selector">
+    <button class="size-btn active" data-size="30ml">30 ML</button>
+    <button class="size-btn" data-size="50ml">50 ML</button>
+</div>
+
+<!-- QUANTITY + CART ROW -->
+<div class="cart-row">
+
+    <div class="quantity-selector">
+        <button class="qty-minus" id="minus">−</button>
+        <span class="qty-value" id="qty">1</span>
+        <button class="qty-plus" id="plus">+</button>
+    </div>
+
+    <button class="add-to-cart-btn">Add to Cart</button>
+
+</div>
+
+    <!-- ACCORDION -->
+    <div class="product-accordion">
+
+    <div class="accordion-item">
+        <div class="accordion-header">Product Description <span>+</span></div>
+        <div class="accordion-content" id="productDescription"></div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Scent Story <span>+</span></div>
+        <div class="accordion-content" id="productScentStory"></div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Usage Tips <span>+</span></div>
+        <div class="accordion-content" id="productUsageTips"></div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Ingredients <span>+</span></div>
+        <div class="accordion-content" id="productIngredients"></div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Brand & Manufacturer Info <span>+</span></div>
+        <div class="accordion-content" id="productBrandInfo"></div>
+    </div>
+
+</div>
+<!-- Recommended Perfumes -->
+
+<section class="recommended-section">
+
+<h2>You May Also Like</h2>
+
+<div class="perfumes-grid" id="recommendedPerfumes"></div>
+
+</section>
+
+<!-- Load perfume database -->
+<script src="products.js"></script>
+
+<!-- Product page logic -->
+<script src="product.js"></script>
+
+<!-- nav bar -->
+<script src="script.js"></script>
+
+</body>
+</html>

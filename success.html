@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful | Jibreel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #023048;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .success-box {
+            background: #0c3f57;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 400px;
+        }
+
+        .success-box h1 {
+            color: #08A7C5;
+            margin-bottom: 15px;
+        }
+
+        .success-box p {
+            margin: 10px 0;
+        }
+
+        .success-box a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #08A7C5;
+            color: #023048;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="success-box">
+    <h1>Payment Successful</h1>
+
+    <p id="payment-id"></p>
+    <p id="order-id"></p>
+
+    <p>Thank you for choosing Jibreel.</p>
+
+    <a href="index.html">Continue Shopping</a>
+</div>
+
+<script>
+    const data = JSON.parse(localStorage.getItem("jibreel_last_payment"));
+
+    if (data) {
+        document.getElementById("payment-id").innerHTML =
+            "Payment ID: <strong>" + data.paymentId + "</strong>";
+
+        document.getElementById("order-id").innerHTML =
+            "Order ID: <strong>" + data.backendOrderId + "</strong>";
+    }
+</script>
+
+</body>
+</html>

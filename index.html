@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibreel Perfumes | Luxury Fragrances</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="fonts/NovaQuinta.woff2" as="font" type="font/woff2" crossorigin>
+    
+<!-- Main Styles -->
+<!-- Luxury Font System -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Assistant:wght@300;400;600&display=swap" rel="stylesheet">    
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="home-page">
+<div class="top-bar">
+
+    <!-- LEFT TEXT -->
+    <div class="top-bar-left">
+        10% DISCOUNT. USE THE CODE, <strong>FIRST10</strong>
+        <a href="#perfumes" class="top-bar-link">SHOP NOW</a>
+    </div>
+
+    <!-- RIGHT COUNTDOWN -->
+    <div class="top-bar-right">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>DAY</small>
+        </div>
+
+        <span class="colon">:</span>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>HRS</small>
+        </div>
+
+        <span class="colon">:</span>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>MIN</small>
+        </div>
+
+        <span class="colon">:</span>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>SEC</small>
+        </div>
+
+    </div>
+
+</div>
+    <!-- SPLASH SCREEN START -->
+<div id="splash">
+    <div class="splash-content">
+        <img src="jibreel-logo.png" alt="Jibreel Logo" class="splash-logo">
+
+        <div class="since-text">
+            SINCE 1990
+        </div>
+    </div>
+</div>
+<!-- SPLASH SCREEN END -->
+
+    <!-- =============================================
+         NAVIGATION
+         ============================================= -->
+<nav class="navbar" id="navbar">
+
+    <!-- 🔥 TOP: LOGO CENTER -->
+    <div class="nav-top">
+        <a href="#" class="nav-logo">
+            <img src="jibreel-logo.png" alt="Jibreel Perfumes Logo" class="nav-logo-img">
+        </a>
+    </div>
+
+    <!-- 🔥 BOTTOM: MENU + ICONS -->
+    <div class="nav-bottom">
+
+        <!-- LEFT: MENU TOGGLE -->
+        <div class="nav-left">
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- CENTER MENU -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="#collections">Collections</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#perfumes">Perfumes</a></li>
+                    <li><a href="#attars">Attars</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- RIGHT ICONS -->
+        <div class="nav-icons">
+            <a href="#perfumeSearch"><i class="fas fa-search"></i></a>
+            <a href="account.html"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+
+    </div>
+
+</nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#collections" onclick="toggleMenu()">Collections</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+    <!-- HERO SECTION START -->
+<section class="hero" id="home">
+
+    <video autoplay muted loop playsinline>
+        <source src="images/hero.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Gradient Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Vignette Edge Effect -->
+    <div class="hero-vignette"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+
+        <img
+            src="jibreel-logo.png"
+            alt="Jibreel Perfumes Logo"
+            class="hero-logo"
+        />
+
+        <div class="hero-divider"></div>
+
+        <img
+    src="images/hero-text.png"
+    alt="Imagined in Arabia Bottled in India"
+    class="hero-text"
+/>
+
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll">
+        <span class="hero-scroll-text">Scroll</span>
+        <div class="hero-scroll-line"></div>
+    </div>
+
+</section>
+<!-- HERO SECTION END -->
+
+<!-- =============================================
+     BEST SELLERS
+============================================= -->
+
+    <section id="collections" class="section-padding">
+    <p class="section-subtitle">Exclusively Curated</p>
+    <h2 class="section-title">Best Sellers</h2>
+    <div class="section-divider"></div>
+
+    <div class="collections-grid">
+
+        <!-- Card 1 -->
+        <div class="collection-card">
+            <div class="card-image"></div>
+            <div class="card-body">
+                <h3 class="card-name">Impression of HAWAS for him from Rasasi</h3>
+                <p class="card-desc">
+                    <span class="note-title">Top:</span> Apple, Bergamot, Lemon <br>
+                    <span class="note-title">Heart:</span> Watery Notes, Plum, Orange Blossom <br>
+                    <span class="note-title">Base:</span> Ambergris, Musk, Patchouli </p>
+                <p class="card-price">₹800</p>
+                <a href="#" class="card-btn">View Details</a>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="collection-card">
+            <div class="card-image"></div>
+            <div class="card-body">
+                <h3 class="card-name">Impression of Tobacco Vanille from TomFord</h3>
+                <p class="card-desc">
+                    <span class="note-title">Top:</span> Tobacco Leaf, Spices <br>
+                    <span class="note-title">Heart:</span> Vanilla, Cacao, Tonka Bean <br>
+                    <span class="note-title">Base:</span> Dried Fruits, Woody Notes </p>
+                <p class="card-price">₹1000</p>
+                <a href="#" class="card-btn">View Details</a>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="collection-card">
+            <div class="card-image"></div>
+            <div class="card-body">
+                <h3 class="card-name">Impression of Oud Kalemat from Arabian Oud</h3>
+                <p class="card-desc">
+                    <span class="note-title">Top:</span> Blueberry, Anise <br>
+                    <span class="note-title">Heart:</span> Rosemary, Cashmere Wood <br>
+                    <span class="note-title">Base:</span> Amber, Honey, Musk </p>
+                <p class="card-price">₹1000</p>
+                <a href="#" class="card-btn">View Details</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =============================================
+     SECTION 4: PERFUMES
+============================================= -->
+
+<section id="perfumes">
+
+    <div class="perfumes-header">
+         <input 
+type="text" 
+id="perfumeSearch" 
+placeholder="Search fragrances..."
+class="perfume-search"
+/>
+<div class="category-filter">
+
+<button data-category="all">All</button>
+<button data-category="Oud">Oud</button>
+<button data-category="Sweet">Sweet</button>
+<button data-category="Fresh">Fresh</button>
+<button data-category="Woody">Woody</button>
+<button data-category="Oriental">Oriental</button>
+<button data-category="Luxury">Luxury</button>
+
+</div>
+
+<div class="type-filter">
+    <button class="filter-btn active" data-type="all">All Types</button>
+    <button class="filter-btn" data-type="spray">Spray</button>
+    <button class="filter-btn" data-type="rollon">Roll-On</button>
+</div>
+        
+
+    <!-- EMPTY GRID -->
+    <div class="perfumes-grid" id="perfumeGrid"></div>
+
+<div class="view-all-container">
+    <a href="#" class="view-all-btn add-to-cart-btn">
+        View All Collection
+    </a>
+</div>
+
+</section>
+<section id="attars" class="attars-section">
+
+  <div class="attars-header">
+    <span class="attars-subtitle">Heritage Distilled</span>
+    <h2 class="attars-title">The Art of Attar</h2>
+    <div class="attars-divider"></div>
+  </div>
+
+  <div class="attars-grid">
+
+    <div class="attar-card">
+      <h3 class="attar-card-name">Royal Oud</h3>
+      <p class="attar-card-desc">
+        Ancient Assamese oud distilled traditionally for a deep woody mystique.
+      </p>
+      <p class="attar-card-size">6ml / 12ml</p>
+      <a href="#" class="attar-card-btn">Discover Essence</a>
+    </div>
+
+    <div class="attar-card">
+      <h3 class="attar-card-name">Amber Musk</h3>
+      <p class="attar-card-desc">
+        Rare botanical amber fused with heirloom white musk.
+      </p>
+      <p class="attar-card-size">6ml / 12ml</p>
+      <a href="#" class="attar-card-btn">Discover Essence</a>
+    </div>
+
+    <div class="attar-card">
+      <h3 class="attar-card-name">Saffron Rose</h3>
+      <p class="attar-card-desc">
+        Taifi rose married with Kashmiri saffron threads.
+      </p>
+      <p class="attar-card-size">6ml / 12ml</p>
+      <a href="#" class="attar-card-btn">Discover Essence</a>
+    </div>
+
+    <div class="attar-card">
+      <h3 class="attar-card-name">Sandalwood Noir</h3>
+      <p class="attar-card-desc">
+        Mysore sandalwood aged for a creamy, meditative depth.
+      </p>
+      <p class="attar-card-size">6ml / 12ml</p>
+      <a href="#" class="attar-card-btn">Discover Essence</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =============================================
+     SECTION 3: ABOUT
+============================================= -->
+
+<section class="about" id="about">
+
+  <div class="about-container">
+
+    <!-- Center Logo -->
+    <div class="about-logo">
+    <img src="jibreel-logo.png" alt="Jibreel Logo" class="about-logo-img">
+</div>
+
+    <!-- Gold Divider -->
+    <div class="about-divider"></div>
+
+    <!-- About Content -->
+    <div class="about-content">
+      <h3>In Business Since 1990</h3>
+
+<p class="about-highlight">
+Small-Batch | Premium Ingredients — For Those Who Know The Difference.  
+High-end fragrances expertly blended and balanced to elevate the craft of perfumery.  
+Jibreel brings you the finest quality fragrances money can buy.  
+Our formulations use exclusive ingredients at precise concentrations to create scents that last longer, smell richer, and leave a memorable trail.
+</p>
+  </div>
+
+</section>
+
+
+<!-- =============================================
+         JAVASCRIPT
+         ============================================= -->
+<script src="products.js" defer></script>
+<script src="script.js" defer></script>
+
+ <script>
+        // -------- Navbar Scroll Effect --------
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // -------- Mobile Menu Toggle --------
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.getElementById('menuToggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // -------- Hero Video Fallback --------
+        // If video fails to load, the poster image serves as the background.
+        // Replace the <source src=""> in the hero video with your brand video URL.
+    </script>
+<script>
+window.addEventListener("load", function() {
+
+    document.body.style.opacity = "1";
+
+    setTimeout(function() {
+
+        const splash = document.getElementById("splash");
+        splash.classList.add("fade-out");
+
+        setTimeout(function(){
+            splash.style.display = "none";
+        }, 800);
+
+    }, 2800);
+
+});
+
+</script>
+</body>
+</html>

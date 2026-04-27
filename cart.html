@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Jibreel Perfumes</title>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="fonts/NovaQuinta.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Assistant:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <body class="product-page-body">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span>GET 10% OFF ON ALL ORDERS</span>
+            <strong>USE CODE: JIBREEL10</strong>
+            <a href="index.html#perfumes" class="top-bar-link">SHOP NOW</a>
+        </div>
+
+        <div class="top-bar-right">
+            <div class="time-box">
+                <span>00</span>
+                <small>HRS</small>
+            </div>
+            <span class="colon">:</span>
+            <div class="time-box">
+                <span>00</span>
+                <small>MIN</small>
+            </div>
+            <span class="colon">:</span>
+            <div class="time-box">
+                <span>00</span>
+                <small>SEC</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar scrolled">
+        <div class="nav-top">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <!-- IMPORTANT: use the exact same logo img line from index.html here -->
+                    <img src="jibreel-logo.png" alt="Jibreel Logo" class="nav-logo-img">
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-bottom">
+
+    <!-- LEFT -->
+    <div class="nav-left">
+        <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- CENTER -->
+    <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+
+        <li class="dropdown">
+            <a href="index.html#collections">Collections</a>
+            <ul class="dropdown-menu">
+                <li><a href="index.html#perfumes">Perfumes</a></li>
+                <li><a href="index.html#attars">Attars</a></li>
+            </ul>
+        </li>
+
+        <li><a href="index.html#perfumes">Perfumes</a></li>
+        <li><a href="index.html#attars">Attars</a></li>
+        <li><a href="cart.html">Cart</a></li>
+    </ul>
+
+    <!-- RIGHT -->
+    <div class="nav-icons">
+        <a href="index.html#perfumeSearch"><i class="fas fa-search"></i></a>
+        <a href="account.html"><i class="fas fa-user"></i></a>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+        </a>
+    </div>
+
+</div>
+    </header>
+
+         <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#home" onclick="toggleMenu()">Home</a>
+    <a href="index.html#collections" onclick="toggleMenu()">Collections</a>
+    <a href="index.html#about" onclick="toggleMenu()">About</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+    <!-- CART PAGE -->
+    <section class="cart-page">
+        <div class="cart-page-container">
+
+            <h1 class="cart-page-title">Your Cart</h1>
+            <p class="cart-page-subtitle">Review your selected fragrances before checkout.</p>
+
+            <!-- EMPTY MESSAGE -->
+            <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
+                <p>Your cart is empty.</p>
+                <a href="index.html#perfumes" class="continue-shopping-btn">Continue Shopping</a>
+            </div>
+
+            <!-- CART ITEMS -->
+            <div id="cart-items" class="cart-items"></div>
+
+            <!-- CART SUMMARY -->
+            <div id="cart-summary" class="cart-summary" style="display: none;">
+                <div class="cart-summary-row">
+                    <span>Total</span>
+                    <span id="cart-total">₹0</span>
+                </div>
+
+                <button id="checkout-btn" class="checkout-btn">Proceed to Secure Checkout</button>
+                <p class="checkout-note">Test mode enabled — Razorpay popup will open for UI testing only.</p>
+                <div id="payment-status" class="payment-status" style="display: none;"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER / BRAND ENDING -->
+    <section class="about">
+        <div class="about-container">
+    <div class="about-logo">
+        <img src="jibreel-logo.png" alt="Jibreel Logo" class="about-logo-img">
+    </div>
+
+            <div class="about-divider"></div>
+
+            <div class="about-content">
+                <h3>In Business Since 1990</h3>
+                <p>
+                    At Jibreel, every fragrance is crafted to reflect elegance, depth and identity.
+                    Our cart experience is designed with the same premium philosophy as the rest of our brand.
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="cart.js?v=2"></script>
+</body>
+</html>
