@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const checkoutBtn = document.getElementById("checkout-btn");
     const paymentStatus = document.getElementById("payment-status");
 
-    const BACKEND_API_URL = "http://localhost:5000/api";
+    const BACKEND_API_URL = "https://name-jibreel-backend.onrender.com/api";
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
