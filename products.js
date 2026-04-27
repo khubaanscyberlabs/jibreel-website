@@ -4,7 +4,7 @@ const perfumes = [
   description: "Apple, Bergamot, Lemon, Cinnamon.",
   variants: {
     spray: {
-      image: "images/hawas.jpg",
+      image: "image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -24,7 +24,7 @@ const perfumes = [
     description: "Bergamot, Green Notes.",
     variants: {
     spray: {
-      image: "images/Haramain.jpg",
+      image: "image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -44,7 +44,7 @@ const perfumes = [
     description: "Tobacco Leaf, Spicy Notes.",
     variants: {
     spray: {
-      image: "images/tomford.jpg",
+      image: "image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -64,7 +64,7 @@ const perfumes = [
     description: "Blueberry, Anise.",
     variants: {
     spray: {
-      image: "images/oud-kalemat.jpg",
+      image: "image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -84,7 +84,7 @@ const perfumes = [
     description: "Black Currant, Citron,.",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -104,7 +104,7 @@ const perfumes = [
     description: "Cistus Labdanum (Spain)",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -124,7 +124,7 @@ const perfumes = [
     description: "Cognac",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -144,7 +144,7 @@ const perfumes = [
     description: "Raspberry, Saffron, Thyme",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -164,7 +164,7 @@ const perfumes = [
     description: "Jasmine, Peach",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -184,7 +184,7 @@ const perfumes = [
     description: "Peony, Citruses, Mandarin Orange",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -204,7 +204,7 @@ const perfumes = [
     description: "Calabrian Bergamot, Pepper",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -224,7 +224,7 @@ const perfumes = [
     description: "Sea Notes, Bergamot",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -244,7 +244,7 @@ const perfumes = [
     description: "Grapefruit, Cinnamon, Nutmeg, Cardamom",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -264,7 +264,7 @@ const perfumes = [
     description: "Bergamot, Lavender",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -284,7 +284,7 @@ const perfumes = [
     description: "Grapefruit, Bergamot, Saffron, Cardamom, Artemisia, Cypress Leaf ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -304,7 +304,7 @@ const perfumes = [
     description: "Jasmine Sambac, Magnolia ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -324,7 +324,7 @@ const perfumes = [
     description: "Tomato Leaf, Freesia, Rose ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -344,7 +344,7 @@ const perfumes = [
     description: "Bergamot, Lavender, Clary Sage  (Olfactoryfactoryllc) ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -364,7 +364,7 @@ const perfumes = [
     description: "Neroli, Bergamot, Black Pepper, Petitgrain ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -384,7 +384,7 @@ const perfumes = [
     description: "Grapefruit, Monoi Oil, Sea Salt ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -404,7 +404,7 @@ const perfumes = [
     description: "Rare Oud (Agarwood), Brazilian Rosewood, Cardamom, Sichuan Pepper ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -424,7 +424,7 @@ const perfumes = [
     description: "Black Truffle, Ylang-Ylang, Bergamot, Black Currant, Effervescent Citrus ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -444,7 +444,7 @@ const perfumes = [
     description: "Whiskey",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -464,7 +464,7 @@ const perfumes = [
     description: "Smoke, Spices, Saffron ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -484,7 +484,7 @@ const perfumes = [
     description: "Lavender, Mint ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -504,7 +504,7 @@ const perfumes = [
     description: "TBD",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -524,7 +524,7 @@ const perfumes = [
     description: "Sicilian Orange, Sicilian Lemon, Calabrian Bergamot",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -544,7 +544,7 @@ const perfumes = [
     description: "Saffron, Nutmeg, Lavender",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -564,7 +564,7 @@ const perfumes = [
     description: "Bergamot, Saffron",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -584,7 +584,7 @@ const perfumes = [
     description: "Bergamot, Bay Leaf, Spicy Notes",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -604,7 +604,7 @@ const perfumes = [
     description: "Turkish Rose, Lavender, Lemon, Peony",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -624,7 +624,7 @@ const perfumes = [
     description: "Yuzu, Lemon, Bergamot, Lemon Verbena, Mandarin Orange, Cypress, Calone, Coriander, Sage, Tarragon",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -644,7 +644,7 @@ const perfumes = [
     description: "Bergamot, Pink Pepper, Tangerine, Oud, Honey, Nutmeg, Elemi",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -664,7 +664,7 @@ const perfumes = [
     description: "Cardamom, Cypress, Lavender, Myrtle, Rosewood, Thyme",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -684,7 +684,7 @@ const perfumes = [
     description: "Bitter Almond, Black Cherry,Cherry Liqueur",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -704,7 +704,7 @@ const perfumes = [
     description: "Bergamot, Cinnamon, Cardamom, Orange Blossom",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -724,7 +724,7 @@ const perfumes = [
     description: "Rum, Cinnamon, Bergamot",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -744,7 +744,7 @@ const perfumes = [
     description: "Incense, Tobacco, Bergamot",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -764,7 +764,7 @@ const perfumes = [
     description: "Pink Pepper, Bergamot, Pear, Elemi, Nutmeg",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -784,7 +784,7 @@ const perfumes = [
     description: "Pear, Pink Pepper, Orange Blossom",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -804,7 +804,7 @@ const perfumes = [
     description: "Raspberry, Quince",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -824,7 +824,7 @@ const perfumes = [
     description: "Pink Pepper, Mandarin Orange, Bergamot",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -844,7 +844,7 @@ const perfumes = [
     description: "Jasmine, Rangoon Creeper",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -864,7 +864,7 @@ const perfumes = [
     description: "Pink Pepper, Turkish Rose",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -884,7 +884,7 @@ const perfumes = [
     description: "Red Ginger, Cardamom",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -904,7 +904,7 @@ const perfumes = [
     description: "Bergamot, Ginger, Green Apple",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -924,7 +924,7 @@ const perfumes = [
     description: "Sicilian Lemon, Black Currant, Bergamot, Spicy Notes ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -944,7 +944,7 @@ const perfumes = [
     description: "Rose, Saffron, Pimento ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -964,7 +964,7 @@ const perfumes = [
     description: "Passionfruit, Grapefruit, Pineapple, Tangerine, Strawberry ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -984,7 +984,7 @@ const perfumes = [
     description: "Raspberry, Saffron, Oud ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1004,7 +1004,7 @@ const perfumes = [
     description: "Lavender, Lemon Zest, Amalfi Lemon ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1024,7 +1024,7 @@ const perfumes = [
     description: "Chamomile, Amalfi Lemon, Artemisia ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1044,7 +1044,7 @@ const perfumes = [
     description: "Saffron, Jasmine ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1064,7 +1064,7 @@ const perfumes = [
     description: "Orange, Grapefruit ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1084,7 +1084,7 @@ const perfumes = [
     description: "Bergamot, Oregano, Pepper ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1104,7 +1104,7 @@ const perfumes = [
     description: "Raspberry, Saffron, Leather ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1124,7 +1124,7 @@ const perfumes = [
     description: "Cannabis, Green Notes, Davana, Saffron, Thyme",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1144,7 +1144,7 @@ const perfumes = [
     description: "Bergamot, Orange Blossom",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1164,7 +1164,7 @@ const perfumes = [
     description: "Grapefruit, Lemon, Mint, Pink Pepper",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1184,7 +1184,7 @@ const perfumes = [
     description: "Saffron, Bulgarian Rose, Violet",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1204,7 +1204,7 @@ const perfumes = [
     description: "Almond, Coffee, Bergamot,Lemon",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1224,7 +1224,7 @@ const perfumes = [
     description: "Pink Grapefruit, Calabrian Bergamot, Cactus Juice",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1244,7 +1244,7 @@ const perfumes = [
     description: "Black Pepper, White Pepper, Italian Green Bergamot",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1264,7 +1264,7 @@ const perfumes = [
     description: "Sea Water, Lavender, Mint, Green Notes, Rosemary, Calone, Coriander",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1284,7 +1284,7 @@ const perfumes = [
     description: "Bergamot, Star Anise, White Lily",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1304,7 +1304,7 @@ const perfumes = [
     description: "Pink Pepper, Cardamom, Violet Leaves",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1324,7 +1324,7 @@ const perfumes = [
     description: "Orange, Mandarin Orange, Bergamot, Orange Blossom ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1344,7 +1344,7 @@ const perfumes = [
     description: "Bergamot, Black Currant, Apple, Pineapple, Pink Pepper ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1364,7 +1364,7 @@ const perfumes = [
     description: "Rose, Orange, Water Lily ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1388,14 +1388,14 @@ const perfumes = [
     "30ml": 1499,
     "50ml": 2499
   },
-    image: "images/Pacific-Chill.jpg"
+    image: "images/spray-30ml.jpg"
   },
 {
     name: "Impression of Scandal - Jean Paul Gaultier",
     description: "Blood Orange, Grapefruit,Gardenia ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1415,7 +1415,7 @@ const perfumes = [
     description: "Cardamom, Lemon, Spices,Juniper ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1435,7 +1435,7 @@ const perfumes = [
     description: "Bergamot, Apple, Lemon ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1455,7 +1455,7 @@ const perfumes = [
     description: "Pear, Bergamot, Lemon,Lavender, Mint ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
@@ -1475,7 +1475,7 @@ const perfumes = [
     description: "Bergamot, Pineapple, Grapefruit ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1495,7 +1495,7 @@ const perfumes = [
     description: "Bergamot, Black Currant, Apple,Pineapple, Pink Pepper ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 1000,
         "50ml": 1400
@@ -1515,7 +1515,7 @@ const perfumes = [
     description: "Grapefruit, Ginger, Bergamot ",
     variants: {
     spray: {
-      image: "images/Pacific-Chill.jpg",
+      image: "images/spray-30ml.jpg",
       sizes: {
         "30ml": 800,
         "50ml": 1300
