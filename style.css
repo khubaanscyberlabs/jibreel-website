@@ -350,15 +350,15 @@ text-align:center;
     background: transparent;
     backdrop-filter: none;
     border-bottom: 1px solid transparent;
-    transition: all 0.35s ease;
+    transition: background 0.4s ease, padding 0.35s ease, box-shadow 0.4s ease;
 }
 
 .navbar.scrolled {
     padding: 12px 5% 10px;
     background: rgba(2, 48, 72, 0.96);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.45);
 }
 
 /* TEXT VISIBILITY ON HERO (TRANSPARENT NAVBAR) */
@@ -416,6 +416,8 @@ text-align:center;
     height: 78px;
     width: auto;
     object-fit: contain;
+    transform-origin: center;
+    will-change: transform;
     filter: drop-shadow(0 4px 14px rgba(0,0,0,0.45));
     transition: all 0.35s ease;
 }
