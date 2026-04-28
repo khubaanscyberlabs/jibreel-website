@@ -346,7 +346,7 @@ text-align:center;
     flex-direction: column;
     align-items: center;
 
-    padding: 18px 5% 14px;
+    padding: 22px 5% 18px;
     background: transparent;
     backdrop-filter: none;
     border-bottom: 1px solid transparent;
@@ -354,7 +354,7 @@ text-align:center;
 }
 
 .navbar.scrolled {
-    padding: 10px 5% 9px;
+    padding: 12px 5% 10px;
     background: rgba(2, 48, 72, 0.96);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.18);
@@ -413,7 +413,7 @@ text-align:center;
 }
 
 .nav-logo-img {
-    height: 66px;
+    height: 78px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 14px rgba(0,0,0,0.45));
@@ -421,7 +421,7 @@ text-align:center;
 }
 
 .navbar.scrolled .nav-logo-img {
-    height: 52px;
+    height: 60px;
 }
         .nav-logo span {
             color: var(--gold);
@@ -1848,96 +1848,7 @@ h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     letter-spacing: 0.12em;
 }
-/* =============================================
-   TOP ANNOUNCEMENT BAR
-============================================= */
 
-.top-bar {
-    width: 100%;
-    background: #023048;  /* ✅ keep carbon blue */
-    color: #ffffff;
-
-    display: flex;
-    justify-content: center;   /* 🔥 center everything */
-    align-items: center;
-    gap: 30px;                 /* spacing between text & timer */
-
-    padding: 8px 5%;
-    font-size: 12px;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1100;
-}
-
-/* LEFT TEXT */
-.top-bar-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-align: center;
-}
-
-.top-bar-left strong {
-    font-weight: 700;
-}
-
-/* SHOP NOW */
-.top-bar-link {
-    margin-left: 10px;
-    text-decoration: underline;
-    font-weight: 600;
-}
-
-/* RIGHT COUNTDOWN */
-.top-bar-right {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* EACH BOX */
-.time-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 11px;
-}
-
-.time-box span {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-/* LABEL */
-.time-box small {
-    font-size: 9px;
-    letter-spacing: 1px;
-}
-
-/* COLONS */
-.colon {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .top-bar {
-        flex-direction: column;
-        gap: 5px;
-        padding: 6px;
-    }
-
-    .top-bar-left {
-        font-size: 11px;
-        text-align: center;
-    }
-
-    .top-bar-right {
-        transform: scale(0.9);
-    }
-}
 /* =========================================
    CART PAGE STYLES — MATCH HOMEPAGE
 ========================================= */
