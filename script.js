@@ -45,7 +45,7 @@ const firstPrice = sizes[firstSize] || "";
 
 card.innerHTML = `
 <div class="perfume-card-image-wrapper">
-<img src="${variant?.image || product.image}" alt="${product.name}" loading="lazy">
+<img src="${variant?.images ? variant.images[firstSize] : (variant?.image || product.image)}" alt="${product.name}" loading="lazy">
 </div>
 
 <div class="perfume-card-body">
