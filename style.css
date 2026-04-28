@@ -448,25 +448,34 @@ text-align:center;
     transition: all 0.3s ease;
 }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #08A7C5;
-            transition: var(--transition);
-        }
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 0;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #D4AF37,
+        transparent
+    );
+
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
         .nav-links a:hover {
     color: #08A7C5;
-    text-shadow: 0 0 8px rgba(8, 167, 197, 0.4);
+    text-shadow: 0 0 10px rgba(8, 167, 197, 0.35);
 }
 
         .nav-links a:hover::after {
-            width: 100%;
-        }
+    width: 70%;
+}
 
         /* Nav Icons */
         .nav-icons {
