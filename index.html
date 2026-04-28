@@ -92,7 +92,18 @@
 
         <!-- RIGHT ICONS -->
         <div class="nav-icons">
-            <a href="#perfumeSearch"><i class="fas fa-search"></i></a>
+            <div class="nav-search">
+    <button type="button" class="nav-search-btn" id="navSearchBtn">
+        <i class="fas fa-search"></i>
+    </button>
+
+    <input 
+        type="text" 
+        id="navSearchInput" 
+        class="nav-search-input" 
+        placeholder="Search perfumes..."
+    >
+</div>
             <a href="account.html"><i class="fas fa-user"></i></a>
             <a href="cart.html" class="cart-icon">
                 <i class="fas fa-shopping-bag"></i>
@@ -218,12 +229,14 @@
 <section id="perfumes">
 
     <div class="perfumes-header">
-         <input 
+        <!-- PERFUME SECTION SEARCH HIDDEN
+<input 
 type="text" 
 id="perfumeSearch" 
 placeholder="Search fragrances..."
 class="perfume-search"
 />
+-->
 <!-- CATEGORY FILTER HIDDEN
 <div class="category-filter">
 
