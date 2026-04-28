@@ -167,12 +167,26 @@ app.post("/api/payments/verify", async (req, res) => {
   }
 });
 
-app.get("/api/orders", async (req, res) => {
+function requireAdmin(req, res, next) {
+  const adminKey = req.headers["x-admin-key"];
+
+  if (!process.env.ADMIN_API_KEY) {
+    return res.status(500).json({ success: false, message: "Admin key not configured." });
+  }
+
+  if (adminKey !== process.env.ADMIN_API_KEY) {
+    return res.status(401).json({ success: false, message: "Unauthorized admin access." });
+  }
+
+  next();
+}
+
+app.get("/api/admin/orders", requireAdmin, async (req, res) => {
   try {
     const orders = await readOrders();
     res.json({ success: true, orders: orders.slice().reverse() });
   } catch (error) {
-    console.error("Read orders error:", error);
+    console.error("Read admin orders error:", error);
     res.status(500).json({ success: false, message: "Could not read orders." });
   }
 });
