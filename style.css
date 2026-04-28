@@ -559,16 +559,14 @@ text-align:center;
 .nav-search-input {
     width: 0;
     opacity: 0;
-
     border: none;
     outline: none;
-
+    padding: 4px 0;
+    margin-left: 0;
     background: transparent;
     color: white;
-
     font-size: 13px;
     letter-spacing: 0.08em;
-
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -577,10 +575,10 @@ text-align:center;
     width: 160px;
     opacity: 1;
     margin-left: 10px;
+    padding: 4px 0;
 
-    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.6);
 }
-
         /* =============================================
            SECTION 2: HERO
            ============================================= */
