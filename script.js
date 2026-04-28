@@ -125,6 +125,20 @@ sizeButtons.forEach(btn => {
         if(newPrice){
             card.querySelector(".perfume-price").innerText = `₹${newPrice}`;
         }
+        const cardImage = card.querySelector(".perfume-card-image-wrapper img");
+
+// 🔥 always fetch fresh variant
+const currentVariant = selectedType === "all"
+    ? product.variants?.spray
+    : product.variants?.[selectedType] || product.variants?.spray;
+
+if (currentVariant?.images && currentVariant.images[selectedSize]) {
+    cardImage.src = currentVariant.images[selectedSize];
+}
+
+if (variant?.images && variant.images[selectedSize]) {
+    cardImage.src = variant.images[selectedSize];
+}
     });
 });
 
