@@ -1,5 +1,6 @@
 let selectedCategory = "all";
 let selectedType = "all";
+let searchTerm = "";
 
 function renderPerfumes(list, showAll = false){
 
@@ -11,7 +12,13 @@ grid.innerHTML = "";
 
 // ✅ LIMIT ONLY HERE (CORRECT PLACE)
 let filteredList = list;
-
+// Search filter
+if (searchTerm.trim() !== "") {
+    filteredList = filteredList.filter(p =>
+        p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        p.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+}
 // Category filter
 if (selectedCategory !== "all") {
     filteredList = filteredList.filter(p => p.category === selectedCategory);
@@ -253,6 +260,36 @@ typeButtons.forEach(btn => {
         renderPerfumes(perfumes, true);
         }); // closes click
 }); // closes forEach
+
+// ==============================
+// NAVBAR SEARCH
+// ==============================
+
+const navSearch = document.querySelector(".nav-search");
+const navSearchBtn = document.getElementById("navSearchBtn");
+const navSearchInput = document.getElementById("navSearchInput");
+
+if (navSearch && navSearchBtn && navSearchInput) {
+    navSearchBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        navSearch.classList.toggle("active");
+
+        if (navSearch.classList.contains("active")) {
+            navSearchInput.focus();
+        } else {
+            navSearchInput.value = "";
+            searchTerm = "";
+            renderPerfumes(perfumes, false);
+        }
+    });
+
+    navSearchInput.addEventListener("input", function () {
+        searchTerm = navSearchInput.value;
+        renderPerfumes(perfumes, true);
+    });
+}
 
 // ==============================
 // NEW PREMIUM COUNTDOWN (GLOBAL)
