@@ -67,6 +67,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let selectedVariant = "spray";
     let selectedSize = Object.keys(product.variants[selectedVariant].sizes)[0];
+    function getVariantImage(variant, size) {
+    const variantData = product.variants[variant];
+
+    if (variantData.images && variantData.images[size]) {
+        return variantData.images[size];
+    }
+
+    return variantData.image;
+}
 
     function renderSizes(variant) {
         const sizes = product.variants[variant].sizes;
@@ -85,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("productPrice").innerText = "Rs. " + sizes[size];
                 document.getElementById("productMRP").innerText = "Rs. " + (sizes[size] + 800);
+                document.getElementById("productImage").src = getVariantImage(selectedVariant, selectedSize);
             });
 
             sizeSelector.appendChild(btn);
@@ -93,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedSize = Object.keys(sizes)[0];
         document.getElementById("productPrice").innerText = "Rs. " + sizes[selectedSize];
         document.getElementById("productMRP").innerText = "Rs. " + (sizes[selectedSize] + 800);
-        document.getElementById("productImage").src = product.variants[variant].image;
+        document.getElementById("productImage").src = getVariantImage(variant, selectedSize);
     }
 
     variantButtons.forEach(btn => {
@@ -110,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         addToCartBtn.addEventListener("click", () => {
         const price = product.variants[selectedVariant].sizes[selectedSize];
-        const image = product.variants[selectedVariant].image;
+        const image = getVariantImage(selectedVariant, selectedSize);
 
         const item = {
             name: product.name,
@@ -183,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             card.innerHTML = `
                 <div class="perfume-card-image-wrapper">
-                    <img src="${p.variants.spray.image}" alt="${p.name}">
+                    <img src="${p.variants.spray.images ? p.variants.spray.images["30ml"] : p.variants.spray.image}" alt="${p.name}">
                 </div>
 
                 <div class="perfume-card-body">
