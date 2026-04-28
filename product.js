@@ -23,7 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const defaultVariant = "spray";
         const defaultSize = Object.keys(product.variants[defaultVariant].sizes)[0];
 
-        document.getElementById("productImage").src = product.variants[defaultVariant].image;
+        document.getElementById("productImage").src =
+    product.variants[defaultVariant].images
+        ? product.variants[defaultVariant].images[defaultSize]
+        : product.variants[defaultVariant].image;
         document.getElementById("productPrice").innerText =
             "Rs. " + product.variants[defaultVariant].sizes[defaultSize];
 
