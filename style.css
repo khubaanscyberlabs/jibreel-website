@@ -335,90 +335,85 @@ text-align:center;
         /* =============================================
            SECTION 1: NAVIGATION
            ============================================= */
-       .navbar {
+      .navbar {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
 
     display: flex;
-    flex-direction: column; /* 🔥 KEY CHANGE */
+    flex-direction: column;
     align-items: center;
 
-    padding: 10px 5%;
-    background: transparent;
-
-    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    padding: 18px 5% 14px;
+    background: rgba(2, 48, 72, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+    transition: all 0.35s ease;
 }
 
-/* NAV TOP (LOGO CENTER) */
+.navbar.scrolled {
+    padding: 10px 5% 9px;
+    background: rgba(2, 48, 72, 0.96);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
 .nav-top {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-bottom: 8px;
 }
 
-/* NAV BOTTOM (MENU + ICONS) */
 .nav-bottom {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 2px;
-    margin-bottom: 4px;
-    position: relative; /* 🔥 required */
+    position: relative;
 }
 
-/* LEFT */
 .nav-left {
     flex: 1;
     display: flex;
     justify-content: flex-start;
 }
 
-/* CENTER */
 .nav-links {
-    position: absolute;   /* 🔥 KEY FIX */
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    
     display: flex;
-    gap: 35px;
+    align-items: center;
+    gap: 38px;
+    list-style: none;
 }
 
-/* RIGHT */
 .nav-icons {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    gap: 25px;
-}
-    /* NAVBAR HOVER EFFECT */
-.navbar:hover {
-    background: rgba(2, 48, 72, 0.95);
-    backdrop-filter: blur(12px);
+    align-items: center;
+    gap: 24px;
 }
 
-       .navbar.scrolled {
-    top: 0;
-    background: rgba(2, 48, 72, 0.95);
-    backdrop-filter: blur(12px);
-    padding: 8px 5%;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-}
-        /* Logo */
-       .nav-logo {
+.nav-logo {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .nav-logo-img {
-    height: 44px;
+    height: 66px;
     width: auto;
     object-fit: contain;
-    transition: var(--transition);
+    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.45));
+    transition: all 0.35s ease;
 }
 
+.navbar.scrolled .nav-logo-img {
+    height: 52px;
+}
         .nav-logo span {
             color: var(--gold);
             font-style: italic;
@@ -432,15 +427,15 @@ text-align:center;
         }
 
         .nav-links a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--white);
-            position: relative;
-            transition: var(--transition);
-        }
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #ffffff;
+    position: relative;
+    transition: all 0.3s ease;
+}
 
         .nav-links a::after {
             content: '';
@@ -469,11 +464,18 @@ text-align:center;
             gap: 25px;
         }
 
-        .nav-icons a {
-            color: var(--white);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
+        .nav-icons a,
+.nav-search-btn {
+    color: #ffffff;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+}
+
+.nav-icons a:hover,
+.nav-search-btn:hover {
+    color: var(--gold);
+    transform: translateY(-1px);
+}
 
         .nav-icons a:hover {
             color: var(--gold);
@@ -758,6 +760,17 @@ text-align:center;
         @media (max-width: 480px) {
             .nav-logo {
                 font-size: 1.4rem;
+            }
+            .nav-logo-img {
+            height: 54px;
+            }
+
+            .navbar.scrolled .nav-logo-img {
+                height: 46px;
+            }
+
+            .navbar {
+                padding: 14px 5% 12px;
             }
 
             .nav-icons {
