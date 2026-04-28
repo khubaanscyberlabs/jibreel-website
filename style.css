@@ -421,7 +421,6 @@ text-align:center;
     filter: drop-shadow(0 4px 14px rgba(0,0,0,0.45));
     transition: all 0.35s ease;
 }
-
 .navbar.scrolled .nav-logo-img {
     height: 60px;
 }
@@ -549,6 +548,38 @@ text-align:center;
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
+
+        .nav-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* HIDDEN STATE */
+.nav-search-input {
+    width: 0;
+    opacity: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+
+    font-size: 13px;
+    letter-spacing: 0.08em;
+
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ACTIVE STATE */
+.nav-search.active .nav-search-input {
+    width: 160px;
+    opacity: 1;
+    margin-left: 10px;
+
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+}
 
         /* =============================================
            SECTION 2: HERO
@@ -2291,5 +2322,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-search-input::placeholder {
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    letter-spacing: 0.1em;
 }
