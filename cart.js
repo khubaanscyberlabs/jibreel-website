@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartTotal = document.getElementById("cart-total");
     const checkoutBtn = document.getElementById("checkout-btn");
     const paymentStatus = document.getElementById("payment-status");
+    const customerName = document.getElementById("customer-name");
+    const customerPhone = document.getElementById("customer-phone");
+    const customerEmail = document.getElementById("customer-email");
+    const customerAddress = document.getElementById("customer-address");
 
     const BACKEND_API_URL = "https://name-jibreel-backend.onrender.com/api";
 
@@ -163,7 +167,10 @@ document.addEventListener("DOMContentLoaded", function () {
             showPaymentStatus("Your cart is empty. Add a fragrance before checkout.", "error");
             return;
         }
-
+        if (!customerName.value.trim() || !customerPhone.value.trim() || !customerAddress.value.trim()) {
+    showPaymentStatus("Please enter name, mobile number and delivery address before checkout.", "error");
+    return;
+}
         checkoutBtn.disabled = true;
         checkoutBtn.innerText = "Creating secure order...";
 
@@ -172,7 +179,16 @@ document.addEventListener("DOMContentLoaded", function () {
             const createOrderResponse = await fetch(`${BACKEND_API_URL}/payments/create-order`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ items: cart, customer: { source: "cart_page" } })
+                body: JSON.stringify({
+    items: cart,
+    customer: {
+        source: "cart_page",
+        name: customerName.value.trim(),
+        phone: customerPhone.value.trim(),
+        email: customerEmail.value.trim(),
+        address: customerAddress.value.trim()
+    }
+})
             });
             const createOrderData = await createOrderResponse.json();
             console.log("RAZORPAY ORDER DATA:", createOrderData);
