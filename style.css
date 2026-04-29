@@ -385,9 +385,7 @@ text-align:center;
 }
 
 .nav-left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+    display: none;
 }
 
 .nav-links {
@@ -438,10 +436,11 @@ text-align:center;
 
         /* Nav Links */
         .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        gap: 38px;
+}
 
         .nav-links a {
     font-family: 'Montserrat', sans-serif;
