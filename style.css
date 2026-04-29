@@ -347,10 +347,18 @@ text-align:center;
     align-items: center;
 
     padding: 16px 5% 14px;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    transition: background 0.4s ease, padding 0.35s ease, box-shadow 0.4s ease;
+}
+
+.navbar:hover,
+.navbar.scrolled {
     background: rgba(2, 48, 72, 0.96);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-    transition: background 0.4s ease, padding 0.35s ease, box-shadow 0.4s ease;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
 }
 
 .navbar.scrolled {
