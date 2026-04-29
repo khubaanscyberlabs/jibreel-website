@@ -369,6 +369,7 @@ text-align:center;
 }
 
 .nav-top {
+    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -425,14 +426,6 @@ text-align:center;
             font-style: italic;
         }
 
-        /* Nav Links */
-        .nav-links {
-        margin-right: auto;
-        display: flex;
-        align-items: center;
-        gap: 38px;
-}
-
         .nav-links a {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.72rem;
@@ -473,12 +466,7 @@ text-align:center;
     width: 70%;
 }
 
-        /* Nav Icons */
-        .nav-icons {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+        
 
         .nav-icons a,
 .nav-search-btn {
