@@ -28,11 +28,11 @@
       margin-bottom: 20px;
     }
 
-    input, button {
-      padding: 12px;
+    input, button, select {
+      padding: 10px;
       border-radius: 8px;
       border: none;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     input {
@@ -68,20 +68,20 @@
       color: #023048;
     }
 
-    .paid {
-      color: green;
+    .status-badge {
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
       font-weight: bold;
     }
 
-    .failed {
-      color: red;
-      font-weight: bold;
-    }
-
-    .created {
-      color: orange;
-      font-weight: bold;
-    }
+    .status-badge.paid { color: green; }
+    .status-badge.failed { color: red; }
+    .status-badge.created { color: orange; }
+    .status-badge.packed { color: #8a5a00; }
+    .status-badge.shipped { color: blue; }
+    .status-badge.delivered { color: green; }
+    .status-badge.cancelled { color: red; }
   </style>
 </head>
 
@@ -99,28 +99,50 @@
         <tr>
           <th>Date</th>
           <th>Order ID</th>
+          <th>Customer</th>
+          <th>Phone</th>
           <th>Payment ID</th>
           <th>Status</th>
-          <tr>
-  <th>Date</th>
-  <th>Order ID</th>
-  <th>Customer</th>
-  <th>Phone</th>
-  <th>Payment ID</th>
-  <th>Status</th>
-  <th>Total</th>
-  <th>Items</th>
-</tr>
+          <th>Update</th>
+          <th>Total</th>
           <th>Items</th>
         </tr>
       </thead>
-      <tbody id="ordersBody">
-      </tbody>
+      <tbody id="ordersBody"></tbody>
     </table>
   </div>
 
   <script>
     const BACKEND_URL = "https://name-jibreel-backend.onrender.com";
+
+    async function updateOrderStatus(orderId) {
+      const adminKey = document.getElementById("adminKey").value.trim();
+      const selectedStatus = document.getElementById(`status-${orderId}`).value;
+
+      if (!adminKey) {
+        alert("Please enter admin key first.");
+        return;
+      }
+
+      const response = await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}/status`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-key": adminKey
+        },
+        body: JSON.stringify({ status: selectedStatus })
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        alert(data.message || "Status update failed.");
+        return;
+      }
+
+      alert("Order status updated successfully.");
+      loadOrders();
+    }
 
     async function loadOrders() {
       const adminKey = document.getElementById("adminKey").value.trim();
@@ -157,22 +179,36 @@
             ? order.items.map(item => `${item.name || "Item"} x ${item.quantity || 1}`).join(", ")
             : "No items";
 
+          const orderId = order.razorpayOrderId || order.orderId || order.id;
+
           const row = document.createElement("tr");
 
           row.innerHTML = `
-  <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
-  <td>${order.razorpayOrderId || order.orderId || "-"}</td>
-  <td>${order.customer?.name || "-"}</td>
-  <td>${order.customer?.phone || "-"}</td>
-  <td>${order.razorpayPaymentId || "-"}</td>
-  <td>
-  <span class="status-badge ${order.status}">
-    ${order.status || "-"}
-  </span>
-</td>
-  <td>₹${order.amount || order.total || "-"}</td>
-  <td>${items}</td>
-`;
+            <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
+            <td>${orderId || "-"}</td>
+            <td>${order.customer?.name || "-"}</td>
+            <td>${order.customer?.phone || "-"}</td>
+            <td>${order.razorpayPaymentId || "-"}</td>
+            <td>
+              <span class="status-badge ${order.status}">
+                ${order.status || "-"}
+              </span>
+            </td>
+            <td>
+              <select id="status-${orderId}">
+                <option value="created" ${order.status === "created" ? "selected" : ""}>Created</option>
+                <option value="paid" ${order.status === "paid" ? "selected" : ""}>Paid</option>
+                <option value="packed" ${order.status === "packed" ? "selected" : ""}>Packed</option>
+                <option value="shipped" ${order.status === "shipped" ? "selected" : ""}>Shipped</option>
+                <option value="delivered" ${order.status === "delivered" ? "selected" : ""}>Delivered</option>
+                <option value="cancelled" ${order.status === "cancelled" ? "selected" : ""}>Cancelled</option>
+              </select>
+              <button onclick="updateOrderStatus('${orderId}')">Update</button>
+            </td>
+            <td>₹${order.amount || order.total || "-"}</td>
+            <td>${items}</td>
+          `;
+
           ordersBody.appendChild(row);
         });
 
