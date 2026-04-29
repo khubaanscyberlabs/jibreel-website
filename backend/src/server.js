@@ -183,14 +183,29 @@ function requireAdmin(req, res, next) {
 
 app.get("/api/admin/orders", requireAdmin, async (req, res) => {
   try {
-    const orders = await readOrders();
-    res.json({ success: true, orders: orders.slice().reverse() });
+    const { status } = req.query;
+
+    let orders = await readOrders();
+
+    // ✅ Optional filtering (paid / created / failed)
+    if (status) {
+      orders = orders.filter(order => order.status === status);
+    }
+
+    // ✅ Latest first
+    orders = orders.slice().reverse();
+
+    res.json({
+      success: true,
+      count: orders.length,
+      orders
+    });
+
   } catch (error) {
     console.error("Read admin orders error:", error);
     res.status(500).json({ success: false, message: "Could not read orders." });
   }
 });
-
 app.use((req, res) => {
   res.status(404).json({ success: false, message: "API route not found." });
 });
