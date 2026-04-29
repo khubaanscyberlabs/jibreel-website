@@ -975,8 +975,7 @@ font-size:14px;
 }
 .perfume-card-image-wrapper {
     aspect-ratio: 1 / 1;   
-    background: #f7f7f7;
-
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
