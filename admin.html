@@ -101,7 +101,16 @@
           <th>Order ID</th>
           <th>Payment ID</th>
           <th>Status</th>
-          <th>Total</th>
+          <tr>
+  <th>Date</th>
+  <th>Order ID</th>
+  <th>Customer</th>
+  <th>Phone</th>
+  <th>Payment ID</th>
+  <th>Status</th>
+  <th>Total</th>
+  <th>Items</th>
+</tr>
           <th>Items</th>
         </tr>
       </thead>
@@ -151,14 +160,15 @@
           const row = document.createElement("tr");
 
           row.innerHTML = `
-            <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
-            <td>${order.razorpayOrderId || order.orderId || "-"}</td>
-            <td>${order.razorpayPaymentId || "-"}</td>
-            <td class="${order.status || ""}">${order.status || "-"}</td>
-            <td>₹${order.amount || order.total || "-"}</td>
-            <td>${items}</td>
-          `;
-
+  <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
+  <td>${order.razorpayOrderId || order.orderId || "-"}</td>
+  <td>${order.customer?.name || "-"}</td>
+  <td>${order.customer?.phone || "-"}</td>
+  <td>${order.razorpayPaymentId || "-"}</td>
+  <td class="${order.status || ""}">${order.status || "-"}</td>
+  <td>₹${order.amount || order.total || "-"}</td>
+  <td>${items}</td>
+`;
           ordersBody.appendChild(row);
         });
 
