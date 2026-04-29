@@ -986,7 +986,8 @@ font-size:14px;
 .perfume-card-image-wrapper img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 10px 20px;
     object-position: center;
     transition: transform 0.4s ease;
 }
