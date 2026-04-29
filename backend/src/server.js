@@ -206,6 +206,52 @@ app.get("/api/admin/orders", requireAdmin, async (req, res) => {
     res.status(500).json({ success: false, message: "Could not read orders." });
   }
 });
+app.patch("/api/admin/orders/:id/status", requireAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    const allowedStatuses = ["created", "paid", "packed", "shipped", "delivered", "cancelled"];
+
+    if (!allowedStatuses.includes(status)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid order status."
+      });
+    }
+
+    const orders = await readOrders();
+
+    const orderIndex = orders.findIndex(order =>
+      order.id === id || order.razorpayOrderId === id
+    );
+
+    if (orderIndex === -1) {
+      return res.status(404).json({
+        success: false,
+        message: "Order not found."
+      });
+    }
+
+    orders[orderIndex].status = status;
+    orders[orderIndex].updatedAt = new Date().toISOString();
+
+    await writeOrders(orders);
+
+    res.json({
+      success: true,
+      message: "Order status updated.",
+      order: orders[orderIndex]
+    });
+
+  } catch (error) {
+    console.error("Update order status error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Could not update order status."
+    });
+  }
+});
 app.use((req, res) => {
   res.status(404).json({ success: false, message: "API route not found." });
 });
