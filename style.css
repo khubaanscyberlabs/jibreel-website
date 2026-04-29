@@ -378,10 +378,10 @@ text-align:center;
 }
 
 .nav-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
 }
 
 .nav-left {
@@ -390,18 +390,16 @@ text-align:center;
 
 .nav-links {
     display: flex;
-    justify-content: center;
     gap: 34px;
-    margin-top: 12px;
+    justify-content: center;
 }
 
 .nav-icons {
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
-    gap: 22px;
+    gap: 20px;
+    align-items: center;
 }
 
 .nav-logo {
@@ -410,7 +408,7 @@ text-align:center;
 }
 
 .nav-logo-img {
-    height: 78px;
+    height: 64px;
     width: auto;
     object-fit: contain;
     transform-origin: center;
