@@ -55,59 +55,40 @@
          ============================================= -->
 <nav class="navbar" id="navbar">
 
-    <!-- 🔥 BOTTOM: MENU + ICONS -->
-    <div class="nav-bottom">
+   <!-- TOP ROW -->
+<div class="nav-top">
 
-        <!-- LEFT: MENU TOGGLE -->
-        <div class="nav-left">
-            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <a href="#home" class="nav-logo">
+        <img src="jibreel-logo.png" class="nav-logo-img">
+    </a>
+
+    <div class="nav-icons">
+        <div class="nav-search">
+            <button class="nav-search-btn" id="navSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+            <input type="text" id="navSearchInput" class="nav-search-input">
         </div>
 
-        <!-- CENTER MENU -->
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            
-            <li class="dropdown">
-                <a href="#collections">Collections</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#perfumes">Perfumes</a></li>
-                    <li><a href="#attars">Attars</a></li>
-                </ul>
-            </li>
+        <a href="account.html"><i class="fas fa-user"></i></a>
 
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <!-- RIGHT ICONS -->
-        <a href="#home" class="nav-logo">
-    <img src="jibreel-logo.png" alt="Jibreel Perfumes Logo" class="nav-logo-img">
-</a>
-        <div class="nav-icons">
-            <div class="nav-search">
-    <button type="button" class="nav-search-btn" id="navSearchBtn">
-        <i class="fas fa-search"></i>
-    </button>
-
-    <input 
-        type="text" 
-        id="navSearchInput" 
-        class="nav-search-input" 
-        placeholder="Search perfumes..."
-    >
-</div>
-            <a href="account.html"><i class="fas fa-user"></i></a>
-            <a href="cart.html" class="cart-icon">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-count">0</span>
-            </a>
-        </div>
-
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+        </a>
     </div>
+
+</div>
+
+<!-- BOTTOM ROW -->
+<div class="nav-bottom">
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
 
 </nav>
     <!-- Mobile Menu Overlay -->
