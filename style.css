@@ -335,7 +335,7 @@ text-align:center;
         /* =============================================
            SECTION 1: NAVIGATION
            ============================================= */
-      .navbar {
+     .navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -343,13 +343,13 @@ text-align:center;
     z-index: 1000;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 22px 5% 18px;
-    background: transparent;
-    backdrop-filter: none;
-    border-bottom: 1px solid transparent;
+
+    padding: 16px 5% 14px;
+    background: rgba(2, 48, 72, 0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
     transition: background 0.4s ease, padding 0.35s ease, box-shadow 0.4s ease;
 }
 
@@ -369,12 +369,11 @@ text-align:center;
 }
 
 .nav-top {
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;   /* centers logo */
+    align-items: center;
+    position: relative;
 }
 
 .nav-bottom {
@@ -396,7 +395,7 @@ text-align:center;
 
 .nav-icons {
     position: absolute;
-    right: 0;
+    right: 20px;   /* push to right */
     display: flex;
     gap: 20px;
     align-items: center;
@@ -405,6 +404,7 @@ text-align:center;
 .nav-logo {
     display: flex;
     justify-content: center;
+     margin: 0 auto;
 }
 
 .nav-logo-img {
