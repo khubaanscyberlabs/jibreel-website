@@ -206,8 +206,16 @@ console.log("CREATE ORDER DATA:", createOrderData);
                 description: buildCheckoutDescription(),
                 image: "jibreel-logo.png",
                 theme: { color: "#08A7C5" },
-                notes: buildCheckoutNotes(),
-                handler: async function (response) {
+
+                prefill: {
+                    name: customerName.value.trim(),
+                    contact: customerPhone.value.trim(),
+                    email: customerEmail.value.trim()
+                },
+
+notes: buildCheckoutNotes(),
+
+handler: async function (response) {
                     try {
                         showPaymentStatus("Payment received. Verifying securely...", "success");
                         const verifyResponse = await fetch(`${BACKEND_API_URL}/payments/verify`, {
