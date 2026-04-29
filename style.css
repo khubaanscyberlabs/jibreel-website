@@ -2358,3 +2358,23 @@ h1, h2, h3, h4, h5 {
   border: none;
   outline: none;
 }
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.status-badge.paid {
+  background: rgba(0,255,0,0.15);
+  color: green;
+}
+
+.status-badge.created {
+  background: rgba(255,165,0,0.15);
+  color: orange;
+}
+
+.status-badge.failed {
+  background: rgba(255,0,0,0.15);
+  color: red;
+}
