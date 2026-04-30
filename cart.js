@@ -276,6 +276,7 @@ checkoutBtn.innerText = "Proceed to Secure Checkout";
 }
 
 if (checkoutBtn) {
+ 
     checkoutBtn.addEventListener("click", function (event) {
         event.preventDefault();
         openRazorpayCheckout();
