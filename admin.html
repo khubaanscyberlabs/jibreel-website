@@ -40,11 +40,44 @@
     }
 
     button {
-      background: #08A7C5;
-      color: #023048;
-      font-weight: bold;
-      cursor: pointer;
-    }
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+    .btn-primary {
+  background: #08A7C5;
+  color: #023048;
+}
+
+.btn-primary:hover {
+  background: #023048;
+  color: #08A7C5;
+}
+
+.btn-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background: #374151;
+  color: #fff;
+}
 
     table {
       width: 100%;
@@ -116,13 +149,11 @@
     <h1>Jibreel Admin Orders</h1>
 
     <input type="password" id="adminKey" placeholder="Enter Admin API Key" />
-    <button onclick="loadOrders()">Load Orders</button>
-    <button onclick="updateAllStatuses()">
+    <button onclick="loadOrders()" class="btn-primary">Load Orders</button>
+    <button onclick="updateAllStatuses()" class="btn-secondary">
   Update All Statuses
 </button>
-<button onclick="clearOrders()" style="background:red;color:white;">
-  Clear All Orders
-</button>
+<button onclick="clearOrders()" class="btn-danger">Clear All</button>
 
     <p id="statusText">Enter admin key and click Load Orders.</p>
 
@@ -335,12 +366,12 @@ async function clearOrders() {
       <option value="delivered" ${order.status === "delivered" ? "selected" : ""}>Delivered</option>
       <option value="cancelled" ${order.status === "cancelled" ? "selected" : ""}>Cancelled</option>
     </select>
-    <button onclick="updateOrderStatus('${orderId}')">Update</button>
+    <button class="btn-primary" onclick="updateOrderStatus('${orderId}')">Update</button>
   </td>
   <td>₹${order.amount || order.total || "-"}</td>
   <td>
     ${items}<br>
-    <button onclick="deleteOrder('${orderId}')" style="background:red;color:white;margin-top:5px;">
+    <button class="btn-danger" onclick="deleteOrder('${orderId}')" style="margin-top:5px;">
       Delete
     </button>
   </td>
