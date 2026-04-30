@@ -578,19 +578,19 @@ text-align:center;
            ============================================= */
 
         /* --- Hero Container --- */
-      .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+     .hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-
+    align-items: center;
     text-align: center;
+
+    padding: 0 20px;
 }
+
       
 .hero {
     position: relative;
@@ -602,15 +602,14 @@ text-align:center;
 
         /* --- Centered Logo (Placeholder) --- */
         .hero-logo {
-            width: 160px;
-            height: 160px;
-            object-fit: contain;
-            margin-bottom: 50px;
-            filter: drop-shadow(0 0 35px rgba(27,163,178,0.35));
-            opacity: 0;
-            animation: heroFadeIn 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
-            transition: filter 0.6s ease;
-        }
+    width: 140px;
+    max-width: 45vw;
+    margin-bottom: 14px;
+    filter: drop-shadow(0 8px 22px rgba(0,0,0,0.5));
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroFadeIn 1.2s ease forwards;
+}
 
         .hero-logo:hover {
             filter: drop-shadow(0 0 60px rgba(212, 175, 55, 0.4));
@@ -618,12 +617,12 @@ text-align:center;
 
         /* --- Gold Decorative Divider --- */
        .hero-divider {
-    width: 70px;
+    width: 80px;
     height: 2px;
-    background: #D4AF37;   /* Solid premium gold */
-    margin-bottom: 35px;
+    background: var(--gold);
+    margin: 12px auto 18px auto;
     opacity: 0;
-    animation: heroFadeIn 1.5s ease 1.5s forwards;
+    animation: heroFadeIn 1.2s ease 0.3s forwards;
 }
 
 .hero-text {
@@ -645,7 +644,7 @@ text-align:center;
         /* --- Tagline (Cinzel Font) --- */
  /* --- Scroll Indicator Animation --- */
             .hero-cta {
-    margin-top: 34px;
+    margin-top: 26px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -817,39 +816,44 @@ text-align:center;
             color: var(--gold);
         }
 
-        /* Mobile - Hero */
-        @media (max-width: 768px) {
-            .hero-logo {
-                width: 120px;
-                height: 120px;
-                margin-bottom: 35px;
-            }
+       /* Mobile - Hero */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 680px;
+    }
 
-            .hero-divider {
-                width: 40px;
-                margin-bottom: 25px;
-            }
-            .hero-text {
-    width: 90%;
-    max-width: 360px;
+    .hero-content {
+        padding: 0 22px;
+    }
+
+    .hero-logo {
+        width: 110px;
+        max-width: 38vw;
+        margin-bottom: 10px;
+    }
+
+    .hero-divider {
+        width: 60px;
+        margin: 10px auto 14px auto;
+    }
+
+    .hero-text {
+        width: 92%;
+        max-width: 300px;
+    }
+
+    .hero-cta {
+        min-width: 205px;
+        height: 46px;
+        margin-top: 22px;
+        font-size: 10px;
+        letter-spacing: 2.2px;
+    }
+
+    .hero-scroll {
+        bottom: 25px;
+    }
 }
-            .hero {
-    min-height: 680px;
-}
-
-.hero-cta {
-    min-width: 205px;
-    height: 46px;
-    margin-top: 28px;
-    font-size: 10px;
-    letter-spacing: 2.2px;
-}
-
-            .hero-scroll {
-                bottom: 25px;
-            }
-        }
-
         @media (max-width: 480px) {
             .nav-logo {
                 font-size: 1.4rem;
