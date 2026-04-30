@@ -177,6 +177,37 @@ async function clearOrders() {
     alert("Error clearing orders");
   }
 }
+    async function deleteOrder(orderId) {
+  const adminKey = document.getElementById("adminKey").value.trim();
+
+  if (!adminKey) {
+    alert("Enter admin key");
+    return;
+  }
+
+  if (!confirm("Delete this order?")) return;
+
+  try {
+    const res = await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}`, {
+      method: "DELETE",
+      headers: {
+        "x-admin-key": adminKey
+      }
+    });
+
+    const data = await res.json();
+
+    alert(data.message);
+
+    if (data.success) {
+      loadOrders();
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Delete failed");
+  }
+}
     async function loadOrders() {
       const adminKey = document.getElementById("adminKey").value.trim();
       const statusText = document.getElementById("statusText");
@@ -245,7 +276,12 @@ async function clearOrders() {
               <button onclick="updateOrderStatus('${orderId}')">Update</button>
             </td>
             <td>₹${order.amount || order.total || "-"}</td>
-            <td>${items}</td>
+            <td><td>
+  ${items}<br>
+  <button onclick="deleteOrder('${orderId}')" style="background:red;color:white;margin-top:5px;">
+    Delete
+  </button>
+</td>${items}</td>
           `;
 
           ordersBody.appendChild(row);
