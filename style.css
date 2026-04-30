@@ -2324,53 +2324,7 @@ h1, h2, h3, h4, h5 {
     border-color: rgba(190, 40, 40, 0.18);
     color: #7a1f1f;
 }
-/* =============================================
-   NAVBAR SEARCH
-============================================= */
 
-.nav-search {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.nav-search-btn {
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 0;
-}
-
-.nav-search-input {
-    width: 0;
-    opacity: 0;
-    pointer-events: none;
-    margin-left: 0;
-    padding: 7px 0;
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 30px;
-    background: rgba(255,255,255,0.12);
-    color: #ffffff;
-    font-size: 13px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.nav-search.active .nav-search-input {
-    width: 180px;
-    opacity: 1;
-    pointer-events: auto;
-    margin-left: 10px;
-    padding: 7px 14px;
-}
-
-.nav-search-input::placeholder {
-    color: rgba(255,255,255,0.6);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-}
 .customer-form {
     margin: 25px 0;
     padding: 22px;
@@ -2400,7 +2354,7 @@ h1, h2, h3, h4, h5 {
     min-height: 90px;
     resize: vertical;
 }
-<!-- redeploy trigger -->
+
 .customer-form {
   margin-top: 20px;
   display: flex;
