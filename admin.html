@@ -91,6 +91,9 @@
 
     <input type="password" id="adminKey" placeholder="Enter Admin API Key" />
     <button onclick="loadOrders()">Load Orders</button>
+<button onclick="clearOrders()" style="background:red;color:white;">
+  Clear All Orders
+</button>
 
     <p id="statusText">Enter admin key and click Load Orders.</p>
 
@@ -143,7 +146,37 @@
       alert("Order status updated successfully.");
       loadOrders();
     }
+async function clearOrders() {
+  const adminKey = document.getElementById("adminKey").value.trim();
 
+  if (!adminKey) {
+    alert("Please enter admin key.");
+    return;
+  }
+
+  if (!confirm("Are you sure you want to delete ALL orders?")) return;
+
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/admin/orders`, {
+      method: "DELETE",
+      headers: {
+        "x-admin-key": adminKey
+      }
+    });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    if (data.success) {
+      loadOrders();
+    }
+
+  } catch (error) {
+    console.error(error);
+    alert("Error clearing orders");
+  }
+}
     async function loadOrders() {
       const adminKey = document.getElementById("adminKey").value.trim();
       const statusText = document.getElementById("statusText");
