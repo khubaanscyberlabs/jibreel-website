@@ -210,14 +210,17 @@ window.addEventListener("scroll", () => {
 // ==============================
 
 function toggleMenu() {
-
     const menu = document.getElementById("mobileMenu");
+    const toggle = document.getElementById("menuToggle");
+
     if (!menu) return;
 
     menu.classList.toggle("active");
 
+    if (toggle) {
+        toggle.classList.toggle("active");
+    }
 }
-
 // =======================
 // GLOBAL CART COUNT SYNC
 // =======================
