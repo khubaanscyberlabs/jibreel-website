@@ -91,6 +91,9 @@
 
     <input type="password" id="adminKey" placeholder="Enter Admin API Key" />
     <button onclick="loadOrders()">Load Orders</button>
+    <button onclick="updateAllStatuses()">
+  Update All Statuses
+</button>
 <button onclick="clearOrders()" style="background:red;color:white;">
   Clear All Orders
 </button>
@@ -146,6 +149,39 @@
       alert("Order status updated successfully.");
       loadOrders();
     }
+    async function updateAllStatuses() {
+  const adminKey = document.getElementById("adminKey").value.trim();
+
+  if (!adminKey) {
+    alert("Please enter admin key.");
+    return;
+  }
+
+  const selects = document.querySelectorAll("select[id^='status-']");
+
+  if (selects.length === 0) {
+    alert("No orders loaded.");
+    return;
+  }
+      if (!confirm("Update all visible order statuses?")) return;
+
+  for (const select of selects) {
+    const orderId = select.id.replace("status-", "");
+    const selectedStatus = select.value;
+
+    await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}/status`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "x-admin-key": adminKey
+      },
+      body: JSON.stringify({ status: selectedStatus })
+    });
+  }
+
+  alert("All visible order statuses updated.");
+  loadOrders();
+}
 async function clearOrders() {
   const adminKey = document.getElementById("adminKey").value.trim();
 
