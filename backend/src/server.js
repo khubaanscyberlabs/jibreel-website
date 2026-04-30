@@ -256,6 +256,7 @@ app.get("/api/admin/orders", requireAdmin, async (req, res) => {
 
 
 // ✅ DELETE ALL ORDERS
+// ✅ DELETE ALL ORDERS
 app.delete("/api/admin/orders", requireAdmin, async (req, res) => {
   try {
     await writeOrders([]);
@@ -268,6 +269,40 @@ app.delete("/api/admin/orders", requireAdmin, async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to clear orders"
+    });
+  }
+});
+
+
+// ✅ DELETE SINGLE ORDER
+app.delete("/api/admin/orders/:id", requireAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    let orders = await readOrders();
+    const beforeCount = orders.length;
+
+    orders = orders.filter(order =>
+      order.id !== id && order.razorpayOrderId !== id
+    );
+
+    if (orders.length === beforeCount) {
+      return res.status(404).json({
+        success: false,
+        message: "Order not found"
+      });
+    }
+
+    await writeOrders(orders);
+
+    res.json({
+      success: true,
+      message: "Order deleted successfully"
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to delete order"
     });
   }
 });
