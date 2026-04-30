@@ -219,9 +219,15 @@ async function clearOrders() {
           row.innerHTML = `
             <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
             <td>${orderId || "-"}</td>
-            <td>${order.customer?.name || "-"}</td>
-            <td>${order.customer?.phone || "-"}</td>
-            <td>${order.razorpayPaymentId || "-"}</td>
+            <td>$<td>
+  <strong>${order.customer?.name || "-"}</strong><br>
+  <small>${order.customer?.address || "-"}</small>
+</td>{order.customer?.name || "-"}</td>
+            <td>${order.custom<td>
+  ${order.customer?.phone || "-"}<br>
+  ${order.customer?.phone ? `<a href="https://wa.me/${order.customer.phone}" target="_blank">WhatsApp</a>` : ""}
+</td>er?.phone || "-"}</td>
+            <td>${order.razorpayPaymen<td>${order.payment?.razorpayPaymentId || "-"}</td>tId || "-"}</td>
             <td>
               <span class="status-badge ${order.status}">
                 ${order.status || "-"}
