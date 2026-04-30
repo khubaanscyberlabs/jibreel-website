@@ -268,18 +268,19 @@ typeButtons.forEach(btn => {
 // NAVBAR SEARCH
 // ==============================
 
-const navSearch = document.querySelector(".nav-search");
 const navSearchBtn = document.getElementById("navSearchBtn");
+const searchPanel = document.getElementById("searchPanel");
 const navSearchInput = document.getElementById("navSearchInput");
 
-if (navSearch && navSearchBtn && navSearchInput) {
+if (navSearchBtn && searchPanel && navSearchInput) {
+
     navSearchBtn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
 
-        navSearch.classList.toggle("active");
+        searchPanel.classList.toggle("active");
 
-        if (navSearch.classList.contains("active")) {
+        if (searchPanel.classList.contains("active")) {
             navSearchInput.focus();
         } else {
             navSearchInput.value = "";
@@ -291,6 +292,13 @@ if (navSearch && navSearchBtn && navSearchInput) {
     navSearchInput.addEventListener("input", function () {
         searchTerm = navSearchInput.value;
         renderPerfumes(perfumes, true);
+    });
+
+    // OPTIONAL: close when clicking outside (premium behavior)
+    document.addEventListener("click", function (e) {
+        if (!searchPanel.contains(e.target) && !navSearchBtn.contains(e.target)) {
+            searchPanel.classList.remove("active");
+        }
     });
 }
 // CLOSE SEARCH WHEN CLICK OUTSIDE
