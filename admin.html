@@ -247,42 +247,42 @@ async function clearOrders() {
 
           const row = document.createElement("tr");
 
-          row.innerHTML = `
-            <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
-            <td>${orderId || "-"}</td>
-            <td>$<td>
-  <strong>${order.customer?.name || "-"}</strong><br>
-  <small>${order.customer?.address || "-"}</small>
-</td>{order.customer?.name || "-"}</td>
-            <td>${order.custom<td>
-  ${order.customer?.phone || "-"}<br>
-  ${order.customer?.phone ? `<a href="https://wa.me/${order.customer.phone}" target="_blank">WhatsApp</a>` : ""}
-</td>er?.phone || "-"}</td>
-            <td>${order.razorpayPaymen<td>${order.payment?.razorpayPaymentId || "-"}</td>tId || "-"}</td>
-            <td>
-              <span class="status-badge ${order.status}">
-                ${order.status || "-"}
-              </span>
-            </td>
-            <td>
-              <select id="status-${orderId}">
-                <option value="created" ${order.status === "created" ? "selected" : ""}>Created</option>
-                <option value="paid" ${order.status === "paid" ? "selected" : ""}>Paid</option>
-                <option value="packed" ${order.status === "packed" ? "selected" : ""}>Packed</option>
-                <option value="shipped" ${order.status === "shipped" ? "selected" : ""}>Shipped</option>
-                <option value="delivered" ${order.status === "delivered" ? "selected" : ""}>Delivered</option>
-                <option value="cancelled" ${order.status === "cancelled" ? "selected" : ""}>Cancelled</option>
-              </select>
-              <button onclick="updateOrderStatus('${orderId}')">Update</button>
-            </td>
-            <td>₹${order.amount || order.total || "-"}</td>
-            <td><td>
-  ${items}<br>
-  <button onclick="deleteOrder('${orderId}')" style="background:red;color:white;margin-top:5px;">
-    Delete
-  </button>
-</td>${items}</td>
-          `;
+       row.innerHTML = `
+  <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
+  <td>${orderId || "-"}</td>
+  <td>
+    <strong>${order.customer?.name || "-"}</strong><br>
+    <small>${order.customer?.address || "-"}</small>
+  </td>
+  <td>
+    ${order.customer?.phone || "-"}<br>
+    ${order.customer?.phone ? `<a href="https://wa.me/${order.customer.phone}" target="_blank">WhatsApp</a>` : ""}
+  </td>
+  <td>${order.payment?.razorpayPaymentId || "-"}</td>
+  <td>
+    <span class="status-badge ${order.status}">
+      ${order.status || "-"}
+    </span>
+  </td>
+  <td>
+    <select id="status-${orderId}">
+      <option value="created" ${order.status === "created" ? "selected" : ""}>Created</option>
+      <option value="paid" ${order.status === "paid" ? "selected" : ""}>Paid</option>
+      <option value="packed" ${order.status === "packed" ? "selected" : ""}>Packed</option>
+      <option value="shipped" ${order.status === "shipped" ? "selected" : ""}>Shipped</option>
+      <option value="delivered" ${order.status === "delivered" ? "selected" : ""}>Delivered</option>
+      <option value="cancelled" ${order.status === "cancelled" ? "selected" : ""}>Cancelled</option>
+    </select>
+    <button onclick="updateOrderStatus('${orderId}')">Update</button>
+  </td>
+  <td>₹${order.amount || order.total || "-"}</td>
+  <td>
+    ${items}<br>
+    <button onclick="deleteOrder('${orderId}')" style="background:red;color:white;margin-top:5px;">
+      Delete
+    </button>
+  </td>
+`;
 
           ordersBody.appendChild(row);
         });
