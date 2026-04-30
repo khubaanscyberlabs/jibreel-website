@@ -229,8 +229,50 @@ function requireAdmin(req, res, next) {
 
   next();
 }
+// ✅ GET ALL ORDERS (ADMIN)
+app.get("/api/admin/orders", requireAdmin, async (req, res) => {
+  try {
+    const { status } = req.query;
 
-vapp.patch("/api/admin/orders/:id/status", requireAdmin, async (req, res) => {
+    let orders = await readOrders();
+
+    if (status) {
+      orders = orders.filter(order => order.status === status);
+    }
+
+    orders = orders.slice().reverse();
+
+    res.json({
+      success: true,
+      count: orders.length,
+      orders
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch orders"
+    });
+  }
+});
+
+
+// ✅ DELETE ALL ORDERS
+app.delete("/api/admin/orders", requireAdmin, async (req, res) => {
+  try {
+    await writeOrders([]);
+
+    res.json({
+      success: true,
+      message: "All orders cleared"
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to clear orders"
+    });
+  }
+});
+app.patch("/api/admin/orders/:id/status", requireAdmin, async (req, res) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
