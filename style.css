@@ -543,35 +543,64 @@ text-align:center;
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .nav-search {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-/* HIDDEN STATE */
-.nav-search-input {
-    width: 0;
-    opacity: 0;
-    border: none;
-    outline: none;
-    padding: 4px 0;
-    margin-left: 0;
+        .nav-search-btn {
     background: transparent;
-    color: white;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-/* ACTIVE STATE */
-.nav-search.active .nav-search-input {
-    width: 160px;
-    opacity: 1;
-    margin-left: 10px;
-    padding: 4px 0;
+.search-panel {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 100%;
+    z-index: 998;
+    background: rgba(2, 48, 72, 0.96);
+    border-top: 1px solid rgba(212,175,55,0.25);
+    border-bottom: 1px solid rgba(212,175,55,0.25);
+    padding: 18px 5%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: all 0.35s ease;
+}
 
-    border-bottom: 1px solid rgba(212, 175, 55, 0.6);
+.search-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.search-panel-input {
+    width: 100%;
+    max-width: 760px;
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(212,175,55,0.65);
+    color: #ffffff;
+    padding: 12px 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    outline: none;
+    letter-spacing: 0.08em;
+}
+
+.search-panel-input::placeholder {
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 11px;
+}
+
+@media (max-width: 768px) {
+    .search-panel {
+        top: 86px;
+        padding: 16px 20px;
+    }
 }
         /* =============================================
            SECTION 2: HERO
