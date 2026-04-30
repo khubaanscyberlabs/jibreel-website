@@ -403,9 +403,9 @@ text-align:center;
 
 .nav-icons {
     position: absolute;
-    right: 20px;   /* push to right */
+    right: 28px;
     display: flex;
-    gap: 20px;
+    gap: 18px;
     align-items: center;
 }
 
@@ -514,12 +514,15 @@ text-align:center;
 
         /* Mobile Menu Toggle */
         .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            z-index: 1001;
-        }
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    padding: 4px;
+}
 
         .menu-toggle span {
             width: 28px;
@@ -718,6 +721,17 @@ text-align:center;
             .nav-links {
                 display: none;
             }
+            .nav-bottom {
+    display: none;
+}
+
+.nav-icons {
+    right: 18px;
+}
+
+.nav-search.active .nav-search-input {
+    width: 120px;
+}
 
             .menu-toggle {
                 display: flex;
