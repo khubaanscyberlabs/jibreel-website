@@ -68,21 +68,47 @@
       color: #023048;
     }
 
-    .status-badge {
-      padding: 6px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
+   .status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: lowercase;
+  min-width: 70px;
+  text-align: center;
+}
 
-    .status-badge.paid { color: green; }
-    .status-badge.failed { color: red; }
-    .status-badge.created { color: orange; }
-    .status-badge.packed { color: #8a5a00; }
-    .status-badge.shipped { color: blue; }
-    .status-badge.delivered { color: green; }
-    .status-badge.cancelled { color: red; }
-  </style>
+.status-badge.created {
+  background: #fff1d6;
+  color: #c56b00;
+}
+
+.status-badge.paid {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-badge.packed {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.shipped {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-badge.delivered {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.status-badge.cancelled,
+.status-badge.failed {
+  background: #fee2e2;
+  color: #b91c1c;
+}  </style>
 </head>
 
 <body>
