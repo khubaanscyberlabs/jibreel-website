@@ -8,7 +8,6 @@ const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const fs = require("fs/promises");
 const path = require("path");
-const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -133,7 +132,7 @@ app.post("/api/payments/create-order", async (req, res) => {
     });
 
     const localOrder = {
-      id: uuidv4(),
+      id: crypto.randomUUID(),
       receipt,
       razorpayOrderId: razorpayOrder.id,
       status: "created",
