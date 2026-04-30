@@ -12,6 +12,11 @@ const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const axios = require("axios");
+
+const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
+const WHATSAPP_PHONE_ID = process.env.WHATSAPP_PHONE_ID;
+const ADMIN_WHATSAPP_NUMBER = process.env.ADMIN_WHATSAPP_NUMBER;
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://127.0.0.1:5500";
 const STORE_CURRENCY = process.env.STORE_CURRENCY || "INR";
 const ORDERS_FILE = path.join(__dirname, "..", "data", "orders.json");
@@ -38,6 +43,47 @@ function validateCartItems(items) {
   }
 
   return null;
+}
+
+async function sendWhatsAppAlert(order) {
+  try {
+    if (!WHATSAPP_TOKEN || !WHATSAPP_PHONE_ID || !ADMIN_WHATSAPP_NUMBER) {
+      console.log("WhatsApp config missing");
+      return;
+    }
+
+    const message = `
+🛒 New Order Received
+
+Order ID: ${order.id}
+Amount: ₹${order.amount}
+
+Items:
+${order.items.map(i => `- ${i.name} (${i.size}) x${i.quantity}`).join("\n")}
+
+Status: ${order.status}
+`;
+
+    await axios.post(
+      `https://graph.facebook.com/v18.0/${WHATSAPP_PHONE_ID}/messages`,
+      {
+        messaging_product: "whatsapp",
+        to: ADMIN_WHATSAPP_NUMBER,
+        type: "text",
+        text: { body: message }
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    console.log("WhatsApp alert sent");
+  } catch (err) {
+    console.error("WhatsApp error:", err.response?.data || err.message);
+  }
 }
 
 function calculateTotal(items) {
@@ -151,6 +197,9 @@ app.post("/api/payments/verify", async (req, res) => {
     };
 
     await writeOrders(orders);
+    if (isAuthentic) {
+  await sendWhatsAppAlert(orders[orderIndex]);
+}
 
     if (!isAuthentic) {
       return res.status(400).json({ success: false, message: "Payment verification failed." });
