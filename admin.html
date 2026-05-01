@@ -23,7 +23,7 @@
       border: 1px solid rgba(212,175,55,0.35);
     }
 
-    h1 {
+    h1, h2 {
       color: #D4AF37;
       margin-bottom: 20px;
     }
@@ -40,44 +40,44 @@
     }
 
     button {
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
 
     .btn-primary {
-  background: #08A7C5;
-  color: #023048;
-}
+      background: #08A7C5;
+      color: #023048;
+    }
 
-.btn-primary:hover {
-  background: #023048;
-  color: #08A7C5;
-}
+    .btn-primary:hover {
+      background: #023048;
+      color: #08A7C5;
+    }
 
-.btn-danger {
-  background: #fee2e2;
-  color: #b91c1c;
-}
+    .btn-danger {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
 
-.btn-danger:hover {
-  background: #b91c1c;
-  color: #fff;
-}
+    .btn-danger:hover {
+      background: #b91c1c;
+      color: #fff;
+    }
 
-.btn-secondary {
-  background: #e5e7eb;
-  color: #374151;
-}
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #374151;
+    }
 
-.btn-secondary:hover {
-  background: #374151;
-  color: #fff;
-}
+    .btn-secondary:hover {
+      background: #374151;
+      color: #fff;
+    }
 
     table {
       width: 100%;
@@ -101,47 +101,49 @@
       color: #023048;
     }
 
-   .status-badge {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: lowercase;
-  min-width: 70px;
-  text-align: center;
-}
+    .status-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: lowercase;
+      min-width: 70px;
+      text-align: center;
+    }
 
-.status-badge.created {
-  background: #fff1d6;
-  color: #c56b00;
-}
+    .status-badge.created {
+      background: #fff1d6;
+      color: #c56b00;
+    }
 
-.status-badge.paid {
-  background: #dcfce7;
-  color: #15803d;
-}
+    .status-badge.paid {
+      background: #dcfce7;
+      color: #15803d;
+    }
 
-.status-badge.packed {
-  background: #fef3c7;
-  color: #92400e;
-}
+    .status-badge.packed {
+      background: #fef3c7;
+      color: #92400e;
+    }
 
-.status-badge.shipped {
-  background: #dbeafe;
-  color: #1d4ed8;
-}
+    .status-badge.shipped {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
 
-.status-badge.delivered {
-  background: #d1fae5;
-  color: #047857;
-}
+    .status-badge.delivered {
+      background: #d1fae5;
+      color: #047857;
+    }
 
-.status-badge.cancelled,
-.status-badge.failed {
-  background: #fee2e2;
-  color: #b91c1c;
-}  </style>
+    .status-badge.cancelled,
+    .status-badge.failed,
+    .status-badge.verification_failed {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+  </style>
 </head>
 
 <body>
@@ -149,18 +151,17 @@
     <h1>Jibreel Admin Orders</h1>
 
     <div id="loginBox">
-  <input type="text" id="adminUser" placeholder="Username" />
-  <input type="password" id="adminPass" placeholder="Password" />
-  <button onclick="adminLogin()">Login</button>
-</div>
+      <input type="text" id="adminUser" placeholder="Username" />
+      <input type="password" id="adminPass" placeholder="Password" />
+      <button class="btn-primary" onclick="adminLogin()">Login</button>
+    </div>
 
-<div id="adminPanel" style="display:none;">
-  <button onclick="loadOrders()">Load Orders</button>
-</div>
-    <button onclick="updateAllStatuses()" class="btn-secondary">
-  Update All Statuses
-</button>
-<button onclick="clearOrders()" class="btn-danger">Clear All</button>
+    <div id="adminPanel" style="display:none;">
+      <button class="btn-primary" onclick="loadOrders()">Load Orders</button>
+      <button class="btn-primary" onclick="loadProducts()">Load Products</button>
+      <button onclick="updateAllStatuses()" class="btn-secondary">Update All Statuses</button>
+      <button onclick="clearOrders()" class="btn-danger">Clear All</button>
+    </div>
 
     <p id="statusText">Login and click Load Orders.</p>
 
@@ -180,59 +181,68 @@
       </thead>
       <tbody id="ordersBody"></tbody>
     </table>
+
+    <h2>Manage Products</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Discount</th>
+          <th>Stock</th>
+          <th>Save</th>
+        </tr>
+      </thead>
+      <tbody id="productsBody"></tbody>
+    </table>
   </div>
 
   <script>
     const BACKEND_URL = "https://name-jibreel-backend.onrender.com";
+    const ADMIN_KEY = "JIBreel@1990";
     let isLoggedIn = false;
 
     async function adminLogin() {
-  const username = document.getElementById("adminUser").value.trim();
-  const password = document.getElementById("adminPass").value.trim();
+      const username = document.getElementById("adminUser").value.trim();
+      const password = document.getElementById("adminPass").value.trim();
 
-  if (!username || !password) {
-    alert("Enter username and password");
-    return;
-  }
-
-  const response = await fetch(`${BACKEND_URL}/api/admin/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ username, password })
-  });
-
-  const data = await response.json();
-
-  if (!data.success) {
-    alert(data.message || "Login failed");
-    return;
-  }
-
-  isLoggedIn = true;
-
-  document.getElementById("loginBox").style.display = "none";
-  document.getElementById("adminPanel").style.display = "block";
-
-  alert("Login successful");
-}
-
-
-    async function updateOrderStatus(orderId) {
-      const adminKey = "JIBreel@1990";
-      const selectedStatus = document.getElementById(`status-${orderId}`).value;
-
-      if (!adminKey) {
-        alert("Please enter admin key first.");
+      if (!username || !password) {
+        alert("Enter username and password");
         return;
       }
+
+      const response = await fetch(`${BACKEND_URL}/api/admin/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        alert(data.message || "Login failed");
+        return;
+      }
+
+      isLoggedIn = true;
+
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("adminPanel").style.display = "block";
+
+      alert("Login successful");
+    }
+
+    async function updateOrderStatus(orderId) {
+      const selectedStatus = document.getElementById(`status-${orderId}`).value;
 
       const response = await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}/status`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "x-admin-key": adminKey
+          "x-admin-key": ADMIN_KEY
         },
         body: JSON.stringify({ status: selectedStatus })
       });
@@ -245,102 +255,164 @@
       }
 
       alert("Order status updated successfully.");
-      
       loadOrders();
     }
+
     async function updateAllStatuses() {
-  const adminKey = "JIBreel@1990";
+      const selects = document.querySelectorAll("select[id^='status-']");
 
-  
+      if (selects.length === 0) {
+        alert("No orders loaded.");
+        return;
+      }
 
-  const selects = document.querySelectorAll("select[id^='status-']");
-
-  if (selects.length === 0) {
-    alert("No orders loaded.");
-    return;
-  }
       if (!confirm("Update all visible order statuses?")) return;
 
-  for (const select of selects) {
-    const orderId = select.id.replace("status-", "");
-    const selectedStatus = select.value;
+      for (const select of selects) {
+        const orderId = select.id.replace("status-", "");
+        const selectedStatus = select.value;
 
-    await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}/status`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "x-admin-key": adminKey
-      },
-      body: JSON.stringify({ status: selectedStatus })
-    });
-  }
-
-  alert("All visible order statuses updated.");
-  loadOrders();
-}
-async function clearOrders() {
-  const adminKey = "JIBreel@1990";
-
-  
-
-  if (!confirm("Are you sure you want to delete ALL orders?")) return;
-
-  try {
-    const response = await fetch(`${BACKEND_URL}/api/admin/orders`, {
-      method: "DELETE",
-      headers: {
-        "x-admin-key": adminKey
+        await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}/status`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            "x-admin-key": ADMIN_KEY
+          },
+          body: JSON.stringify({ status: selectedStatus })
+        });
       }
-    });
 
-    const data = await response.json();
-
-    alert(data.message);
-
-    if (data.success) {
+      alert("All visible order statuses updated.");
       loadOrders();
     }
 
-  } catch (error) {
-    console.error(error);
-    alert("Error clearing orders");
-  }
-}
+    async function clearOrders() {
+      if (!confirm("Are you sure you want to delete ALL orders?")) return;
+
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/admin/orders`, {
+          method: "DELETE",
+          headers: {
+            "x-admin-key": ADMIN_KEY
+          }
+        });
+
+        const data = await response.json();
+
+        alert(data.message);
+
+        if (data.success) {
+          loadOrders();
+        }
+
+      } catch (error) {
+        console.error(error);
+        alert("Error clearing orders");
+      }
+    }
+
     async function deleteOrder(orderId) {
-  const adminKey = "JIBreel@1990";
+      if (!confirm("Delete this order?")) return;
 
-  
+      try {
+        const res = await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}`, {
+          method: "DELETE",
+          headers: {
+            "x-admin-key": ADMIN_KEY
+          }
+        });
 
-  if (!confirm("Delete this order?")) return;
+        const data = await res.json();
 
-  try {
-    const res = await fetch(`${BACKEND_URL}/api/admin/orders/${orderId}`, {
-      method: "DELETE",
-      headers: {
-        "x-admin-key": adminKey
+        alert(data.message);
+
+        if (data.success) {
+          loadOrders();
+        }
+
+      } catch (err) {
+        console.error(err);
+        alert("Delete failed");
       }
-    });
-
-    const data = await res.json();
-
-    alert(data.message);
-
-    if (data.success) {
-      loadOrders();
     }
 
-  } catch (err) {
-    console.error(err);
-    alert("Delete failed");
-  }
-}
-    
+    async function loadProducts() {
+      const response = await fetch(`${BACKEND_URL}/api/products`);
+      const data = await response.json();
+
+      const productsBody = document.getElementById("productsBody");
+      productsBody.innerHTML = "";
+
+      if (!data.success) {
+        alert(data.message || "Could not load products.");
+        return;
+      }
+
+      data.products.forEach(p => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${p.name}</td>
+          <td><input type="number" id="price-${p.id}" value="${p.price}" /></td>
+          <td><input type="number" id="discount-${p.id}" value="${p.discount}" /></td>
+          <td>
+            <select id="stock-${p.id}">
+              <option value="true" ${p.inStock ? "selected" : ""}>In Stock</option>
+              <option value="false" ${!p.inStock ? "selected" : ""}>Out of Stock</option>
+            </select>
+          </td>
+          <td>
+            <button class="btn-primary" onclick="saveProduct('${p.id}')">Save</button>
+          </td>
+        `;
+
+        productsBody.appendChild(row);
+      });
+    }
+
+    async function saveProduct(productId) {
+      const price = document.getElementById(`price-${productId}`).value;
+      const discount = document.getElementById(`discount-${productId}`).value;
+      const inStock = document.getElementById(`stock-${productId}`).value === "true";
+
+      const response = await fetch(`${BACKEND_URL}/api/products`);
+      const data = await response.json();
+
+      const updatedProducts = data.products.map(p => {
+        if (p.id === productId) {
+          return {
+            ...p,
+            price: Number(price),
+            discount: Number(discount),
+            inStock
+          };
+        }
+        return p;
+      });
+
+      const saveResponse = await fetch(`${BACKEND_URL}/api/admin/products`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-key": ADMIN_KEY
+        },
+        body: JSON.stringify({ products: updatedProducts })
+      });
+
+      const saveData = await saveResponse.json();
+
+      if (!saveData.success) {
+        alert(saveData.message || "Product update failed");
+        return;
+      }
+
+      alert("Product updated successfully");
+      loadProducts();
+    }
+
     async function loadOrders() {
-      const adminKey = "JIBreel@1990";
       const statusText = document.getElementById("statusText");
       const ordersBody = document.getElementById("ordersBody");
-
-      
 
       statusText.textContent = "Loading orders...";
       ordersBody.innerHTML = "";
@@ -348,9 +420,9 @@ async function clearOrders() {
       try {
         const response = await fetch(`${BACKEND_URL}/api/admin/orders`, {
           method: "GET",
-         headers: {
-  "x-admin-key": "JIBreel@1990"
-}
+          headers: {
+            "x-admin-key": ADMIN_KEY
+          }
         });
 
         const data = await response.json();
@@ -371,42 +443,42 @@ async function clearOrders() {
 
           const row = document.createElement("tr");
 
-       row.innerHTML = `
-  <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
-  <td>${orderId || "-"}</td>
-  <td>
-    <strong>${order.customer?.name || "-"}</strong><br>
-    <small>${order.customer?.address || "-"}</small>
-  </td>
-  <td>
-    ${order.customer?.phone || "-"}<br>
-    ${order.customer?.phone ? `<a href="https://wa.me/${order.customer.phone}" target="_blank">WhatsApp</a>` : ""}
-  </td>
-  <td>${order.payment?.razorpayPaymentId || "-"}</td>
-  <td>
-    <span class="status-badge ${order.status}">
-      ${order.status || "-"}
-    </span>
-  </td>
-  <td>
-    <select id="status-${orderId}">
-      <option value="created" ${order.status === "created" ? "selected" : ""}>Created</option>
-      <option value="paid" ${order.status === "paid" ? "selected" : ""}>Paid</option>
-      <option value="packed" ${order.status === "packed" ? "selected" : ""}>Packed</option>
-      <option value="shipped" ${order.status === "shipped" ? "selected" : ""}>Shipped</option>
-      <option value="delivered" ${order.status === "delivered" ? "selected" : ""}>Delivered</option>
-      <option value="cancelled" ${order.status === "cancelled" ? "selected" : ""}>Cancelled</option>
-    </select>
-    <button class="btn-primary" onclick="updateOrderStatus('${orderId}')">Update</button>
-  </td>
-  <td>₹${order.amount || order.total || "-"}</td>
-  <td>
-    ${items}<br>
-    <button class="btn-danger" onclick="deleteOrder('${orderId}')" style="margin-top:5px;">
-      Delete
-    </button>
-  </td>
-`;
+          row.innerHTML = `
+            <td>${order.createdAt ? new Date(order.createdAt).toLocaleString() : "-"}</td>
+            <td>${orderId || "-"}</td>
+            <td>
+              <strong>${order.customer?.name || "-"}</strong><br>
+              <small>${order.customer?.address || "-"}</small>
+            </td>
+            <td>
+              ${order.customer?.phone || "-"}<br>
+              ${order.customer?.phone ? `<a href="https://wa.me/${order.customer.phone}" target="_blank">WhatsApp</a>` : ""}
+            </td>
+            <td>${order.payment?.razorpayPaymentId || "-"}</td>
+            <td>
+              <span class="status-badge ${order.status}">
+                ${order.status || "-"}
+              </span>
+            </td>
+            <td>
+              <select id="status-${orderId}">
+                <option value="created" ${order.status === "created" ? "selected" : ""}>Created</option>
+                <option value="paid" ${order.status === "paid" ? "selected" : ""}>Paid</option>
+                <option value="packed" ${order.status === "packed" ? "selected" : ""}>Packed</option>
+                <option value="shipped" ${order.status === "shipped" ? "selected" : ""}>Shipped</option>
+                <option value="delivered" ${order.status === "delivered" ? "selected" : ""}>Delivered</option>
+                <option value="cancelled" ${order.status === "cancelled" ? "selected" : ""}>Cancelled</option>
+              </select>
+              <button class="btn-primary" onclick="updateOrderStatus('${orderId}')">Update</button>
+            </td>
+            <td>₹${order.amount || order.total || "-"}</td>
+            <td>
+              ${items}<br>
+              <button class="btn-danger" onclick="deleteOrder('${orderId}')" style="margin-top:5px;">
+                Delete
+              </button>
+            </td>
+          `;
 
           ordersBody.appendChild(row);
         });
