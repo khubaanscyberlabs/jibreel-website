@@ -28,6 +28,24 @@ const razorpay = new Razorpay({
 app.use(helmet());
 app.use(cors({ origin: FRONTEND_URL }));
 app.use(express.json({ limit: "1mb" }));
+app.post("/api/admin/login", (req, res) => {
+  const { username, password } = req.body;
+
+  const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+    return res.json({
+      success: true,
+      message: "Login successful"
+    });
+  }
+
+  res.status(401).json({
+    success: false,
+    message: "Invalid credentials"
+  });
+});
 app.use(morgan("dev"));
 
 function validateCartItems(items) {
