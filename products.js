@@ -1,5 +1,5 @@
-let perfumes = [
-  { id: "hawas",
+const perfumes = [
+  { 
   name: "Impression of HAWAS for him - Rasasi",
   description: "Apple, Bergamot, Lemon, Cinnamon.",
   variants: {
@@ -20,7 +20,7 @@ let perfumes = [
     }
   }
 },
-  { id: "oud",
+  { 
     name: "Impression of Amber Oud - Al Haramain ",
     description: "Bergamot, Green Notes.",
     variants: {
