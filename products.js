@@ -1,5 +1,5 @@
-const perfumes = [
-  {
+let perfumes = [
+  { id: "hawas",
   name: "Impression of HAWAS for him - Rasasi",
   description: "Apple, Bergamot, Lemon, Cinnamon.",
   variants: {
@@ -20,7 +20,7 @@ const perfumes = [
     }
   }
 },
-  {
+  { id: "oud",
     name: "Impression of Amber Oud - Al Haramain ",
     description: "Bergamot, Green Notes.",
     variants: {
@@ -1607,3 +1607,38 @@ const perfumes = [
   }
 },
 ];
+const API = "https://name-jibreel-backend.onrender.com";
+
+async function loadProductsFromBackend() {
+  try {
+    const res = await fetch(`${API}/api/products`);
+    const data = await res.json();
+
+    if (!data.success) return;
+
+    // overwrite products
+    window.perfumes = perfumes.map(local => {
+  const backendProduct = data.products.find(p => p.id === local.id);
+
+  if (!backendProduct) return local;
+
+  return {
+    ...local,
+    price: backendProduct.price,
+    discount: backendProduct.discount,
+    inStock: backendProduct.inStock
+  };
+});
+
+    // re-render UI
+    if (typeof renderPerfumes === "function") {
+      renderPerfumes(window.perfumes, false);
+    }
+
+  } catch (err) {
+    console.log("Using local products.js");
+  }
+}
+
+// call it
+loadProductsFromBackend();
