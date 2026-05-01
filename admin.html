@@ -148,8 +148,15 @@
   <div class="admin-box">
     <h1>Jibreel Admin Orders</h1>
 
-    <input type="password" id="adminKey" placeholder="Enter Admin API Key" />
-    <button onclick="loadOrders()" class="btn-primary">Load Orders</button>
+    <div id="loginBox">
+  <input type="text" id="adminUser" placeholder="Username" />
+  <input type="password" id="adminPass" placeholder="Password" />
+  <button onclick="adminLogin()">Login</button>
+</div>
+
+<div id="adminPanel" style="display:none;">
+  <button onclick="loadOrders()">Load Orders</button>
+</div>
     <button onclick="updateAllStatuses()" class="btn-secondary">
   Update All Statuses
 </button>
@@ -177,6 +184,7 @@
 
   <script>
     const BACKEND_URL = "https://name-jibreel-backend.onrender.com";
+    let isLoggedIn = false;
 
     async function updateOrderStatus(orderId) {
       const adminKey = document.getElementById("adminKey").value.trim();
@@ -204,6 +212,37 @@
       }
 
       alert("Order status updated successfully.");
+      async function adminLogin() {
+  const username = document.getElementById("adminUser").value.trim();
+  const password = document.getElementById("adminPass").value.trim();
+
+  if (!username || !password) {
+    alert("Enter username and password");
+    return;
+  }
+
+  const response = await fetch(`${BACKEND_URL}/api/admin/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ username, password })
+  });
+
+  const data = await response.json();
+
+  if (!data.success) {
+    alert(data.message || "Login failed");
+    return;
+  }
+
+  isLoggedIn = true;
+
+  document.getElementById("loginBox").style.display = "none";
+  document.getElementById("adminPanel").style.display = "block";
+
+  alert("Login successful");
+}
       loadOrders();
     }
     async function updateAllStatuses() {
@@ -301,6 +340,10 @@ async function clearOrders() {
     alert("Delete failed");
   }
 }
+    if (!isLoggedIn) {
+  alert("Please login first");
+  return;
+}
     async function loadOrders() {
       const adminKey = document.getElementById("adminKey").value.trim();
       const statusText = document.getElementById("statusText");
@@ -317,9 +360,9 @@ async function clearOrders() {
       try {
         const response = await fetch(`${BACKEND_URL}/api/admin/orders`, {
           method: "GET",
-          headers: {
-            "x-admin-key": adminKey
-          }
+         headers: {
+  "x-admin-key": "JIBreel@1990"
+}
         });
 
         const data = await response.json();
