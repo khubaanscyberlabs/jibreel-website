@@ -1,0 +1,16 @@
+[
+  {
+    "id": "hawas",
+    "name": "Hawas",
+    "price": 1300,
+    "discount": 0,
+    "inStock": true
+  },
+  {
+    "id": "oud",
+    "name": "Oud",
+    "price": 1500,
+    "discount": 10,
+    "inStock": true
+  }
+]
