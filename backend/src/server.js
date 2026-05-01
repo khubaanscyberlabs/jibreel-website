@@ -19,6 +19,7 @@ const ADMIN_WHATSAPP_NUMBER = process.env.ADMIN_WHATSAPP_NUMBER;
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://127.0.0.1:5500";
 const STORE_CURRENCY = process.env.STORE_CURRENCY || "INR";
 const ORDERS_FILE = path.join(__dirname, "..", "data", "orders.json");
+const PRODUCTS_FILE = path.join(__dirname, "..", "data", "products.json");
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
@@ -148,6 +149,21 @@ app.post("/api/payments/create-order", async (req, res) => {
         item_count: String(items.reduce((sum, item) => sum + Number(item.quantity), 0))
       }
     });
+
+    async function readProducts() {
+  try {
+    const data = await fs.readFile(PRODUCTS_FILE, "utf8");
+    return JSON.parse(data || "[]");
+  } catch (err) {
+    if (err.code === "ENOENT") return [];
+    throw err;
+  }
+}
+
+async function writeProducts(products) {
+  await fs.mkdir(path.dirname(PRODUCTS_FILE), { recursive: true });
+  await fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+}
 
     const localOrder = {
       id: crypto.randomUUID(),
@@ -367,6 +383,46 @@ app.patch("/api/admin/orders/:id/status", requireAdmin, async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Could not update order status."
+    });
+  }
+});
+
+// ✅ GET PRODUCTS (PUBLIC)
+app.get("/api/products", async (req, res) => {
+  try {
+    const products = await readProducts();
+    res.json({ success: true, products });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch products"
+    });
+  }
+});
+
+// ✅ UPDATE PRODUCTS (ADMIN)
+app.put("/api/admin/products", requireAdmin, async (req, res) => {
+  try {
+    const products = req.body.products;
+
+    if (!Array.isArray(products)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid product data"
+      });
+    }
+
+    await writeProducts(products);
+
+    res.json({
+      success: true,
+      message: "Products updated successfully"
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to update products"
     });
   }
 });
