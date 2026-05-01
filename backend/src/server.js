@@ -122,6 +122,20 @@ async function writeOrders(orders) {
   await fs.mkdir(path.dirname(ORDERS_FILE), { recursive: true });
   await fs.writeFile(ORDERS_FILE, JSON.stringify(orders, null, 2));
 }
+async function readProducts() {
+  try {
+    const data = await fs.readFile(PRODUCTS_FILE, "utf8");
+    return JSON.parse(data || "[]");
+  } catch (err) {
+    if (err.code === "ENOENT") return [];
+    throw err;
+  }
+}
+
+async function writeProducts(products) {
+  await fs.mkdir(path.dirname(PRODUCTS_FILE), { recursive: true });
+  await fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+}
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", service: "jibreel-backend" });
@@ -150,20 +164,7 @@ app.post("/api/payments/create-order", async (req, res) => {
       }
     });
 
-    async function readProducts() {
-  try {
-    const data = await fs.readFile(PRODUCTS_FILE, "utf8");
-    return JSON.parse(data || "[]");
-  } catch (err) {
-    if (err.code === "ENOENT") return [];
-    throw err;
-  }
-}
-
-async function writeProducts(products) {
-  await fs.mkdir(path.dirname(PRODUCTS_FILE), { recursive: true });
-  await fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 2));
-}
+    
 
     const localOrder = {
       id: crypto.randomUUID(),
