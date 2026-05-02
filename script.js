@@ -56,8 +56,8 @@ card.innerHTML = `
 
 <img src="${variant?.images ? variant.images[firstSize] : (variant?.image || product.image)}" alt="${product.name}" loading="lazy">
 
-<button class="perfume-card-btn add-to-cart-btn">
-Add to cart
+<button class="perfume-card-btn add-to-cart-btn" aria-label="Add to cart">
++
 </button>
 
 </div>
@@ -71,6 +71,39 @@ Add to cart
 `;
 
 grid.appendChild(card);
+
+// =======================
+// ADD TO CART (HOMEPAGE)
+// =======================
+
+const addBtn = card.querySelector(".add-to-cart-btn");
+
+addBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const item = {
+        name: product.name,
+        price: firstPrice,
+        image: variant?.images ? variant.images[firstSize] : (variant?.image || product.image),
+        size: firstSize,
+        quantity: 1
+    };
+
+    // Check if already exists
+    const existing = cart.find(i => i.name === item.name && i.size === item.size);
+
+    if(existing){
+        existing.quantity += 1;
+    } else {
+        cart.push(item);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartCount();
+});
 
 });
 
