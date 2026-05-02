@@ -51,23 +51,21 @@ const firstSize = Object.keys(sizes)[0];
 const firstPrice = sizes[firstSize] || "";
 
 card.innerHTML = `
+card.innerHTML = `
 <div class="perfume-card-image-wrapper">
+
 <img src="${variant?.images ? variant.images[firstSize] : (variant?.image || product.image)}" alt="${product.name}" loading="lazy">
 
 <button class="perfume-card-btn add-to-cart-btn">
 Add to cart
 </button>
+
 </div>
 
 <div class="perfume-card-body">
 
 <h3 class="perfume-card-name">${product.name}</h3>
 <p class="perfume-price">₹${firstPrice}</p>
-
-<a href="product.html?perfume=${encodeURIComponent(product.name)}"
-class="view-details-btn">
-View Details
-</a>
 
 </div>
 `;
