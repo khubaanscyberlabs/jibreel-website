@@ -328,14 +328,24 @@ function renderCartDrawer() {
                 <div>
                     <h4>${item.name}</h4>
                     <p>${item.size}</p>
-                    <p>Qty: ${item.quantity}</p>
-                    <p>₹${itemTotal}</p>
+                    <div class="cart-drawer-qty">
+    <button type="button" class="drawer-qty-minus" data-index="${cart.indexOf(item)}">−</button>
+    <span>${item.quantity}</span>
+    <button type="button" class="drawer-qty-plus" data-index="${cart.indexOf(item)}">+</button>
+</div>
+
+<p>₹${itemTotal}</p>
+
+<button type="button" class="cart-drawer-remove" data-index="${cart.indexOf(item)}">
+    Remove
+</button>
                 </div>
             </div>
         `;
     }).join("");
 
     drawerTotal.innerText = `₹${total}`;
+    attachCartDrawerActions();
 }
 
 function openCartDrawer() {
@@ -383,3 +393,42 @@ if (cartIcon) {
         overlay.addEventListener("click", closeCartDrawer);
     }
 });
+function attachCartDrawerActions() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    document.querySelectorAll(".drawer-qty-plus").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const index = Number(this.dataset.index);
+            cart[index].quantity += 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            renderCartDrawer();
+        });
+    });
+
+    document.querySelectorAll(".drawer-qty-minus").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const index = Number(this.dataset.index);
+
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            renderCartDrawer();
+        });
+    });
+
+    document.querySelectorAll(".cart-drawer-remove").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const index = Number(this.dataset.index);
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            renderCartDrawer();
+        });
+    });
+}
