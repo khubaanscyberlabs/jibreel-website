@@ -2378,3 +2378,44 @@ h1, h2, h3, h4, h5 {
     font-size: 13px;
     letter-spacing: 0.08em;
 }
+.cart-drawer-qty {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.drawer-qty-minus,
+.drawer-qty-plus {
+    width: 26px;
+    height: 26px;
+    border: 1px solid #08A7C5;
+    background: #08A7C5;
+    color: #023048;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.drawer-qty-minus:hover,
+.drawer-qty-plus:hover {
+    background: #023048;
+    color: #08A7C5;
+    border-color: #023048;
+}
+
+.cart-drawer-remove {
+    margin-top: 6px;
+    background: transparent;
+    border: none;
+    color: #777;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.cart-drawer-remove:hover {
+    color: #023048;
+}
