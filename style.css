@@ -1536,15 +1536,52 @@ max-width:250px;
     text-align: center;
     margin-top: 30px;
    }
-.view-all-btn {
-  height: 48px;              /* Bigger height */
-  padding: 0 32px;           /* Wider capsule */
-  font-size: 15px;
-  display: inline-flex;      /* Proper centering */
-  align-items: center;
-  justify-content: center;
+.view-all-container {
+    text-align: center;
+    margin-top: 40px;
 }
 
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 46px;
+    padding: 0 34px;
+
+    border: 1px solid #08A7C5;   /* Feroza */
+    background: transparent;
+    color: #08A7C5;
+
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    border-radius: 50px;
+
+    transition: all 0.35s ease;
+}
+
+.view-all-btn:hover {
+    background: #023048;   /* Carbon */
+    color: #08A7C5;
+    border-color: #023048;
+
+    transform: translateY(-2px);
+}
+
+.view-all-btn::after {
+    content: " →";
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover::after {
+    transform: translateX(4px);
+}
 /* =========================
    TYPE FILTER CONTAINER
 ========================= */
