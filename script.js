@@ -85,7 +85,7 @@ addBtn.addEventListener("click", function(e){
 
     const item = {
         name: product.name,
-        price: firstPrice,
+        price: Number(firstPrice),
         image: variant?.images ? variant.images[firstSize] : (variant?.image || product.image),
         size: firstSize,
         quantity: 1
@@ -103,6 +103,8 @@ addBtn.addEventListener("click", function(e){
     localStorage.setItem("cart", JSON.stringify(cart));
 
     updateCartCount();
+    renderCartDrawer();
+    openCartDrawer();
 });
 
 });
@@ -296,3 +298,88 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+// ==============================
+// CART DRAWER
+// ==============================
+
+function renderCartDrawer() {
+    const drawerItems = document.getElementById("cartDrawerItems");
+    const drawerTotal = document.getElementById("cartDrawerTotal");
+
+    if (!drawerItems || !drawerTotal) return;
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+        drawerItems.innerHTML = `<p class="cart-drawer-empty">Your cart is empty.</p>`;
+        drawerTotal.innerText = "₹0";
+        return;
+    }
+
+    let total = 0;
+
+    drawerItems.innerHTML = cart.map(item => {
+        const itemTotal = Number(item.price) * Number(item.quantity);
+        total += itemTotal;
+
+        return `
+            <div class="cart-drawer-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div>
+                    <h4>${item.name}</h4>
+                    <p>${item.size}</p>
+                    <p>Qty: ${item.quantity}</p>
+                    <p>₹${itemTotal}</p>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    drawerTotal.innerText = `₹${total}`;
+}
+
+function openCartDrawer() {
+    const drawer = document.getElementById("cartDrawer");
+    const overlay = document.getElementById("cartDrawerOverlay");
+
+    if (!drawer || !overlay) return;
+
+    drawer.classList.add("active");
+    overlay.classList.add("active");
+}
+
+function closeCartDrawer() {
+    const drawer = document.getElementById("cartDrawer");
+    const overlay = document.getElementById("cartDrawerOverlay");
+
+    if (!drawer || !overlay) return;
+
+    drawer.classList.remove("active");
+    overlay.classList.remove("active");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    renderCartDrawer();
+
+    // NAVBAR CART ICON → OPEN DRAWER
+const cartIcon = document.querySelector(".cart-icon");
+
+if (cartIcon) {
+    cartIcon.addEventListener("click", function(e){
+        e.preventDefault();
+        renderCartDrawer();
+        openCartDrawer();
+    });
+}
+
+    const closeBtn = document.getElementById("cartDrawerClose");
+    const overlay = document.getElementById("cartDrawerOverlay");
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeCartDrawer);
+    }
+
+    if (overlay) {
+        overlay.addEventListener("click", closeCartDrawer);
+    }
+});
