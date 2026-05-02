@@ -2155,25 +2155,27 @@ h1, h2, h3, h4, h5 {
 .perfume-card-btn,
 .add-to-cart-btn {
     position: absolute;
-    left: 12px;
     right: 12px;
     bottom: 12px;
+    width: 42px;
     height: 42px;
-    border-radius: 0;
+    border-radius: 50%;
     background: #ffffff;
     color: #121212;
-    border: 1px solid rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.14);
     font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     opacity: 0;
     transform: translateY(8px);
     transition: all 0.3s ease;
     z-index: 2;
 }
-
 .perfume-card:hover .perfume-card-btn,
 .perfume-card:hover .add-to-cart-btn {
     opacity: 1;
@@ -2182,8 +2184,9 @@ h1, h2, h3, h4, h5 {
 
 .perfume-card-btn:hover,
 .add-to-cart-btn:hover {
-    background: #023048;
+    background: #121212;
     color: #ffffff;
+    border-color: #121212;
 }
 
 .view-details {
@@ -2214,11 +2217,12 @@ h1, h2, h3, h4, h5 {
         gap: 28px 14px;
     }
 
-    .perfume-card-btn,
-    .add-to-cart-btn {
-        opacity: 1;
-        transform: none;
-        height: 38px;
-        font-size: 12px;
-    }
+   .perfume-card-btn,
+.add-to-cart-btn {
+    opacity: 1;
+    transform: none;
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+}
 }
