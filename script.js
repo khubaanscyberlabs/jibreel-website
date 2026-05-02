@@ -38,8 +38,8 @@ const card = document.createElement("div");
 card.classList.add("perfume-card");
 
 // Card click → product page
-card.addEventListener('click', function(e) {
-    if (e.target.closest('button')) return;
+card.addEventListener("click", function(e) {
+    if (e.target.closest("button")) return;
     window.location.href = `product.html?perfume=${encodeURIComponent(product.name)}`;
 });
 
@@ -51,7 +51,6 @@ const sizes = variant?.sizes || {};
 const firstSize = Object.keys(sizes)[0];
 const firstPrice = sizes[firstSize] || "";
 
-// ✅ CLEAN AMANZADA STYLE CARD
 card.innerHTML = `
 <div class="perfume-card-image-wrapper">
 
@@ -73,65 +72,9 @@ Add to cart
 
 grid.appendChild(card);
 
-}); // end forEach
-
-} // end function
-
-// ===== Quantity Logic =====
-const qtyValue = card.querySelector(".qty-value");
-const minusBtn = card.querySelector(".qty-minus");
-const plusBtn = card.querySelector(".qty-plus");
-
-let quantity = 1;
-
-plusBtn.addEventListener("click", () => {
-quantity++;
-qtyValue.textContent = quantity;
 });
 
-minusBtn.addEventListener("click", () => {
-if(quantity > 1){
-quantity--;
-qtyValue.textContent = quantity;
 }
-});
-
-// ===== Size Logic =====
-const sizeButtons = card.querySelectorAll(".size-btn");
-
-sizeButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-
-        sizeButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const selectedSize = btn.dataset.size;
-        const newPrice = variant?.sizes?.[selectedSize];
-
-        if(newPrice){
-            card.querySelector(".perfume-price").innerText = `₹${newPrice}`;
-        }
-        const cardImage = card.querySelector(".perfume-card-image-wrapper img");
-
-// 🔥 always fetch fresh variant
-const currentVariant = selectedType === "all"
-    ? product.variants?.spray
-    : product.variants?.[selectedType] || product.variants?.spray;
-
-if (currentVariant?.images && currentVariant.images[selectedSize]) {
-    cardImage.src = currentVariant.images[selectedSize];
-}
-
-if (variant?.images && variant.images[selectedSize]) {
-    cardImage.src = variant.images[selectedSize];
-}
-    });
-});
-
-}); // ✅ closes displayList.forEach
-
-} // ✅ closes renderPerfumes
-
 
 document.addEventListener("DOMContentLoaded", function(){
 
