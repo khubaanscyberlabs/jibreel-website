@@ -5,13 +5,12 @@ let searchTerm = "";
 function renderPerfumes(list, showAll = false){
 
 const grid = document.getElementById("perfumeGrid");
-
 if (!grid) return;
 
 grid.innerHTML = "";
 
-// ✅ LIMIT ONLY HERE (CORRECT PLACE)
 let filteredList = list;
+
 // Search filter
 if (searchTerm.trim() !== "") {
     filteredList = filteredList.filter(p =>
@@ -19,17 +18,18 @@ if (searchTerm.trim() !== "") {
         p.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
 }
+
 // Category filter
 if (selectedCategory !== "all") {
     filteredList = filteredList.filter(p => p.category === selectedCategory);
 }
 
-// Type filter (we’ll prepare for roll-on later)
+// Type filter
 if (selectedType !== "all") {
     filteredList = filteredList.filter(p => p.variants && p.variants[selectedType]);
 }
 
-// Apply limit AFTER filtering
+// Limit
 const displayList = showAll ? filteredList : filteredList.slice(0, 4);
 
 displayList.forEach(product => {
@@ -37,20 +37,21 @@ displayList.forEach(product => {
 const card = document.createElement("div");
 card.classList.add("perfume-card");
 
+// Card click → product page
 card.addEventListener('click', function(e) {
-    if (e.target.closest('button') || e.target.closest('a')) return;
-
+    if (e.target.closest('button')) return;
     window.location.href = `product.html?perfume=${encodeURIComponent(product.name)}`;
 });
 
 const variant = selectedType === "all" 
     ? product.variants?.spray 
     : product.variants?.[selectedType] || product.variants?.spray;
+
 const sizes = variant?.sizes || {};
 const firstSize = Object.keys(sizes)[0];
 const firstPrice = sizes[firstSize] || "";
 
-card.innerHTML = `
+// ✅ CLEAN AMANZADA STYLE CARD
 card.innerHTML = `
 <div class="perfume-card-image-wrapper">
 
@@ -71,6 +72,10 @@ Add to cart
 `;
 
 grid.appendChild(card);
+
+}); // end forEach
+
+} // end function
 
 // ===== Quantity Logic =====
 const qtyValue = card.querySelector(".qty-value");
