@@ -2180,15 +2180,7 @@ h1, h2, h3, h4, h5 {
     transition: all 0.3s ease;
 }
 
-/* CARD HOVER → FEROZA BUTTON */
-.perfume-card:hover .add-to-cart-btn {
-    opacity: 1;
-    transform: translateY(0) scale(1);
 
-    background: #08A7C5;   /* Feroza */
-    color: #023048;        /* Carbon */
-    border-color: #08A7C5;
-}
 
 
 .perfume-card-btn:hover,
@@ -2202,6 +2194,26 @@ h1, h2, h3, h4, h5 {
 .perfume-card-btn:active,
 .add-to-cart-btn:active {
     transform: translateY(0) scale(0.94);
+}
+
+/* SHOW BUTTON ONLY (NO COLOR FORCE) */
+.perfume-card:hover .add-to-cart-btn {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* DEFAULT HOVER STATE (CARD) */
+.perfume-card:hover .add-to-cart-btn {
+    background: #08A7C5;
+    color: #023048;
+    border-color: #08A7C5;
+}
+
+/* BUTTON HOVER (PRIORITY STATE) */
+.add-to-cart-btn:hover {
+    background: #023048;
+    color: #08A7C5;
+    border-color: #023048;
 }
 
 .view-details {
