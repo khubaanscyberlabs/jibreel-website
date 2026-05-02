@@ -223,14 +223,6 @@ if (navSearchBtn && searchPanel && navSearchInput) {
         }
     });
 }
-// CLOSE SEARCH WHEN CLICK OUTSIDE
-document.addEventListener("click", function(e){
-    if (!e.target.closest(".nav-search")) {
-        if (navSearch) {
-            navSearch.classList.remove("active");
-        }
-    }
-});
 
 // ==============================
 // NEW PREMIUM COUNTDOWN (GLOBAL)
