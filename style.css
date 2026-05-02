@@ -2261,7 +2261,8 @@ h1, h2, h3, h4, h5 {
 .cart-drawer-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0,0,0,0.42);
+    backdrop-filter: blur(2px);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -2282,7 +2283,7 @@ h1, h2, h3, h4, h5 {
     height: 100vh;
     background: #ffffff;
     z-index: 1999;
-    transition: right 0.35s ease;
+    transition: right 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     box-shadow: -12px 0 35px rgba(0,0,0,0.18);
@@ -2327,6 +2328,10 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 18px;
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 18px;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: drawerItemFade 0.4s ease forwards;
+    transition: all 0.25s ease;
 }
 
 .cart-drawer-item img {
@@ -2351,8 +2356,10 @@ h1, h2, h3, h4, h5 {
 
 .cart-drawer-empty {
     text-align: center;
-    margin-top: 80px;
-    color: #777;
+    margin-top: 90px;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 0.08em;
 }
 
 .cart-drawer-footer {
@@ -2377,6 +2384,10 @@ h1, h2, h3, h4, h5 {
     text-decoration: none;
     font-size: 13px;
     letter-spacing: 0.08em;
+}
+
+.cart-drawer-item:hover {
+    background: #fafafa;
 }
 .cart-drawer-qty {
     display: inline-flex;
@@ -2418,4 +2429,10 @@ h1, h2, h3, h4, h5 {
 
 .cart-drawer-remove:hover {
     color: #023048;
+}
+@keyframes drawerItemFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
