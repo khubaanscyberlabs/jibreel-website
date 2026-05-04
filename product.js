@@ -12,13 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // PRODUCT LOAD
     // ==============================
 
+        let details = null;
         if (product) {
 
         document.getElementById("productName").textContent = product.name;
         document.getElementById("productDescription").textContent = product.description;
         const cleanProductName = product.name.trim().toLowerCase();
 
-const details = typeof productDetails !== "undefined"
+details = typeof productDetails !== "undefined"
     ? productDetails[cleanProductName]
     : null;
 
@@ -130,12 +131,14 @@ if (details) {
             variantButtons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
 
-            selectedVariant = btn.dataset.variant;
-            if (details) {
+           selectedVariant = btn.dataset.variant;
+
+if (details) {
     document.getElementById("productUsageTips").innerText =
         selectedVariant === "rollon" ? details.rollonUsageTips : details.sprayUsageTips;
 }
-            renderSizes(selectedVariant);
+
+renderSizes(selectedVariant);
         });
     });
 
