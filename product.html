@@ -18,41 +18,57 @@
 <body class="product-page-body">
 
 <nav class="navbar" id="navbar">
+    <div class="nav-top">
+        <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <a href="index.html" class="nav-logo">
-    <img src="jibreel-logo.png" alt="Jibreel Perfumes Logo" class="nav-logo-img">
-</a>
-
-        <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    
-    <li class="dropdown">
-        <a href="#collections">Collections</a>
-        <ul class="dropdown-menu">
-            <li><a href="index.html#perfumes">Perfumes</a></li>
-            <li><a href="index.html#attars">Attars</a></li>
-        </ul>
-    </li>
-
-    
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-</ul>
+            <img src="jibreel-logo.png" alt="Jibreel Perfumes Logo" class="nav-logo-img">
+        </a>
 
         <div class="nav-icons">
-            <a href="#perfumeSearch"><i class="fas fa-search"></i></a>
+            <button type="button" class="nav-search-btn" id="navSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+
             <a href="account.html"><i class="fas fa-user"></i></a>
+
             <a href="#" class="cart-icon">
                 <i class="fas fa-shopping-bag"></i>
                 <span class="cart-count">0</span>
             </a>
-            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
-    </nav>
+    </div>
 
+    <div class="nav-bottom">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="index.html#collections">Collections</a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#perfumes">Perfumes</a></li>
+                    <li><a href="index.html#attars">Attars</a></li>
+                </ul>
+            </li>
+
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="search-panel" id="searchPanel">
+    <input 
+        type="text" 
+        id="navSearchInput" 
+        class="search-panel-input" 
+        placeholder="Search perfumes..."
+    >
+</div>
 <!-- Mobile Menu Overlay -->
    <!-- Mobile Menu Overlay -->
 <div class="mobile-menu" id="mobileMenu">
