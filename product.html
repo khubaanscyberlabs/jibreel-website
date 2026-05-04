@@ -6,7 +6,14 @@
     <title>Product Page</title>
 
     <!-- CONNECT MAIN CSS -->
-   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Luxury Font System -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Assistant:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- CONNECT MAIN CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="product-page-body">
@@ -56,108 +63,123 @@
     <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
 </div>
 
-<div class="product-page">
+<main class="product-page amanzada-product-layout">
 
-<div class="product-image">
-<img id="productImage">
-</div>
-<div class="product-info">
-
-    <!-- TITLE -->
-    <h1 id="productName"></h1>
-
-    <!-- RATING -->
-    <div class="perfume-rating">
-        ★★★★★ <span>(7)</span>
+    <div class="product-image product-gallery-main">
+        <button class="product-zoom-btn" type="button">Zoom picture</button>
+        <img id="productImage" alt="Jibreel Perfume">
     </div>
 
-    <!-- TAGS -->
-    <div class="product-tags">
-        <span>Aquatic</span>
-        <span>Aromatic</span>
-        <span>Fresh</span>
-        <span class="tag-men">Men</span>
+    <div class="product-info amanzada-product-info">
+
+        <p class="product-vendor">Jibreel</p>
+
+        <h1 id="productName"></h1>
+
+        <div class="price-box amanzada-price-box">
+            <span class="price" id="productPrice"></span>
+            <span class="mrp">Regular price <span id="productMRP"></span></span>
+        </div>
+
+        <div class="perfume-rating">
+            ★★★★★ <span>(7)</span>
+        </div>
+
+        <p class="product-short-desc" id="productDescription"></p>
+
+        <p class="product-option-label">Type:</p>
+        <div class="variant-selector">
+            <button class="variant-btn active" data-variant="spray">Spray</button>
+            <button class="variant-btn" data-variant="rollon">Roll-On</button>
+        </div>
+
+        <p class="product-option-label">Size:</p>
+        <div class="size-selector"></div>
+
+        <div class="cart-row product-cart-row">
+            <div class="quantity-selector product-quantity-selector">
+                <button class="qty-minus" id="minus">−</button>
+                <span class="qty-value" id="qty">1</span>
+                <button class="qty-plus" id="plus">+</button>
+            </div>
+
+            <button class="add-to-cart-btn product-buy-btn">Add to cart</button>
+        </div>
+
+        <div class="product-accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Scent Story <span>+</span></div>
+                <div class="accordion-content" id="productScentStory"></div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Usage Tips <span>+</span></div>
+                <div class="accordion-content" id="productUsageTips"></div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Ingredients <span>+</span></div>
+                <div class="accordion-content" id="productIngredients"></div>
+            </div>
+        </div>
+
     </div>
+</main>
 
-    <!-- BADGES -->
-    <div class="product-badges">
-        <div>All Day <span>Longevity</span></div>
-        <div>Strong <span>Projection</span></div>
+<section class="suggest-fragrance-section">
+    <p>Can't find your perfect scent? Tell us what you're looking for and we'll bring it to you.</p>
+    <h2>Suggest a Fragrance</h2>
+    <p>Please include your WhatsApp number in your message so we can reach out with personalized fragrance recommendations.</p>
+
+    <form class="suggest-fragrance-form">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="E-mail">
+        <textarea placeholder="Message"></textarea>
+        <button type="button">Send message</button>
+    </form>
+</section>
+
+<section class="product-trust-strip">
+    <div>
+        <strong>INTERNATIONAL SHIPPING</strong>
+        <span>Worldwide shipping support</span>
     </div>
-
-    <!-- INSPIRED -->
-    <p class="inspired-text">
-        Inspired by <span id="inspiredBy"></span>
-    </p>
-
-    <!-- PRICE -->
-    <div class="price-box">
-        <span class="price" id="productPrice"></span>
-        <span class="mrp">M.R.P. <span id="productMRP"></span></span>
-        <p class="tax-text">Inclusive of all taxes</p>
+    <div>
+        <strong>Customer service</strong>
+        <span>Get in touch through WhatsApp</span>
     </div>
-    <!-- VARIANT -->
-<div class="variant-selector">
-    <button class="variant-btn active" data-variant="spray">Spray</button>
-    <button class="variant-btn" data-variant="rollon">Roll-On</button>
-</div>
-    <!-- SIZE -->
-<div class="size-selector">
-    <button class="size-btn active" data-size="30ml">30 ML</button>
-    <button class="size-btn" data-size="50ml">50 ML</button>
-</div>
-
-<!-- QUANTITY + CART ROW -->
-<div class="cart-row">
-
-    <div class="quantity-selector">
-        <button class="qty-minus" id="minus">−</button>
-        <span class="qty-value" id="qty">1</span>
-        <button class="qty-plus" id="plus">+</button>
+    <div>
+        <strong>Secure payment</strong>
+        <span>Your payment information is processed securely.</span>
     </div>
-
-    <button class="add-to-cart-btn">Add to Cart</button>
-
-</div>
-
-    <!-- ACCORDION -->
-    <div class="product-accordion">
-
-    <div class="accordion-item">
-        <div class="accordion-header">Product Description <span>+</span></div>
-        <div class="accordion-content" id="productDescription"></div>
-    </div>
-
-    <div class="accordion-item">
-        <div class="accordion-header">Scent Story <span>+</span></div>
-        <div class="accordion-content" id="productScentStory"></div>
-    </div>
-
-    <div class="accordion-item">
-        <div class="accordion-header">Usage Tips <span>+</span></div>
-        <div class="accordion-content" id="productUsageTips"></div>
-    </div>
-
-    <div class="accordion-item">
-        <div class="accordion-header">Ingredients <span>+</span></div>
-        <div class="accordion-content" id="productIngredients"></div>
-    </div>
-
-    <div class="accordion-item">
-        <div class="accordion-header">Brand & Manufacturer Info <span>+</span></div>
-        <div class="accordion-content" id="productBrandInfo"></div>
-    </div>
-
-</div>
-<!-- Recommended Perfumes -->
+</section>
 
 <section class="recommended-section">
-
-<h2>You May Also Like</h2>
-
-<div class="perfumes-grid" id="recommendedPerfumes"></div>
-
+    <h2>You May Also Like</h2>
+    <div class="perfumes-grid" id="recommendedPerfumes"></div>
 </section>
+
+<div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+        <h3>Cart</h3>
+        <button type="button" id="cartDrawerClose">×</button>
+    </div>
+
+    <div class="cart-drawer-items" id="cartDrawerItems"></div>
+
+    <div class="cart-drawer-footer">
+        <div class="cart-drawer-total">
+            <span>Total</span>
+            <strong id="cartDrawerTotal">₹0</strong>
+        </div>
+
+        <a href="cart.html" class="cart-drawer-checkout">
+            View Cart / Checkout
+        </a>
+    </div>
+</aside>
 
 <!-- Load perfume database -->
 <script src="products.js"></script>
