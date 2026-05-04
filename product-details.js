@@ -1,5 +1,5 @@
 const productDetails = {
-  "Impression of Amber Oud - Al Haramain": {
+  "impression of amber oud - al haramain": {
     topNotes: "Bergamot, Green Notes",
     middleNotes: "Melon, Pineapple, Sweet Notes, Amber",
     baseNotes: "Woody Notes, Vanilla, Musk",
