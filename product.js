@@ -16,6 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("productName").textContent = product.name;
         document.getElementById("productDescription").textContent = product.description;
+        const cleanProductName = product.name.trim();
+const details = typeof productDetails !== "undefined" ? productDetails[cleanProductName] : null;
+
+if (details) {
+    document.getElementById("productScentStory").innerText = details.scentStory;
+
+    document.getElementById("productIngredients").innerHTML = `
+        <strong>Top Notes:</strong> ${details.topNotes}<br>
+        <strong>Middle Notes:</strong> ${details.middleNotes}<br>
+        <strong>Base Notes:</strong> ${details.baseNotes}
+    `;
+
+    document.getElementById("productUsageTips").innerText = details.sprayUsageTips;
+}
 
         // Inspired by field removed from new Amanzada-style product layout
 
@@ -114,6 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
             btn.classList.add("active");
 
             selectedVariant = btn.dataset.variant;
+            if (details) {
+    document.getElementById("productUsageTips").innerText =
+        selectedVariant === "rollon" ? details.rollonUsageTips : details.sprayUsageTips;
+}
             renderSizes(selectedVariant);
         });
     });
