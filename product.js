@@ -15,7 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
         let details = null;
         if (product) {
 
-        document.getElementById("productName").textContent = product.name;
+        const fullName = product.name.replace("Impression of", "").trim();
+
+let title = fullName;
+let brand = "";
+
+if (fullName.includes("-")) {
+    const parts = fullName.split("-");
+    title = parts[0].trim();
+    brand = parts[1].trim();
+}
+
+document.getElementById("productTitle").textContent = title;
+document.getElementById("productBrand").textContent = brand;
         document.getElementById("productDescription").textContent = product.description;
         const cleanProductName = product.name.trim().toLowerCase();
 
