@@ -151,7 +151,12 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
 
-        alert("Added to cart ✅");
+        if (typeof renderCartDrawer === "function" && typeof openCartDrawer === "function") {
+    renderCartDrawer();
+    openCartDrawer();
+} else {
+    alert("Added to cart ✅");
+}
         });
 
     // ==============================
