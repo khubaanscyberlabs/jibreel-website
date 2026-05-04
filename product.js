@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("productName").textContent = product.name;
         document.getElementById("productDescription").textContent = product.description;
 
-        document.getElementById("inspiredBy").innerText =
-            (product.inspiredBy || "Signature Blend").replace(/inspired by/gi, "Impression of");
+        // Inspired by field removed from new Amanzada-style product layout
 
         const defaultVariant = "spray";
         const defaultSize = Object.keys(product.variants[defaultVariant].sizes)[0];
