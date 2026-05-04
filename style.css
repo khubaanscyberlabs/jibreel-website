@@ -2662,3 +2662,18 @@ h1, h2, h3, h4, h5 {
     color: #777;
     margin-top: -8px;
 }
+/* KEEP PRODUCT BOTTLE CENTERED WHEN SIZE IMAGE CHANGES */
+.product-page-body .product-gallery-main img {
+    width: 100%;
+    max-width: 420px;
+    height: 520px;
+    object-fit: contain;
+    object-position: center center;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .product-page-body .product-gallery-main img {
+        height: 380px;
+        max-width: 310px;
+    }
+}
