@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("productName").textContent = product.name;
         document.getElementById("productDescription").textContent = product.description;
-        const cleanProductName = product.name.trim();
-const details = typeof productDetails !== "undefined" ? productDetails[cleanProductName] : null;
+        const cleanProductName = product.name.trim().toLowerCase();
+
+const details = typeof productDetails !== "undefined"
+    ? productDetails[cleanProductName]
+    : null;
 
 if (details) {
     document.getElementById("productScentStory").innerText = details.scentStory;
