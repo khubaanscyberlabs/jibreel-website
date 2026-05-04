@@ -2491,3 +2491,278 @@ h1, h2, h3, h4, h5 {
         transform: translateY(0);
     }
 }
+/* =========================================
+   PRODUCT PAGE - AMANZADA STYLE OVERRIDE
+========================================= */
+
+.product-page-body .amanzada-product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    padding: 140px 6% 80px;
+    background: #ffffff;
+    align-items: start;
+}
+
+.product-page-body .product-gallery-main {
+    background: #f7f3ef;
+    min-height: 620px;
+    position: sticky;
+    top: 110px;
+}
+
+.product-page-body .product-gallery-main img {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-page-body .product-zoom-btn {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #023048;
+}
+
+.product-page-body .amanzada-product-info {
+    max-width: 520px;
+    gap: 16px;
+}
+
+.product-page-body .product-vendor {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #777;
+    margin: 0;
+}
+
+.product-page-body #productName {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #121212;
+    margin: 0;
+}
+
+.product-page-body .amanzada-price-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 6px;
+}
+
+.product-page-body .price {
+    color: #121212;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.product-page-body .mrp {
+    color: #777;
+    font-size: 15px;
+    text-decoration: line-through;
+    margin-left: 0;
+}
+
+.product-page-body .perfume-rating {
+    display: block !important;
+    color: #023048;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+}
+
+.product-page-body .product-short-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    margin: 8px 0 10px;
+}
+
+.product-page-body .product-option-label {
+    font-size: 14px;
+    color: #121212;
+    margin: 8px 0 0;
+}
+
+.product-page-body .variant-selector,
+.product-page-body .size-selector,
+.product-page-body .quantity-selector {
+    display: flex !important;
+}
+
+.product-page-body .variant-selector,
+.product-page-body .size-selector {
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.product-page-body .variant-btn,
+.product-page-body .size-btn {
+    min-width: 92px;
+    height: 44px;
+    border: 1px solid #d8d8d8;
+    background: #ffffff;
+    color: #121212;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.product-page-body .variant-btn.active,
+.product-page-body .size-btn.active {
+    border-color: #023048;
+    background: #023048;
+    color: #08A7C5;
+}
+
+.product-page-body .product-cart-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.product-page-body .product-quantity-selector {
+    height: 48px;
+    border: 1px solid #d8d8d8;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin: 0;
+}
+
+.product-page-body .product-quantity-selector button {
+    border: none !important;
+    background: transparent !important;
+    color: #121212 !important;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    font-size: 20px;
+}
+
+.product-page-body .product-buy-btn {
+    position: static !important;
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background: #023048 !important;
+    color: #08A7C5 !important;
+    border: 1px solid #023048 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.product-page-body .product-buy-btn:hover {
+    background: #08A7C5 !important;
+    color: #023048 !important;
+    border-color: #08A7C5 !important;
+}
+
+.product-page-body .product-accordion {
+    margin-top: 28px;
+}
+
+.product-page-body .accordion-header {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+}
+
+.product-page-body .suggest-fragrance-section {
+    padding: 80px 6%;
+    background: #f7f3ef;
+    text-align: center;
+}
+
+.product-page-body .suggest-fragrance-section h2 {
+    font-size: 34px;
+    font-weight: 400;
+    color: #023048;
+    margin: 12px 0;
+}
+
+.product-page-body .suggest-fragrance-form {
+    max-width: 620px;
+    margin: 28px auto 0;
+    display: grid;
+    gap: 14px;
+}
+
+.product-page-body .suggest-fragrance-form input,
+.product-page-body .suggest-fragrance-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    font-family: var(--font-ui);
+}
+
+.product-page-body .suggest-fragrance-form textarea {
+    min-height: 120px;
+}
+
+.product-page-body .suggest-fragrance-form button {
+    height: 46px;
+    border: none;
+    background: #023048;
+    color: #08A7C5;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.product-page-body .product-trust-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #e5e5e5;
+}
+
+.product-page-body .product-trust-strip div {
+    background: #ffffff;
+    padding: 34px 20px;
+    text-align: center;
+}
+
+.product-page-body .product-trust-strip strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #023048;
+    margin-bottom: 8px;
+}
+
+.product-page-body .product-trust-strip span {
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .product-page-body .amanzada-product-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 120px 18px 60px;
+    }
+
+    .product-page-body .product-gallery-main {
+        position: static;
+        min-height: 420px;
+    }
+
+    .product-page-body .product-gallery-main img {
+        max-width: 310px;
+    }
+
+    .product-page-body .product-cart-row {
+        grid-template-columns: 1fr;
+    }
+
+    .product-page-body .product-trust-strip {
+        grid-template-columns: 1fr;
+    }
+}
