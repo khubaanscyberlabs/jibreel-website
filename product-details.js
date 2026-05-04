@@ -55,5 +55,96 @@ const productDetails = {
     scentStory: "A warm gourmand fragrance inspired by aged cognac barrels. It opens boozy and spicy, then melts into cinnamon, tonka, oak, vanilla, praline, sandalwood, and almond for a sweet luxury finish.",
     sprayUsageTips: SPRAY_USAGE_TIPS,
     rollonUsageTips: ROLLON_USAGE_TIPS
-  }
+  },
+
+  ,
+"impression of tobacco vanille - tomford": {
+  topNotes: "Tobacco Leaf, Spicy Notes",
+  middleNotes: "Vanilla, Cacao, Tonka Bean, Tobacco Blossom",
+  baseNotes: "Dried Fruits, Woody Notes",
+  scentStory: "A rich and warm tobacco fragrance with spicy notes and creamy vanilla. Sweet, deep, and luxurious — perfect for evenings and winter wear.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of oud kalemat - arabian oud": {
+  topNotes: "Blueberry, Anise",
+  middleNotes: "Cashmere Wood, Floral Notes",
+  baseNotes: "Amber, Honey, Musk",
+  scentStory: "A sweet woody oriental fragrance with fruity blueberry opening and a warm honeyed amber dry down. Smooth, comforting, and long-lasting.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of pacific chill - louis vuitton": {
+  topNotes: "Black Currant, Citron",
+  middleNotes: "Carrot Seeds, Mint",
+  baseNotes: "Ambrette, Fig",
+  scentStory: "A fresh, juicy, and slightly herbal fragrance inspired by a coastal breeze. Light, uplifting, and perfect for summer wear.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of tuscan leather - tom ford": {
+  topNotes: "Raspberry, Saffron, Thyme",
+  middleNotes: "Olibanum, Jasmine",
+  baseNotes: "Leather, Suede, Amber, Woody Notes",
+  scentStory: "A bold leather fragrance with sweet raspberry contrast. Rich, smoky, and luxurious — a strong signature scent.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of yara white - lattafa": {
+  topNotes: "Jasmine, Peach",
+  middleNotes: "Caramel, Amber",
+  baseNotes: "Vanilla, Sandalwood",
+  scentStory: "A soft, sweet, and creamy fragrance with fruity floral notes. Feminine, smooth, and easy to wear daily.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of flora - gucci": {
+  topNotes: "Peony, Citruses, Mandarin Orange",
+  middleNotes: "Osmanthus, Rose",
+  baseNotes: "Patchouli, Pink Pepper, Sandalwood",
+  scentStory: "A delicate floral fragrance with fresh citrus opening and soft rose heart. Elegant, light, and graceful.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of sauvage - dior": {
+  topNotes: "Calabrian Bergamot, Pepper",
+  middleNotes: "Lavender, Sichuan Pepper",
+  baseNotes: "Ambroxan, Cedar",
+  scentStory: "A fresh and spicy masculine fragrance with strong projection. Clean, bold, and highly versatile.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of acqua di gio - giorgio armani": {
+  topNotes: "Sea Notes, Bergamot",
+  middleNotes: "Rosemary, Sage",
+  baseNotes: "Patchouli, Musk",
+  scentStory: "A fresh aquatic fragrance inspired by the sea. Clean, breezy, and perfect for everyday wear.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of sauvage elixir - dior": {
+  topNotes: "Grapefruit, Cinnamon, Nutmeg, Cardamom",
+  middleNotes: "Lavender",
+  baseNotes: "Licorice, Amber, Sandalwood",
+  scentStory: "A stronger, richer version of Sauvage with spicy warmth and deep woody base. Intense and long-lasting.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of homme intense - dior": {
+  topNotes: "Bergamot, Lavender",
+  middleNotes: "Iris, Ambrette",
+  baseNotes: "Cedar, Vetiver",
+  scentStory: "A smooth powdery fragrance with iris dominance. Elegant, soft, and perfect for evening wear.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+}
 };
