@@ -57,7 +57,7 @@ const productDetails = {
     rollonUsageTips: ROLLON_USAGE_TIPS
   },
 
-  ,
+  
 "impression of tobacco vanille - tomford": {
   topNotes: "Tobacco Leaf, Spicy Notes",
   middleNotes: "Vanilla, Cacao, Tonka Bean, Tobacco Blossom",
