@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     const perfumeName = decodeURIComponent(params.get("perfume") || "");
 
-    const product = perfumes.find(p => p.name === perfumeName);
+    const product = perfumes.find(p => p.name.trim() === perfumeName.trim());
 
     console.log("URL Name:", perfumeName);
     console.log("Matched Product:", product);
