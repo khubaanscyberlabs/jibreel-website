@@ -12,7 +12,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/hawas-rollon.jpg",
+       images: {  "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -33,7 +33,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/hawas-rollon.jpg",
+       images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -54,7 +54,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/hawas-rollon.jpg",
+       images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -75,7 +75,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -96,7 +96,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -117,7 +117,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -138,7 +138,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -159,7 +159,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -180,7 +180,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -201,7 +201,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -222,7 +222,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -243,7 +243,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -264,7 +264,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -285,7 +285,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -306,7 +306,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -327,7 +327,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -348,7 +348,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -369,7 +369,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -390,7 +390,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml":  250,
         "12ml": 500
@@ -411,7 +411,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -432,7 +432,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -453,7 +453,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -474,7 +474,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -495,7 +495,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -516,7 +516,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -537,7 +537,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -558,7 +558,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -579,7 +579,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -600,7 +600,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -621,7 +621,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -642,7 +642,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -663,7 +663,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -684,7 +684,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -705,7 +705,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -726,7 +726,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -747,7 +747,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -768,7 +768,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -789,7 +789,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -810,7 +810,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -831,7 +831,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -852,7 +852,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -873,7 +873,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -894,7 +894,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -915,7 +915,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -936,7 +936,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -957,7 +957,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -978,7 +978,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -999,7 +999,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1020,7 +1020,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1041,7 +1041,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1062,7 +1062,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1083,7 +1083,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1104,7 +1104,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1125,7 +1125,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1146,7 +1146,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1167,7 +1167,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1188,7 +1188,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1209,7 +1209,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1230,7 +1230,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1251,7 +1251,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1272,7 +1272,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1293,7 +1293,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1314,7 +1314,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1335,7 +1335,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1356,7 +1356,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1377,7 +1377,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1398,7 +1398,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1419,7 +1419,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1440,7 +1440,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1472,7 +1472,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1493,7 +1493,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1514,7 +1514,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1535,7 +1535,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 250,
         "12ml": 500
@@ -1556,7 +1556,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1577,7 +1577,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
@@ -1598,7 +1598,7 @@ const perfumes = [
       }
     },
     rollon: {
-      image: "images/oud-kalemat.jpg",
+      images: {     "6ml": "images/rollon-6ml.jpg",     "12ml": "images/rollon-12ml.jpg"   },
       sizes: {
         "6ml": 350,
         "12ml": 700
