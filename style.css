@@ -1903,123 +1903,6 @@ h1, h2, h3, h4, h5 {
         font-size: 18px;
     }
 }
-/* =========================================
-   CART PAGE HEADER / FOOTER MATCH FIX
-========================================= */
-
-.product-page-body .navbar {
-    top: 0px;
-    padding: 8px 5%;
-    background: rgba(2, 48, 72, 0.95);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
-}
-
-.product-page-body .nav-top {
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.product-page-body .nav-logo-img {
-    height: 44px;
-    width: auto;
-    object-fit: contain;
-}
-
-.product-page-body .nav-bottom {
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-
-.product-page-body .nav-left,
-.product-page-body .nav-icons {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.product-page-body .nav-left {
-    justify-content: flex-start;
-}
-
-.product-page-body .nav-icons {
-    justify-content: flex-end;
-    gap: 22px;
-}
-
-.product-page-body .nav-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 34px;
-}
-
-.product-page-body .nav-links li {
-    list-style: none;
-}
-
-.product-page-body .nav-links a {
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-}
-
-.product-page-body .top-bar {
-    z-index: 1100;
-}
-
-.product-page-body .cart-page {
-    padding-top: 120px;
-}
-
-.product-page-body .about {
-    padding: 120px 20px;
-}
-
-.product-page-body .about-logo-img {
-    width: 180px;
-    margin: 0 auto 35px;
-}
-
-@media (max-width: 1024px) {
-    .product-page-body .nav-links {
-        display: none;
-    }
-
-    .product-page-body .menu-toggle {
-        display: flex;
-    }
-
-    .product-page-body .nav-logo-img {
-        height: 68px;
-    }
-
-    .product-page-body .cart-page {
-        padding-top: 160px;
-    }
-}
-
-@media (max-width: 768px) {
-    .product-page-body .navbar {
-        padding: 16px 4% 12px;
-    }
-
-    .product-page-body .nav-logo-img {
-        height: 58px;
-    }
-
-    .product-page-body .cart-page {
-        padding-top: 150px;
-    }
-
-    .product-page-body .top-bar {
-        gap: 5px;
-    }
-}
 
 
 .checkout-note {
@@ -2765,4 +2648,11 @@ h1, h2, h3, h4, h5 {
     .product-page-body .product-trust-strip {
         grid-template-columns: 1fr;
     }
+}
+/* PRODUCT PAGE USE SAME NAVBAR AS HOMEPAGE */
+.product-page-body .navbar {
+    background: rgba(2, 48, 72, 0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
 }
