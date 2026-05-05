@@ -116,10 +116,15 @@
 
     body {
     font-family: 'Assistant', sans-serif;
-    background-color: #F5F7F9;
+
+    background: linear-gradient(
+        180deg,
+        #0F1F2A 0%,
+        #112B36 40%,
+        #F5F7F9 100%
+    );
+
     color: #1a1a1a;
-    margin: 0;
-    padding: 0;
 }
 
 body.home-page {
@@ -353,8 +358,8 @@ text-align:center;
     align-items: center;
 
     padding: 16px 5% 14px;
-    background: transparent;
-    backdrop-filter: none;
+    background: rgba(2, 48, 72, 0.35);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid transparent;
     transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -2052,7 +2057,9 @@ h1, h2, h3, h4, h5 {
     background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(2, 48, 72, 0.08);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 0 20px rgba(8, 167, 197, 0.06);
     transition: all 0.3s ease;
 }
 
@@ -2745,4 +2752,7 @@ section {
 }
 section:nth-child(even) {
     background-color: #FAF8F4;
+}
+section {
+    background: transparent;
 }
