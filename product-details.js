@@ -146,5 +146,114 @@ const productDetails = {
   scentStory: "A smooth powdery fragrance with iris dominance. Elegant, soft, and perfect for evening wear.",
   sprayUsageTips: SPRAY_USAGE_TIPS,
   rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+  ,
+"impression of black orchid - tomford": {
+  topNotes: "Black Truffle, Ylang-Ylang, Bergamot, Black Currant",
+  middleNotes: "Black Orchid, Gardenia, Jasmine, Lotus",
+  baseNotes: "Patchouli, Sandalwood, Dark Chocolate, Incense, Amber, Vanilla",
+  scentStory: "A dark, rich and luxurious fragrance opening with truffle and ylang-ylang, evolving into a floral heart and settling into a deep chocolatey, woody and smoky base. Bold, sensual and long-lasting.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of oud wood - tomford": {
+  topNotes: "Agarwood (Oud), Brazilian Rosewood, Cardamom",
+  middleNotes: "Sandalwood, Vetiver",
+  baseNotes: "Tonka Bean, Amber, Vanilla",
+  scentStory: "A refined and smooth oud fragrance with a woody and slightly sweet character. Elegant, clean and perfect for everyday luxury wear.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of tobacco oud - tomford": {
+  topNotes: "Whiskey",
+  middleNotes: "Cinnamon, Spices",
+  baseNotes: "Tobacco, Oud, Sandalwood, Vanilla",
+  scentStory: "A bold and smoky fragrance with boozy whiskey opening, warm spices and a deep tobacco-oud base. Rich, powerful and long-lasting.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of 1001 nights - ajmal": {
+  topNotes: "Smoke, Saffron, Spices",
+  middleNotes: "Rose, Floral Notes",
+  baseNotes: "Oud, Musk, Sandalwood",
+  scentStory: "A traditional Arabic oud fragrance with smoky, spicy and floral layers, settling into a deep musky and woody base. Strong and authentic.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of le male elixir - jpg": {
+  topNotes: "Lavender, Mint",
+  middleNotes: "Vanilla, Benzoin",
+  baseNotes: "Honey, Tonka Bean, Tobacco",
+  scentStory: "A sweet, warm and powerful fragrance blending lavender freshness with rich vanilla, honey and tobacco. Extremely strong projection.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of one million intense - paco rabanne": {
+  topNotes: "Grapefruit, Sea Salt",
+  middleNotes: "Tuberose, Ambergris",
+  baseNotes: "Leather, Vanilla, Tonka Bean",
+  scentStory: "A bold and unique fragrance combining salty freshness with creamy florals and a warm leathery base. Statement-making and long-lasting.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of dunhill icon - dunhill": {
+  topNotes: "Neroli, Bergamot, Black Pepper",
+  middleNotes: "Lavender, Cardamom, Sage",
+  baseNotes: "Vetiver, Leather, Oud",
+  scentStory: "A refined and fresh aromatic fragrance evolving into a woody, slightly leathery base. Clean, classy and versatile.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of hatane - parfum de marly": {
+  topNotes: "Bergamot, Lavender",
+  middleNotes: "Saffron, Praline",
+  baseNotes: "Oud, Leather, Patchouli, Musk",
+  scentStory: "A rich and luxurious fragrance blending sweet praline with oud and leather. Warm, deep and perfect for evening wear.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of rasasi shuhrah": {
+  topNotes: "Tomato Leaf, Rose",
+  middleNotes: "Sandalwood, Jasmine",
+  baseNotes: "Oud, Leather, Musk",
+  scentStory: "A unique green-smoky fragrance with a fresh opening and a deep woody and leathery dry down. Strong and distinctive.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of jadore absolu - dior": {
+  topNotes: "Jasmine Sambac, Magnolia",
+  middleNotes: "Grasse Jasmine, Rose",
+  baseNotes: "Orange Blossom",
+  scentStory: "A rich floral fragrance dominated by luxurious jasmine and rose, creating a sweet, elegant and feminine scent.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of de issey miyake": {
+  topNotes: "Yuzu, Lemon, Bergamot",
+  middleNotes: "Nutmeg, Water Lily",
+  baseNotes: "Cedar, Sandalwood, Musk",
+  scentStory: "A fresh aquatic fragrance inspired by water, blending citrus freshness with woody depth. Clean and timeless.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
+
+"impression of lv imagination": {
+  topNotes: "Citron, Bergamot, Orange",
+  middleNotes: "Neroli, Ginger, Cinnamon",
+  baseNotes: "Black Tea, Ambroxan, Wood",
+  scentStory: "A clean, bright and modern fragrance with citrus freshness and a smooth tea-like dry down. Elegant and long-lasting.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
 }
 };
