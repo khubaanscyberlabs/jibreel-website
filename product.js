@@ -32,13 +32,22 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("productDescription").textContent = product.description;
 
         const cleanProductName = product.name
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
+  .replace(/\s+/g, " ")
+  .trim()
+  .toLowerCase();
 
-       details = typeof productDetails !== "undefined"
-    ? (productDetails[cleanProductName] || productDetails.default)
-    : null;
+console.log("Looking for key:", cleanProductName);
+console.log("Available keys:", Object.keys(productDetails));
+
+      if (typeof productDetails !== "undefined") {
+    if (productDetails[cleanProductName]) {
+        details = productDetails[cleanProductName];
+        console.log("Matched exact productDetails");
+    } else {
+        details = productDetails.default;
+        console.warn("Using DEFAULT data for:", cleanProductName);
+    }
+}
 
         if (details) {
             document.getElementById("productScentStory").innerText = details.scentStory;
