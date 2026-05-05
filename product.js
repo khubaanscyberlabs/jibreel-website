@@ -12,50 +12,53 @@ document.addEventListener("DOMContentLoaded", function () {
     // PRODUCT LOAD
     // ==============================
 
-        let details = null;
-        if (product) {
+    let details = null;
+
+    if (product) {
 
         const fullName = product.name.replace("Impression of", "").trim();
 
-let title = fullName;
-let brand = "";
+        let title = fullName;
+        let brand = "";
 
-if (fullName.includes("-")) {
-    const parts = fullName.split("-");
-    title = parts[0].trim();
-    brand = parts[1].trim();
-}
+        if (fullName.includes("-")) {
+            const parts = fullName.split("-");
+            title = parts[0].trim();
+            brand = parts[1].trim();
+        }
 
-document.getElementById("productTitle").textContent = title;
-document.getElementById("productBrand").textContent = brand;
+        document.getElementById("productTitle").textContent = title;
+        document.getElementById("productBrand").textContent = brand;
         document.getElementById("productDescription").textContent = product.description;
+
         const cleanProductName = product.name.trim().toLowerCase();
 
-details = typeof productDetails !== "undefined"
-    ? productDetails[cleanProductName]
-    : null;
+        details = typeof productDetails !== "undefined"
+            ? productDetails[cleanProductName]
+            : null;
 
-if (details) {
-    document.getElementById("productScentStory").innerText = details.scentStory;
+        if (details) {
+            document.getElementById("productScentStory").innerText = details.scentStory;
 
-    document.getElementById("productIngredients").innerHTML = `
-        <strong>Top Notes:</strong> ${details.topNotes}<br>
-        <strong>Middle Notes:</strong> ${details.middleNotes}<br>
-        <strong>Base Notes:</strong> ${details.baseNotes}
-    `;
+            document.getElementById("productIngredients").innerHTML = `
+                <strong>Top Notes:</strong> ${details.topNotes}<br>
+                <strong>Middle Notes:</strong> ${details.middleNotes}<br>
+                <strong>Base Notes:</strong> ${details.baseNotes}
+            `;
 
-    document.getElementById("productUsageTips").innerText = details.sprayUsageTips;
-}
+            document.getElementById("productUsageTips").innerText = details.sprayUsageTips;
+        }
 
         // Inspired by field removed from new Amanzada-style product layout
 
         const defaultVariant = "spray";
         const defaultSize = Object.keys(product.variants[defaultVariant].sizes)[0];
 
-        document.getElementById("productImage").src =
-    product.variants[defaultVariant].images
-        ? product.variants[defaultVariant].images[defaultSize]
-        : product.variants[defaultVariant].image;
+        const img = document.getElementById("productImage");
+        img.src = product.variants[defaultVariant].images
+            ? product.variants[defaultVariant].images[defaultSize]
+            : product.variants[defaultVariant].image;
+
         document.getElementById("productPrice").innerText =
             "Rs. " + product.variants[defaultVariant].sizes[defaultSize];
 
@@ -67,6 +70,7 @@ if (details) {
         document.body.innerHTML = "<h1 style='color:black'>Product Not Found</h1>";
         return;
     }
+
     // ==============================
     // QUANTITY
     // ==============================
@@ -90,7 +94,7 @@ if (details) {
         }
     });
 
-       // ==============================
+    // ==============================
     // VARIANT + SIZE SELECTOR
     // ==============================
 
@@ -99,15 +103,30 @@ if (details) {
 
     let selectedVariant = "spray";
     let selectedSize = Object.keys(product.variants[selectedVariant].sizes)[0];
-    function getVariantImage(variant, size) {
-    const variantData = product.variants[variant];
 
-    if (variantData.images && variantData.images[size]) {
-        return variantData.images[size];
+    function getVariantImage(variant, size) {
+        const variantData = product.variants[variant];
+
+        if (variantData.images && variantData.images[size]) {
+            return variantData.images[size];
+        }
+
+        return variantData.image;
     }
 
-    return variantData.image;
-}
+    function applyImageFix(img, variant) {
+        if (variant === "rollon") {
+            img.style.objectFit = "contain";
+            img.style.width = "75%";
+            img.style.display = "block";
+            img.style.margin = "0 auto";
+        } else {
+            img.style.objectFit = "";
+            img.style.width = "";
+            img.style.display = "";
+            img.style.margin = "";
+        }
+    }
 
     function renderSizes(variant) {
         const sizes = product.variants[variant].sizes;
@@ -126,16 +145,23 @@ if (details) {
 
                 document.getElementById("productPrice").innerText = "Rs. " + sizes[size];
                 document.getElementById("productMRP").innerText = "Rs. " + (sizes[size] + 800);
-                document.getElementById("productImage").src = getVariantImage(selectedVariant, selectedSize);
+
+                const img = document.getElementById("productImage");
+                img.src = getVariantImage(selectedVariant, selectedSize);
+                applyImageFix(img, selectedVariant);
             });
 
             sizeSelector.appendChild(btn);
         });
 
         selectedSize = Object.keys(sizes)[0];
+
         document.getElementById("productPrice").innerText = "Rs. " + sizes[selectedSize];
         document.getElementById("productMRP").innerText = "Rs. " + (sizes[selectedSize] + 800);
-        document.getElementById("productImage").src = getVariantImage(variant, selectedSize);
+
+        const img = document.getElementById("productImage");
+        img.src = getVariantImage(variant, selectedSize);
+        applyImageFix(img, variant);
     }
 
     variantButtons.forEach(btn => {
@@ -143,20 +169,20 @@ if (details) {
             variantButtons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
 
-           selectedVariant = btn.dataset.variant;
+            selectedVariant = btn.dataset.variant;
 
-if (details) {
-    document.getElementById("productUsageTips").innerText =
-        selectedVariant === "rollon" ? details.rollonUsageTips : details.sprayUsageTips;
-}
+            if (details) {
+                document.getElementById("productUsageTips").innerText =
+                    selectedVariant === "rollon" ? details.rollonUsageTips : details.sprayUsageTips;
+            }
 
-renderSizes(selectedVariant);
+            renderSizes(selectedVariant);
         });
     });
 
     renderSizes(selectedVariant);
 
-        addToCartBtn.addEventListener("click", () => {
+    addToCartBtn.addEventListener("click", () => {
         const price = product.variants[selectedVariant].sizes[selectedSize];
         const image = getVariantImage(selectedVariant, selectedSize);
 
@@ -187,12 +213,12 @@ renderSizes(selectedVariant);
         updateCartCount();
 
         if (typeof renderCartDrawer === "function" && typeof openCartDrawer === "function") {
-    renderCartDrawer();
-    openCartDrawer();
-} else {
-    alert("Added to cart ✅");
-}
-        });
+            renderCartDrawer();
+            openCartDrawer();
+        } else {
+            alert("Added to cart ✅");
+        }
+    });
 
     // ==============================
     // ACCORDION
@@ -204,7 +230,6 @@ renderSizes(selectedVariant);
 
             const content = header.nextElementSibling;
 
-            // close others
             document.querySelectorAll(".accordion-content").forEach(c => {
                 if (c !== content) c.classList.remove("open");
             });
@@ -254,6 +279,7 @@ renderSizes(selectedVariant);
     }
 
 });
+
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -265,4 +291,3 @@ function updateCartCount() {
 }
 
 updateCartCount();
-
