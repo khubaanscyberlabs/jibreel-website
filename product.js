@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const cleanProductName = product.name.trim().toLowerCase();
 
-        details = typeof productDetails !== "undefined"
-            ? productDetails[cleanProductName]
-            : null;
+       details = typeof productDetails !== "undefined"
+    ? (productDetails[cleanProductName] || productDetails.default)
+    : null;
 
         if (details) {
             document.getElementById("productScentStory").innerText = details.scentStory;
