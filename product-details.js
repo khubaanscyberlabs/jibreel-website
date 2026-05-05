@@ -3,6 +3,15 @@ const SPRAY_USAGE_TIPS = "For the best experience, hold the bottle upright about
 const ROLLON_USAGE_TIPS = "Apply a small amount directly onto pulse points such as wrists, behind the ears, neck, and inner elbows. Do not rub harshly after applying. Let the oil settle naturally for a smoother and longer-lasting scent experience.";
 
 const productDetails = {
+
+  default: {
+  topNotes: "Premium fragrance oils",
+  middleNotes: "Floral, woody and spicy accords",
+  baseNotes: "Musk, amber and long-lasting notes",
+  scentStory: "A premium inspired fragrance crafted for a rich and long-lasting experience, designed to deliver smooth projection, elegant dry down and a luxurious feel for daily wear or special occasions.",
+  sprayUsageTips: SPRAY_USAGE_TIPS,
+  rollonUsageTips: ROLLON_USAGE_TIPS
+},
   "impression of hawas for him - rasasi": {
   topNotes: "Apple, Bergamot, Lemon, Cinnamon",
   middleNotes: "Watery Notes, Plum, Orange Blossom, Cardamom",
