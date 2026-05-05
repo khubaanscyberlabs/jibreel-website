@@ -172,6 +172,11 @@ body.home-page {
     background: var(--gold);
     margin: 25px auto 50px;
 }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 
 
@@ -276,7 +281,7 @@ text-align:center;
 ============================================= */
 
 .about {
-    background-color: #ffffff;   /* White */
+    background-color: #FAF8F4;
     padding: 140px 20px;
     text-align: center;
 }
@@ -1000,7 +1005,7 @@ scroll-margin-top: 110px;
 
 #perfumes {
     padding: 120px 5%;
-    background: #ffffff;
+    background: transparent;
    }
 
 .perfume-search{
@@ -2018,28 +2023,25 @@ h1, h2, h3, h4, h5 {
     gap: 48px 28px;   /* 🔥 more breathing space */
 
     padding: 0;
-    max-width: 1320px;  /* slightly wider */
+    max-width: 1200px;  /* slightly wider */
     margin: 0 auto;
 }
 .perfume-card {
     background: #ffffff;
-    border: none;
-    border-radius: 0;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: none;
+    box-shadow: 0 10px 30px rgba(2, 48, 72, 0.08);
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .perfume-card:hover {
-    transform: translateY(-4px);
-    box-shadow: none;
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(2, 48, 72, 0.12);
 }
-
 .perfume-card-image-wrapper {
     position: relative;
     aspect-ratio: 1 / 1.22;
-    background: #f6f1ea;   /* softer luxury tone */
+   background: #FAF8F4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2715,4 +2717,10 @@ section {
 .product-gallery {
     box-shadow: 0 8px 28px rgba(2, 48, 72, 0.06);
     border-radius: 18px;
+}
+section {
+    padding: 90px 0;
+}
+section:nth-child(even) {
+    background-color: #FAF8F4;
 }
