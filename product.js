@@ -31,7 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("productBrand").textContent = brand;
         document.getElementById("productDescription").textContent = product.description;
 
-        const cleanProductName = product.name.trim().toLowerCase();
+        const cleanProductName = product.name
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
 
        details = typeof productDetails !== "undefined"
     ? (productDetails[cleanProductName] || productDetails.default)
