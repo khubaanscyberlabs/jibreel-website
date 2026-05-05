@@ -1289,6 +1289,7 @@ max-width:250px;
     max-width: 300px;   /* 🔥 THIS FIXES BIG IMAGE */
     height: auto;
     object-fit: contain;
+    transform: scale(1.1);
 }
 
 .product-info {
