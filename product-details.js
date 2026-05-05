@@ -148,7 +148,6 @@ const productDetails = {
   rollonUsageTips: ROLLON_USAGE_TIPS
 },
 
-  ,
 "impression of black orchid - tomford": {
   topNotes: "Black Truffle, Ylang-Ylang, Bergamot, Black Currant",
   middleNotes: "Black Orchid, Gardenia, Jasmine, Lotus",
