@@ -411,9 +411,11 @@ text-align:center;
 
 .nav-icons {
     position: absolute;
-    right: 28px;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    gap: 18px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -484,14 +486,15 @@ text-align:center;
 
         .nav-icons a,
 .nav-search-btn {
-    color: #ffffff;
-    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 .nav-icons a:hover,
 .nav-search-btn:hover {
-    color: var(--gold);
+    color: #08A7C5;
+    opacity: 1;
     transform: translateY(-1px);
 }
 
