@@ -481,11 +481,16 @@ text-align:center;
 
         
 
-        .nav-icons a,
+       .nav-icons a,
 .nav-search-btn {
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 0.95rem;
     transition: all 0.3s ease;
+}
+
+.nav-icons i,
+.nav-search-btn i {
+    font-weight: 300;
 }
 
 .nav-icons a:hover,
@@ -2751,20 +2756,4 @@ body.search-open .navbar {
     backdrop-filter: blur(14px) !important;
     border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28) !important;
-}
-/* FINAL NAV ICON TRANSPARENCY OVERRIDE */
-.nav-icons a,
-.nav-icons i,
-.nav-search-btn,
-.nav-search-btn i {
-    color: rgba(255, 255, 255, 0.72) !important;
-    opacity: 0.82;
-}
-
-.nav-icons a:hover,
-.nav-icons a:hover i,
-.nav-search-btn:hover,
-.nav-search-btn:hover i {
-    color: #08A7C5 !important;
-    opacity: 1;
 }
