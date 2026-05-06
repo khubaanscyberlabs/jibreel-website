@@ -233,7 +233,7 @@ function closeSearchPanel() {
 
     searchPanel.classList.remove("active");
     document.body.classList.remove("search-open");
-
+    document.documentElement.classList.remove("search-open");
     navSearchInput.value = "";
     searchTerm = "";
     renderPerfumes(perfumes, false);
@@ -249,7 +249,7 @@ if (navSearchBtn && searchPanel && navSearchInput) {
 
         if (searchPanel.classList.contains("active")) {
             document.body.classList.add("search-open");
-
+            document.documentElement.classList.add("search-open");
             setTimeout(() => {
                 navSearchInput.focus();
                 navSearchInput.select();
