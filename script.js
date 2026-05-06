@@ -220,7 +220,6 @@ typeButtons.forEach(btn => {
         renderPerfumes(perfumes, true);
         }); // closes click
 }); // closes forEach
-
 // ==============================
 // NAVBAR SEARCH
 // ==============================
@@ -228,6 +227,17 @@ typeButtons.forEach(btn => {
 const navSearchBtn = document.getElementById("navSearchBtn");
 const searchPanel = document.getElementById("searchPanel");
 const navSearchInput = document.getElementById("navSearchInput");
+
+function closeSearchPanel() {
+    if (!searchPanel || !navSearchInput) return;
+
+    searchPanel.classList.remove("active");
+    document.body.classList.remove("search-open");
+
+    navSearchInput.value = "";
+    searchTerm = "";
+    renderPerfumes(perfumes, false);
+}
 
 if (navSearchBtn && searchPanel && navSearchInput) {
 
@@ -238,11 +248,15 @@ if (navSearchBtn && searchPanel && navSearchInput) {
         searchPanel.classList.toggle("active");
 
         if (searchPanel.classList.contains("active")) {
-            navSearchInput.focus();
+            document.body.classList.add("search-open");
+
+            setTimeout(() => {
+                navSearchInput.focus();
+                navSearchInput.select();
+            }, 100);
+
         } else {
-            navSearchInput.value = "";
-            searchTerm = "";
-            renderPerfumes(perfumes, false);
+            closeSearchPanel();
         }
     });
 
@@ -251,14 +265,22 @@ if (navSearchBtn && searchPanel && navSearchInput) {
         renderPerfumes(perfumes, true);
     });
 
-    // OPTIONAL: close when clicking outside (premium behavior)
+    searchPanel.addEventListener("click", function (e) {
+        e.stopPropagation();
+    });
+
     document.addEventListener("click", function (e) {
         if (!searchPanel.contains(e.target) && !navSearchBtn.contains(e.target)) {
-            searchPanel.classList.remove("active");
+            closeSearchPanel();
+        }
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closeSearchPanel();
         }
     });
 }
-
 // ==============================
 // NEW PREMIUM COUNTDOWN (GLOBAL)
 // ==============================
