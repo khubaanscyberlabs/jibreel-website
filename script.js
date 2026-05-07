@@ -4,7 +4,14 @@ let searchTerm = "";
 
 function renderPerfumes(list, showAll = false){
 
-list = list || window.perfumes || perfumes || [];
+if (!Array.isArray(list)) {
+    list = window.perfumes || perfumes || [];
+}
+
+if (!Array.isArray(list)) {
+    list = [];
+}
+
 list = list.filter(product => product.status !== "draft" && product.inStock !== false);
 
 const grid = document.getElementById("perfumeGrid");
