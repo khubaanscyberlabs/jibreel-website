@@ -219,20 +219,53 @@
     const ADMIN_KEY = "JIBreel@1990";
     let isLoggedIn = false;
 
-    function switchAdminSection() {
+   function switchAdminSection() {
+
   const selected = document.getElementById("adminSection").value;
 
   const ordersActions = document.getElementById("ordersActions");
   const productsActions = document.getElementById("productsActions");
 
+  const ordersTable = document.getElementById("ordersTable");
+  const productsTable = document.getElementById("productsTable");
+  const productsTitle = document.getElementById("productsTitle");
+  const statusText = document.getElementById("statusText");
+
+  // BUTTON AREAS
   if (ordersActions) {
-    ordersActions.style.display = selected === "orders" ? "block" : "none";
+    ordersActions.style.display =
+      selected === "orders" ? "block" : "none";
   }
 
   if (productsActions) {
-    productsActions.style.display = selected === "products" ? "block" : "none";
+    productsActions.style.display =
+      selected === "products" ? "block" : "none";
   }
 
+  // TABLES
+  if (ordersTable) {
+    ordersTable.style.display =
+      selected === "orders" ? "table" : "none";
+  }
+
+  if (productsTable) {
+    productsTable.style.display =
+      selected === "products" ? "table" : "none";
+  }
+
+  // PRODUCTS TITLE
+  if (productsTitle) {
+    productsTitle.style.display =
+      selected === "products" ? "block" : "none";
+  }
+
+  // STATUS TEXT
+  if (statusText) {
+    statusText.style.display =
+      selected === "orders" ? "block" : "none";
+  }
+
+  // LOAD DATA
   if (selected === "orders") {
     loadOrders();
   }
@@ -240,6 +273,7 @@
   if (selected === "products") {
     loadProducts();
   }
+
 }
 
     async function adminLogin() {
