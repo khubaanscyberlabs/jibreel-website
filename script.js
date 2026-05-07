@@ -1,22 +1,9 @@
 let selectedCategory = "all";
 let selectedType = "all";
 let searchTerm = "";
-
 function renderPerfumes(list, showAll = false){
 
-if (!Array.isArray(list)) {
-    list = window.perfumes || perfumes || [];
-}
-
-if (!Array.isArray(list)) {
-    list = [];
-}
-
-list = list.filter(product => product.status !== "draft" && product.inStock !== false);
-
 const grid = document.getElementById("perfumeGrid");
-
-    
 if (!grid) return;
 
 grid.innerHTML = "";
@@ -25,15 +12,10 @@ let filteredList = list;
 
 // Search filter
 if (searchTerm.trim() !== "") {
-    filteredList = filteredList.filter(p => {
-        const productName = p.name || "";
-        const productDescription = p.description || "";
-
-        return (
-            productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            productDescription.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-    });
+    filteredList = filteredList.filter(p =>
+        p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        p.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 }
 
 // Category filter
@@ -50,7 +32,6 @@ if (selectedType !== "all") {
 const displayList = showAll ? filteredList : filteredList.slice(0, 4);
 
 displayList.forEach(product => {
-    if (!product || !product.name || !product.variants) return;
 
 const card = document.createElement("div");
 card.classList.add("perfume-card");
@@ -61,32 +42,18 @@ card.addEventListener("click", function(e) {
     window.location.href = `product.html?perfume=${encodeURIComponent(product.name)}`;
 });
 
-const variant = selectedType === "all"
-    ? product.variants?.spray
+const variant = selectedType === "all" 
+    ? product.variants?.spray 
     : product.variants?.[selectedType] || product.variants?.spray;
 
 const sizes = variant?.sizes || {};
 const firstSize = Object.keys(sizes)[0];
 const firstPrice = sizes[firstSize] || "";
 
-let productImage = "";
-
-if (variant?.images && firstSize && variant.images[firstSize]) {
-    productImage = variant.images[firstSize];
-} else if (variant?.image) {
-    productImage = variant.image;
-} else if (product.variants?.spray?.images?.["30ml"]) {
-    productImage = product.variants.spray.images["30ml"];
-} else if (product.variants?.spray?.image) {
-    productImage = product.variants.spray.image;
-} else {
-    productImage = "";
-}
-
 card.innerHTML = `
 <div class="perfume-card-image-wrapper">
 
-<img src="${productImage}" alt="${product.name}" loading="lazy">
+<img src="${variant?.images ? variant.images[firstSize] : (variant?.image || product.image)}" alt="${product.name}" loading="lazy">
 
 <button class="perfume-card-btn add-to-cart-btn" aria-label="Add to cart">
 +
@@ -118,7 +85,7 @@ addBtn.addEventListener("click", function(e){
     const item = {
         name: product.name,
         price: Number(firstPrice),
-        image: productImage,
+        image: variant?.images ? variant.images[firstSize] : (variant?.image || product.image),
         size: firstSize,
         quantity: 1
     };
@@ -145,7 +112,7 @@ addBtn.addEventListener("click", function(e){
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    renderPerfumes(window.perfumes || perfumes);
+    renderPerfumes(perfumes);
 
     // ✅ FIXED: View All Button
     const viewAllBtn = document.querySelector(".view-all-btn");
@@ -153,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if(viewAllBtn){
         viewAllBtn.addEventListener("click", function(e){
             e.preventDefault();
-            renderPerfumes(window.perfumes || perfumes, true);
+            renderPerfumes(perfumes, true);
         });
     }
 
@@ -174,7 +141,7 @@ filterButtons.forEach(btn => {
 
         selectedCategory = btn.dataset.category;
 
-        renderPerfumes(window.perfumes || perfumes, true);
+        renderPerfumes(perfumes, true);
     });
 
 });
@@ -249,7 +216,7 @@ typeButtons.forEach(btn => {
         console.log("Selected Type:", selectedType); // DEBUG
 
         // re-render
-        renderPerfumes(window.perfumes || perfumes, true);
+        renderPerfumes(perfumes, true);
         }); // closes click
 }); // closes forEach
 // ==============================
@@ -268,7 +235,7 @@ function closeSearchPanel() {
     document.documentElement.classList.remove("search-open");
     navSearchInput.value = "";
     searchTerm = "";
-    renderPerfumes(window.perfumes || perfumes, false);
+    renderPerfumes(perfumes, false);
 }
 
 if (navSearchBtn && searchPanel && navSearchInput) {
@@ -294,7 +261,7 @@ if (navSearchBtn && searchPanel && navSearchInput) {
 
     navSearchInput.addEventListener("input", function () {
         searchTerm = navSearchInput.value;
-        renderPerfumes(window.perfumes || perfumes, true);
+        renderPerfumes(perfumes, true);
     });
 
     searchPanel.addEventListener("click", function (e) {
