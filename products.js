@@ -1608,38 +1608,62 @@ const perfumes = [
 },
 ];
 
+function createProductId(name) {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/impression of/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+window.perfumes = perfumes.map(product => ({
+  ...product,
+  id: product.id || createProductId(product.name),
+  status: product.status || "active",
+  inStock: product.inStock !== false
+}));
+
 const API = "https://name-jibreel-backend.onrender.com";
+
+function isValidBackendProduct(product) {
+  return (
+    product &&
+    product.id &&
+    product.name &&
+    product.description &&
+    product.variants &&
+    product.variants.spray &&
+    product.variants.spray.sizes
+  );
+}
 
 async function loadProductsFromBackend() {
   try {
     const res = await fetch(`${API}/api/products`);
     const data = await res.json();
 
-    if (!data.success) return;
+    if (!data.success || !Array.isArray(data.products)) {
+      return;
+    }
 
-    // overwrite products
-    window.perfumes = perfumes.map(local => {
-      const backendProduct = data.products.find(p => p.id === local.id);
+    const validProducts = data.products.filter(isValidBackendProduct);
 
-      if (!backendProduct) return local;
+    if (validProducts.length < 10) {
+      console.warn("Backend product schema incomplete. Using local products.js.");
+      return;
+    }
 
-      return {
-        ...local,
-        price: backendProduct.price,
-        discount: backendProduct.discount,
-        inStock: backendProduct.inStock
-      };
-    });
+    window.perfumes = validProducts
+      .filter(product => product.status !== "draft" && product.inStock !== false);
 
-    // re-render UI
     if (typeof renderPerfumes === "function") {
       renderPerfumes(window.perfumes, false);
     }
 
   } catch (err) {
-    console.log("Using local products.js");
+    console.log("Backend unavailable. Using local products.js.");
   }
 }
 
-// call it
 loadProductsFromBackend();
