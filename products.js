@@ -1607,7 +1607,6 @@ const perfumes = [
   }
 },
 ];
-];
 
 function createProductId(name) {
   return name
