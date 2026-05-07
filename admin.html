@@ -429,28 +429,7 @@
 
 }
 
-      data.products.forEach(p => {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-          <td>${p.name}</td>
-          <td><input type="number" id="price-${p.id}" value="${p.price}" /></td>
-          <td><input type="number" id="discount-${p.id}" value="${p.discount}" /></td>
-          <td>
-            <select id="stock-${p.id}">
-              <option value="true" ${p.inStock ? "selected" : ""}>In Stock</option>
-              <option value="false" ${!p.inStock ? "selected" : ""}>Out of Stock</option>
-            </select>
-          </td>
-          <td>
-            <button class="btn-primary" onclick="saveProduct('${p.id}')">Save</button>
-          </td>
-        `;
-
-        productsBody.appendChild(row);
-      });
-    }
-
+    
     async function saveProduct(productId) {
       const price = document.getElementById(`price-${productId}`).value;
       const discount = document.getElementById(`discount-${productId}`).value;
