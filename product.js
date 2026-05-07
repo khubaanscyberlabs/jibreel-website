@@ -3,7 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     const perfumeName = decodeURIComponent(params.get("perfume") || "");
 
-    const product = perfumes.find(p => p.name.trim() === perfumeName.trim());
+    let product = perfumes.find(p => p.name.trim() === perfumeName.trim());
+    const backendMatch = window.perfumes?.find(p => p.name.trim() === perfumeName.trim());
+
+if (backendMatch) {
+    product = backendMatch;
+}
 
     console.log("URL Name:", perfumeName);
     console.log("Matched Product:", product);
