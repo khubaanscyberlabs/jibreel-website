@@ -504,44 +504,71 @@
 
     
     async function saveProduct(productId) {
-      const price = document.getElementById(`price-${productId}`).value;
-      const discount = document.getElementById(`discount-${productId}`).value;
-      const inStock = document.getElementById(`stock-${productId}`).value === "true";
+  const status = document.getElementById(`status-${productId}`).value;
+  const inStock = document.getElementById(`stock-${productId}`).value === "true";
 
-      const response = await fetch(`${BACKEND_URL}/api/products`);
-      const data = await response.json();
+  const spray30 = Number(document.getElementById(`spray30-${productId}`).value);
+  const spray50 = Number(document.getElementById(`spray50-${productId}`).value);
+  const rollon6 = Number(document.getElementById(`rollon6-${productId}`).value);
+  const rollon12 = Number(document.getElementById(`rollon12-${productId}`).value);
 
-      const updatedProducts = data.products.map(p => {
-        if (p.id === productId) {
-          return {
-            ...p,
-            price: Number(price),
-            discount: Number(discount),
-            inStock
-          };
-        }
-        return p;
-      });
+  const response = await fetch(`${BACKEND_URL}/api/products`);
+  const data = await response.json();
 
-      const saveResponse = await fetch(`${BACKEND_URL}/api/admin/products`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "x-admin-key": ADMIN_KEY
+  if (!data.success || !Array.isArray(data.products)) {
+    alert("Could not fetch latest products.");
+    return;
+  }
+
+  const updatedProducts = data.products.map(product => {
+    if (product.id !== productId) return product;
+
+    return {
+      ...product,
+      status,
+      inStock,
+      variants: {
+        ...product.variants,
+        spray: {
+          ...product.variants?.spray,
+          sizes: {
+            ...product.variants?.spray?.sizes,
+            "30ml": spray30,
+            "50ml": spray50
+          }
         },
-        body: JSON.stringify({ products: updatedProducts })
-      });
+        rollon: {
+          ...product.variants?.rollon,
+          sizes: {
+            ...product.variants?.rollon?.sizes,
+            "6ml": rollon6,
+            "12ml": rollon12
+          }
+        }
+      },
+      updatedAt: new Date().toISOString()
+    };
+  });
 
-      const saveData = await saveResponse.json();
+  const saveResponse = await fetch(`${BACKEND_URL}/api/admin/products`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "x-admin-key": ADMIN_KEY
+    },
+    body: JSON.stringify({ products: updatedProducts })
+  });
 
-      if (!saveData.success) {
-        alert(saveData.message || "Product update failed");
-        return;
-      }
+  const saveData = await saveResponse.json();
 
-      alert("Product updated successfully");
-      loadProducts();
-    }
+  if (!saveData.success) {
+    alert(saveData.message || "Product update failed");
+    return;
+  }
+
+  alert("Product updated successfully");
+  loadProducts();
+}
 
     async function loadOrders() {
       const statusText = document.getElementById("statusText");
