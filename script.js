@@ -4,7 +4,12 @@ let searchTerm = "";
 
 function renderPerfumes(list, showAll = false){
 
+list = list || window.perfumes || perfumes || [];
+list = list.filter(product => product.status !== "draft" && product.inStock !== false);
+
 const grid = document.getElementById("perfumeGrid");
+
+    
 if (!grid) return;
 
 grid.innerHTML = "";
@@ -113,7 +118,7 @@ addBtn.addEventListener("click", function(e){
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    renderPerfumes(perfumes);
+    renderPerfumes(window.perfumes || perfumes);
 
     // ✅ FIXED: View All Button
     const viewAllBtn = document.querySelector(".view-all-btn");
@@ -121,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if(viewAllBtn){
         viewAllBtn.addEventListener("click", function(e){
             e.preventDefault();
-            renderPerfumes(perfumes, true);
+            renderPerfumes(window.perfumes || perfumes, true);
         });
     }
 
@@ -142,7 +147,7 @@ filterButtons.forEach(btn => {
 
         selectedCategory = btn.dataset.category;
 
-        renderPerfumes(perfumes, true);
+        renderPerfumes(window.perfumes || perfumes, true);
     });
 
 });
@@ -217,7 +222,7 @@ typeButtons.forEach(btn => {
         console.log("Selected Type:", selectedType); // DEBUG
 
         // re-render
-        renderPerfumes(perfumes, true);
+        renderPerfumes(window.perfumes || perfumes, true);
         }); // closes click
 }); // closes forEach
 // ==============================
@@ -236,7 +241,7 @@ function closeSearchPanel() {
     document.documentElement.classList.remove("search-open");
     navSearchInput.value = "";
     searchTerm = "";
-    renderPerfumes(perfumes, false);
+    renderPerfumes(window.perfumes || perfumes, false);
 }
 
 if (navSearchBtn && searchPanel && navSearchInput) {
@@ -262,7 +267,7 @@ if (navSearchBtn && searchPanel && navSearchInput) {
 
     navSearchInput.addEventListener("input", function () {
         searchTerm = navSearchInput.value;
-        renderPerfumes(perfumes, true);
+        renderPerfumes(window.perfumes || perfumes, true);
     });
 
     searchPanel.addEventListener("click", function (e) {
