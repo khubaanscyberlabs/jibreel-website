@@ -157,11 +157,24 @@
     </div>
 
     <div id="adminPanel" style="display:none;">
-      <button class="btn-primary" onclick="loadOrders()">Load Orders</button>
-      <button class="btn-primary" onclick="loadProducts()">Load Products</button>
-      <button onclick="updateAllStatuses()" class="btn-secondary">Update All Statuses</button>
-      <button onclick="clearOrders()" class="btn-danger">Clear All</button>
-    </div>
+  <label for="adminSection">Select Admin Section</label><br>
+
+  <select id="adminSection" onchange="switchAdminSection()">
+    <option value="">Choose section</option>
+    <option value="orders">Orders Management</option>
+    <option value="products">Product Management</option>
+  </select>
+
+  <div id="ordersActions" style="display:none; margin-top:15px;">
+    <button class="btn-primary" onclick="loadOrders()">Refresh Orders</button>
+    <button onclick="updateAllStatuses()" class="btn-secondary">Update All Statuses</button>
+    <button onclick="clearOrders()" class="btn-danger">Clear All Orders</button>
+  </div>
+
+  <div id="productsActions" style="display:none; margin-top:15px;">
+    <button class="btn-primary" onclick="loadProducts()">Refresh Products</button>
+  </div>
+</div>
 
     <p id="statusText">Login and click Load Orders.</p>
 
