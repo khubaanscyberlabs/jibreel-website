@@ -55,18 +55,32 @@ card.addEventListener("click", function(e) {
     window.location.href = `product.html?perfume=${encodeURIComponent(product.name)}`;
 });
 
-const variant = selectedType === "all" 
-    ? product.variants?.spray 
+const variant = selectedType === "all"
+    ? product.variants?.spray
     : product.variants?.[selectedType] || product.variants?.spray;
 
 const sizes = variant?.sizes || {};
 const firstSize = Object.keys(sizes)[0];
 const firstPrice = sizes[firstSize] || "";
 
+let productImage = "";
+
+if (variant?.images && firstSize && variant.images[firstSize]) {
+    productImage = variant.images[firstSize];
+} else if (variant?.image) {
+    productImage = variant.image;
+} else if (product.variants?.spray?.images?.["30ml"]) {
+    productImage = product.variants.spray.images["30ml"];
+} else if (product.variants?.spray?.image) {
+    productImage = product.variants.spray.image;
+} else {
+    productImage = "images/placeholder.png";
+}
+
 card.innerHTML = `
 <div class="perfume-card-image-wrapper">
 
-<img src="${variant?.images ? variant.images[firstSize] : (variant?.image || product.image)}" alt="${product.name}" loading="lazy">
+<img src="${productImage}" alt="${product.name}" loading="lazy">
 
 <button class="perfume-card-btn add-to-cart-btn" aria-label="Add to cart">
 +
@@ -98,7 +112,7 @@ addBtn.addEventListener("click", function(e){
     const item = {
         name: product.name,
         price: Number(firstPrice),
-        image: variant?.images ? variant.images[firstSize] : (variant?.image || product.image),
+        image: productImage,
         size: firstSize,
         quantity: 1
     };
