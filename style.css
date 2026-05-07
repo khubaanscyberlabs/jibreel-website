@@ -2062,7 +2062,12 @@ h1, h2, h3, h4, h5 {
 .perfume-card-image-wrapper {
     position: relative;
     aspect-ratio: 1 / 1.22;
-    background: #ffffff;
+    background:
+    radial-gradient(
+    circle,
+    #EFD4C8 0%,
+    #E9C9BB 60%,
+    #DDB6A8 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2738,7 +2743,13 @@ section {
     padding: 90px 0;
 }
 section:nth-child(even) {
-    background-color: #FAF8F4;
+    background:
+    radial-gradient(
+        circle,
+        #EFD4C8 0%,
+        #E9C9BB 58%,
+        #DDB6A8 100%
+    );
 }
 section {
     background: transparent;
