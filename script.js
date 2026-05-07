@@ -25,10 +25,15 @@ let filteredList = list;
 
 // Search filter
 if (searchTerm.trim() !== "") {
-    filteredList = filteredList.filter(p =>
-        p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        p.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    filteredList = filteredList.filter(p => {
+        const productName = p.name || "";
+        const productDescription = p.description || "";
+
+        return (
+            productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            productDescription.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    });
 }
 
 // Category filter
@@ -45,6 +50,7 @@ if (selectedType !== "all") {
 const displayList = showAll ? filteredList : filteredList.slice(0, 4);
 
 displayList.forEach(product => {
+    if (!product || !product.name || !product.variants) return;
 
 const card = document.createElement("div");
 card.classList.add("perfume-card");
@@ -74,7 +80,7 @@ if (variant?.images && firstSize && variant.images[firstSize]) {
 } else if (product.variants?.spray?.image) {
     productImage = product.variants.spray.image;
 } else {
-    productImage = "images/placeholder.png";
+    productImage = "";
 }
 
 card.innerHTML = `
