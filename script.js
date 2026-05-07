@@ -112,7 +112,7 @@ addBtn.addEventListener("click", function(e){
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    renderPerfumes(perfumes);
+        renderPerfumes(window.perfumes || perfumes);
 
     // ✅ FIXED: View All Button
     const viewAllBtn = document.querySelector(".view-all-btn");
