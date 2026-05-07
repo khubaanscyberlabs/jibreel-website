@@ -337,16 +337,97 @@
     }
 
     async function loadProducts() {
-      const response = await fetch(`${BACKEND_URL}/api/products`);
-      const data = await response.json();
 
-      const productsBody = document.getElementById("productsBody");
-      productsBody.innerHTML = "";
+  const response = await fetch(`${BACKEND_URL}/api/products`);
+  const data = await response.json();
 
-      if (!data.success) {
-        alert(data.message || "Could not load products.");
-        return;
-      }
+  const productsBody = document.getElementById("productsBody");
+
+  if (!productsBody) {
+    console.error("productsBody not found");
+    return;
+  }
+
+  productsBody.innerHTML = "";
+
+  if (!data.success || !Array.isArray(data.products)) {
+    alert("Failed to load products");
+    return;
+  }
+
+  data.products.forEach(product => {
+
+    const spray30 =
+      product.variants?.spray?.sizes?.["30ml"] || "";
+
+    const spray50 =
+      product.variants?.spray?.sizes?.["50ml"] || "";
+
+    const rollon6 =
+      product.variants?.rollon?.sizes?.["6ml"] || "";
+
+    const rollon12 =
+      product.variants?.rollon?.sizes?.["12ml"] || "";
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${product.name}</td>
+
+      <td>
+        <select id="status-${product.id}">
+          <option value="active" ${product.status === "active" ? "selected" : ""}>Active</option>
+
+          <option value="draft" ${product.status === "draft" ? "selected" : ""}>Draft</option>
+
+          <option value="out_of_stock" ${product.status === "out_of_stock" ? "selected" : ""}>Out Of Stock</option>
+        </select>
+      </td>
+
+      <td>
+        <select id="stock-${product.id}">
+          <option value="true" ${product.inStock !== false ? "selected" : ""}>In Stock</option>
+
+          <option value="false" ${product.inStock === false ? "selected" : ""}>Out Of Stock</option>
+        </select>
+      </td>
+
+      <td>
+        <input type="number"
+        id="spray30-${product.id}"
+        value="${spray30}">
+      </td>
+
+      <td>
+        <input type="number"
+        id="spray50-${product.id}"
+        value="${spray50}">
+      </td>
+
+      <td>
+        <input type="number"
+        id="rollon6-${product.id}"
+        value="${rollon6}">
+      </td>
+
+      <td>
+        <input type="number"
+        id="rollon12-${product.id}"
+        value="${rollon12}">
+      </td>
+
+      <td>
+        <button onclick="saveProduct('${product.id}')">
+          Save
+        </button>
+      </td>
+    `;
+
+    productsBody.appendChild(row);
+
+  });
+
+}
 
       data.products.forEach(p => {
         const row = document.createElement("tr");
