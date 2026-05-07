@@ -1607,6 +1607,24 @@ const perfumes = [
   }
 },
 ];
+];
+
+function createProductId(name) {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/impression of/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+window.perfumes = perfumes.map(product => ({
+  ...product,
+  id: product.id || createProductId(product.name),
+  status: product.status || "active",
+  inStock: product.inStock !== false
+}));
+
 const API = "https://name-jibreel-backend.onrender.com";
 
 async function loadProductsFromBackend() {
@@ -1614,31 +1632,41 @@ async function loadProductsFromBackend() {
     const res = await fetch(`${API}/api/products`);
     const data = await res.json();
 
-    if (!data.success) return;
+    if (!data.success || !Array.isArray(data.products) || data.products.length === 0) {
+      renderLocalProducts();
+      return;
+    }
 
-    // overwrite products
-    window.perfumes = perfumes.map(local => {
-  const backendProduct = data.products.find(p => p.id === local.id);
+    const backendProducts = data.products.filter(product => product.status !== "draft");
 
-  if (!backendProduct) return local;
+    if (backendProducts.length === 0) {
+      renderLocalProducts();
+      return;
+    }
 
-  return {
-    ...local,
-    price: backendProduct.price,
-    discount: backendProduct.discount,
-    inStock: backendProduct.inStock
-  };
-});
+    window.perfumes = backendProducts;
 
-    // re-render UI
     if (typeof renderPerfumes === "function") {
       renderPerfumes(window.perfumes, false);
     }
 
   } catch (err) {
-    console.log("Using local products.js");
+    console.log("Backend products unavailable. Using local products.js fallback.");
+    renderLocalProducts();
   }
 }
 
-// call it
+function renderLocalProducts() {
+  window.perfumes = perfumes.map(product => ({
+    ...product,
+    id: product.id || createProductId(product.name),
+    status: product.status || "active",
+    inStock: product.inStock !== false
+  }));
+
+  if (typeof renderPerfumes === "function") {
+    renderPerfumes(window.perfumes, false);
+  }
+}
+
 loadProductsFromBackend();
