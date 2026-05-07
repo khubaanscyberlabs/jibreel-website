@@ -3,23 +3,51 @@ document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     const perfumeName = decodeURIComponent(params.get("perfume") || "");
 
-    let product = perfumes.find(p => p.name.trim() === perfumeName.trim());
-    const backendMatch = window.perfumes?.find(p => p.name.trim() === perfumeName.trim());
+    let product = null;
 
-if (backendMatch) {
-    product = backendMatch;
+async function loadBackendProduct() {
+
+    try {
+
+        const res = await fetch("https://name-jibreel-backend.onrender.com/api/products");
+
+        const data = await res.json();
+
+        if (data.success && Array.isArray(data.products)) {
+
+            const backendProduct = data.products.find(
+                p => p.name.trim() === perfumeName.trim()
+            );
+
+            if (backendProduct) {
+                product = backendProduct;
+            }
+
+        }
+
+    } catch (err) {
+        console.log("Backend product load failed");
+    }
+
+    // fallback to local products.js
+    if (!product) {
+
+        product = perfumes.find(
+            p => p.name.trim() === perfumeName.trim()
+        );
+
+    }
+
+    if (!product) {
+        document.body.innerHTML = "<h2>Product not found</h2>";
+        return;
+    }
+
+    initializeProductPage();
+
 }
 
-    console.log("URL Name:", perfumeName);
-    console.log("Matched Product:", product);
-
-    // ==============================
-    // PRODUCT LOAD
-    // ==============================
-
-    let details = null;
-
-    if (product) {
+    function initializeProductPage() {
 
         const fullName = product.name.replace("Impression of", "").trim();
 
@@ -42,7 +70,9 @@ if (backendMatch) {
   .toLowerCase();
 
 console.log("Looking for key:", cleanProductName);
-console.log("Available keys:", Object.keys(productDetails));
+if (typeof productDetails !== "undefined") {
+    console.log("Available keys:", Object.keys(productDetails));
+}
 
       if (typeof productDetails !== "undefined") {
     if (productDetails[cleanProductName]) {
@@ -81,13 +111,7 @@ console.log("Available keys:", Object.keys(productDetails));
 
         document.getElementById("productMRP").innerText =
             "Rs. " + (product.variants[defaultVariant].sizes[defaultSize] + 800);
-
-    } else {
-
-        document.body.innerHTML = "<h1 style='color:black'>Product Not Found</h1>";
-        return;
-    }
-
+        
     // ==============================
     // QUANTITY
     // ==============================
@@ -291,9 +315,13 @@ console.log("Available keys:", Object.keys(productDetails));
                 </div>
             `;
 
-            recommendedGrid.appendChild(card);
+                       recommendedGrid.appendChild(card);
         });
     }
+
+}
+
+loadBackendProduct();
 
 });
 
