@@ -219,6 +219,29 @@
     const ADMIN_KEY = "JIBreel@1990";
     let isLoggedIn = false;
 
+    function switchAdminSection() {
+  const selected = document.getElementById("adminSection").value;
+
+  const ordersActions = document.getElementById("ordersActions");
+  const productsActions = document.getElementById("productsActions");
+
+  if (ordersActions) {
+    ordersActions.style.display = selected === "orders" ? "block" : "none";
+  }
+
+  if (productsActions) {
+    productsActions.style.display = selected === "products" ? "block" : "none";
+  }
+
+  if (selected === "orders") {
+    loadOrders();
+  }
+
+  if (selected === "products") {
+    loadProducts();
+  }
+}
+
     async function adminLogin() {
       const username = document.getElementById("adminUser").value.trim();
       const password = document.getElementById("adminPass").value.trim();
