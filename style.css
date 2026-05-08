@@ -528,14 +528,24 @@ text-align:center;
         }
 
         /* Mobile Menu Toggle */
-        .menu-toggle {
+       .menu-toggle {
     display: none;
+
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+
     flex-direction: column;
     gap: 5px;
+
     cursor: pointer;
+
     z-index: 1001;
+
     background: transparent;
     border: none;
+
     padding: 4px;
 }
 
@@ -807,6 +817,9 @@ text-align:center;
 
 .nav-icons {
     right: 18px;
+}
+            .menu-toggle {
+    left: 18px;
 }
 
 .nav-search.active .nav-search-input {
