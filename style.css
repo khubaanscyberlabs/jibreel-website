@@ -2757,3 +2757,130 @@ body.search-open .navbar {
     border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28) !important;
 }
+/* =========================================
+   LUXURY NAVBAR ICON REDESIGN
+========================================= */
+
+/* ICON CONTAINER */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* ALL NAVBAR ICON LINKS */
+.nav-icons a,
+.nav-search-btn {
+    
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    transition: all 0.35s ease;
+
+    cursor: pointer;
+}
+
+/* ICON SIZE */
+.nav-icons i,
+.nav-search-btn i {
+    font-size: 15px;
+}
+
+/* HOVER EFFECT */
+.nav-icons a:hover,
+.nav-search-btn:hover {
+
+    background: #08A7C5;
+
+    border-color: #08A7C5;
+
+    color: #023048;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(8,167,197,0.35);
+}
+
+/* ACTIVE CLICK EFFECT */
+.nav-icons a:active,
+.nav-search-btn:active {
+    transform: scale(0.96);
+}
+
+/* SEARCH ICON FIX */
+.nav-search {
+    display: flex;
+    align-items: center;
+}
+
+/* REMOVE UGLY DEFAULT BUTTON STYLE */
+.nav-search-btn {
+    border: 1px solid rgba(255,255,255,0.14);
+    outline: none;
+}
+
+/* CART COUNT POLISH */
+.cart-count {
+
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    border-radius: 50px;
+
+    background: #08A7C5;
+
+    color: #023048;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #023048;
+}
+
+/* MOBILE ICON SIZE */
+@media (max-width: 768px) {
+
+    .nav-icons {
+        gap: 10px;
+    }
+
+    .nav-icons a,
+    .nav-search-btn {
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-icons i,
+    .nav-search-btn i {
+        font-size: 14px;
+    }
+}
