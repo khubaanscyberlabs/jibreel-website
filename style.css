@@ -100,7 +100,11 @@
 --font-heading: 'Montserrat', sans-serif;
 --font-body: 'Assistant', sans-serif;
 --font-ui: 'Assistant', sans-serif;
-}
+
+--cream: #F8F6F1;
+--soft-beige: #EFE8DD;
+--luxury-shadow: 0 18px 45px rgba(2, 48, 72, 0.10);
+--soft-border: 1px solid rgba(2, 48, 72, 0.10);
 
         /* -------- Reset & Base -------- */
         *, *::before, *::after {
@@ -2048,21 +2052,24 @@ h1, h2, h3, h4, h5 {
 }
 .perfume-card {
     background: #ffffff;
-    border-radius: 14px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 22px rgba(35, 31, 26, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: var(--soft-border);
+    box-shadow: var(--luxury-shadow);
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .perfume-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(35, 31, 26, 0.09);
+    transform: translateY(-7px);
+    box-shadow: 0 26px 60px rgba(2, 48, 72, 0.16);
+    border-color: rgba(212, 175, 55, 0.35);
     z-index: 2;
 }
 .perfume-card-image-wrapper {
     position: relative;
     aspect-ratio: 1 / 1.22;
-    background: #ffffff;
+    background: linear-gradient(180deg, #ffffff 0%, #F8F6F1 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2094,7 +2101,7 @@ h1, h2, h3, h4, h5 {
 }
 .perfume-card-name {
     font-family: var(--font-heading);
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.10em;
     text-transform: uppercase;
@@ -2104,10 +2111,11 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 8px;
 }
 .perfume-price {
-    font-size: 14px;
-    font-weight: 500;
-    color: #023048;  /* Carbon */
-    letter-spacing: 0.06em;
+    font-size: 15px;
+    font-weight: 600;
+    color: #023048;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
 }
 
 .perfume-card-description,
@@ -2415,10 +2423,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .product-page-body .product-gallery-main {
-    background: #f7f3ef;
+    background: linear-gradient(180deg, #ffffff 0%, #F8F6F1 100%);
     min-height: 620px;
     position: sticky;
     top: 110px;
+    border: var(--soft-border);
+    border-radius: 22px;
+    box-shadow: var(--luxury-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-page-body .product-gallery-main img {
