@@ -2972,3 +2972,48 @@ body.search-open .navbar {
     }
 
 }
+/* FINAL NAV ICON CLEAN FIX */
+.nav-icons {
+    gap: 12px !important;
+}
+
+.nav-icons a,
+.nav-search-btn {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.nav-icons i,
+.nav-search-btn i {
+    font-size: 17px !important;
+    line-height: 1 !important;
+}
+
+/* REMOVE LOGIN TEXT FROM NAVBAR */
+.account-link span {
+    display: none !important;
+}
+
+/* CART COUNT POSITION FIX */
+.nav-icons .cart-count {
+    top: -5px !important;
+    right: -5px !important;
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    font-size: 8px !important;
+}
