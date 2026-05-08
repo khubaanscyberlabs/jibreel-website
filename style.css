@@ -2465,7 +2465,7 @@ h1, h2, h3, h4, h5 {
     margin: 0;
 }
 
-.product-page-body #productName {
+.product-page-body #productTitle {
     font-size: clamp(28px, 4vw, 42px);
     font-weight: 400;
     letter-spacing: 0.02em;
