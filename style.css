@@ -2803,9 +2803,7 @@ body.search-open .navbar {
     background: transparent;
     border: none;
     outline: none;
-
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -2930,4 +2928,47 @@ body.search-open .navbar {
     .nav-search-btn i {
         font-size: 19px;
     }
+}
+/* =========================================
+   LUXURY NAV ICON BUTTONS
+========================================= */
+
+.nav-icons a,
+.nav-search-btn {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.nav-icons a:hover,
+.nav-search-btn:hover {
+
+    background: #023048;
+
+    border-color: #08A7C5;
+
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+
+    .account-link span {
+        display: none;
+    }
+
 }
